@@ -20,45 +20,50 @@
     <form method="POST" action="Accounts/signup">
         <div class="row">
             <h4>Account Information</h4>
+            <div class="col-half">
+                <div class="input-group input-group-icon">
+                <input name="last" type="text" placeholder="Last Name"/>
+                <div class="input-icon"><i class="fa fa-user"></i></div>
+                </div>
             <div class="input-group input-group-icon">
                 <input name="first" type="text" placeholder="First Name"/>
                 <div class="input-icon"><i class="fa fa-user"></i></div>
             </div>
-            <div class="input-group input-group-icon">
-                <input name="last" type="text" placeholder="Last Name"/>
-                <div class="input-icon"><i class="fa fa-user"></i></div>
             </div>
+
             <div class="input-group input-group-icon">
                 <input name="id" type="text" placeholder="Id Number"/>
-                <div class="input-icon"><i class="fa fa-user"></i></div>
+                <div class="input-icon"><i class="fa-credit-card"></i></div>
             </div>
             <div class="input-group input-group-icon">
-                <input name="contact" type="text" placeholder="Contact"/>
-                <div class="input-icon"><i class="fa fa-user"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-                <input name="course" type="text" placeholder="Course"/>
-                <div class="input-icon"><i class="fa fa-user"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-                <input name="year" placeholder="Year"/>
-                <div class="input-icon"><i class="fa fa-user"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-                <input name="email" type="email" placeholder="Email"/>
-                <div class="input-icon"><i class="fa fa-user"></i></div>
-            </div>
-            <div class="input-group input-group-icon">
-                <input name="username" type="text" placeholder="Username"/>
-                <div class="input-icon"><i class="fa fa-envelope"></i></div>
+                <input name="email" type="email" placeholder="Email Address"/>
+                <div class="input-icon"><i class="fa-envelope"></i></div>
             </div>
             <div class="input-group input-group-icon">
                 <input name="password" type="password" placeholder="Password"/>
                 <div class="input-icon"><i class="fa fa-key"></i></div>
             </div>
             <div class="input-group input-group-icon">
-                <input name="usertype" type="text" placeholder="User Type"/>
-                <div class="input-icon"><i class="fa fa-key"></i></div>
+                <input name="contact" type="text" placeholder="Contact No."/>
+                <div class="input-icon"><i class="fa-mobile"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+                <input name="contact" type="text" placeholder="Alternative Contact No."/>
+                <div class="input-icon"><i class="fa-mobile"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+                <input name="course" type="text" placeholder="Course"/>
+                <div class="input-icon"><i class="fa-mortar-board"></i></div>
+            </div>
+            <div class="input-group input-group-icon">
+                <input name="year" placeholder="Year"/>
+                <div class="input-icon"><i class="fa-mortar-board"></i></div>
+            </div>
+            <div class="input-group">
+                <input type="radio" name="gender" value="male" id="gender-male"/>
+                <label for="gender-male">Student</label>
+                <input type="radio" name="gender" value="female" id="gender-female"/>
+                <label for="gender-female">Alumni</label>
             </div>
         </div>
         <div class="row">

@@ -11,7 +11,7 @@ body {
   background-color: #e3e3e3;
 }
 h4 {
-  color: #7ed321;
+  color: #2246d6;
 }
 input,
 input[type="radio"] + label,
@@ -32,13 +32,13 @@ select {
 }
 input:focus {
   outline: 0;
-  border-color: #64ac15;
+  border-color: #152da5;
 }
 input:focus + .input-icon i {
-  color: #7ed321;
+  color: #2246d6;
 }
 input:focus + .input-icon:after {
-  border-right-color: #7ed321;
+  border-right-color: #2246d6;
 }
 input[type="radio"] {
   display: none;
@@ -66,9 +66,9 @@ input[type="radio"]:checked + label,
 input:checked + label:before,
 select:focus,
 select:active {
-  background-color: #7ed321;
+  background-color: #2246d6;
   color: #fff;
-  border-color: #64ac15;
+  border-color: #152da5;
 }
 input[type="checkbox"] {
   display: none;
@@ -118,7 +118,7 @@ select:active {
   outline: 0;
 }
 select option {
-  background-color: #7ed321;
+  background-color: #2246d6;
   color: #fff;
 }
 .input-group {
@@ -192,15 +192,15 @@ select option {
 .col-half {
   padding-right: 10px;
   float: left;
-  width: 50%;
+  width: 100%;
 }
 .col-half:last-of-type {
   padding-right: 0;
 }
 .col-third {
-  padding-right: 10px;
+  padding-right: 20px;
   float: left;
-  width: 33.33333333%;
+  width: 100%;
 }
 .col-third:last-of-type {
   padding-right: 0;
