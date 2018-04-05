@@ -13,7 +13,7 @@ class Accounts extends CI_Controller
     public function signup()
     {
         $this->acc->signup();
-        redirect('login');
+        redirect('dashboard');
     }
 
     public function login()
