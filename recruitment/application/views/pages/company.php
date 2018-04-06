@@ -39,8 +39,8 @@
 <!-- ============================================================== -->
 
 <!-- Modal -->
-<div id="addCompany" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+<div id="addCompany" class="modal fade col-lg-12" role="dialog">
+    <div class="modal-dialog modal-lg">
         <form method="POST">
             <!-- Modal content-->
             <div class="modal-content">
@@ -50,19 +50,99 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="col-md-12">Full Name</label>
-                        <div class="col-md-12">
-                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
+                        <div class="row">
+                                <div class="col-md-6">
+                                    <label>Comapny Name</label>
+                                    <input type="number" class="form-control">
+                                    <label>Address</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" placeholder="No">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" placeholder="Street">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="Municipality/Province" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="text" placeholder="City" class="form-control">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <label>Contact Person</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="text" class="form-control" placeholder="First Name">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" placeholder="Middle Name">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <select class="form-control">
+                                                <option>Mr</option>
+                                                <option>Mrs</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pull-right">
+                                    <label>Contact No:</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="email" class="form-control" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="email" class="form-control" placeholder="Tel. No.">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="email" class="form-control" placeholder="Mobile No">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="email" class="form-control" placeholder="Alternative Mobile No">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="file" class="form-control" placeholder="Logo">
+                                        </div>
+                                    </div>
+                                </div>
+
                         </div>
-                        <label class="col-md-12">Full Name</label>
-                        <div class="col-md-12">
-                            <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
-                        </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <button type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+                        </div>
+
+
+
+                    </div>
                 </div>
             </div>
         </form>
