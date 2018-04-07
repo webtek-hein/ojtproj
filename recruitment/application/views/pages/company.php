@@ -81,7 +81,7 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">
-                                <label>Comapny Name</label>
+                                <label>Company Name</label>
                                 <input name="company" type="text" class="form-control">
                                 <label>Address</label>
                                 <div class="row">

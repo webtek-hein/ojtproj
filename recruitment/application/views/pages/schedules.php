@@ -59,11 +59,14 @@
                                     <div class="col-md-6">
                                         <select class="form-control">
                                             <option>Exam</option>
+                                            <option>Orientation</option>
+                                            <option>Seminar</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6">
                                         <select class="form-control">
                                             <option>Internship</option>
+                                            <option>Employment</option>
                                         </select>
                                     </div>
                                 </div>
