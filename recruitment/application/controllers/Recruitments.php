@@ -19,5 +19,8 @@ class Recruitments extends CI_Controller
     public function archiveCompany($id){
        echo json_encode($this->rec->setCompanyStatus($id));
     }
+    public function revertCompany($id){
+        echo json_encode($this->rec->revertCompanyStatus($id));
+    }
 
 }

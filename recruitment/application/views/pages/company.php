@@ -52,10 +52,11 @@
                             <p>Email: <span id="email"></span></p>
                         </div>
 
-                        <div id="buttonsDiv" class="col-sm-12">
-                            <button type="button" class="btn btn-warning">Edit</button>
+                        <div class="col-sm-12">
+                            <button id="editBtn" type="button" class="btn btn-warning">Edit</button>
                             <button type="button" id="archive" class="btn btn-danger">Archive</button>
                             <button id="detailBack" type="button" class="btn btn-info" onclick="toggleDiv($('#main'),$('#details'))">Back</button>
+                            <button type="button" hidden id="revert" class="btn btn-danger">Revert</button>
                         </div>
                     </div>
                 </div>
