@@ -11,9 +11,13 @@ class Recruitments extends CI_Controller
     }
     public function newCompany(){
     	echo json_encode($this->rec->saveCompany());
+    	redirect('company');
     }
-    public function getCompanies(){
-        echo json_encode($this->rec->companies());
+    public function getCompanies($stat){
+        echo json_encode($this->rec->companies($stat));
+    }
+    public function archiveCompany($id){
+       echo json_encode($this->rec->setCompanyStatus($id));
     }
 
 }

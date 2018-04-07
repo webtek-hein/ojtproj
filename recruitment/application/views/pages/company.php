@@ -10,8 +10,8 @@
                 <!-- Add company -->
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addCompany">Add Company
                 </button>
-                <select class="custom-select pull-right">
-                    <option selected>Registered</option>
+                <select id="compStatus" class="custom-select pull-right">
+                    <option value="0" selected>Registered</option>
                     <option value="1">Archived</option>
                 </select>
                 <div class="table-responsive">
@@ -21,17 +21,41 @@
 
             </div>
             <div id="details" hidden class="card-block">
-                <!--Back Button-->
-                <button type="button" class="btn btn-info" onclick="toggleDiv($('#main'),$('#details'))">
-                    Back to main Page</button>
                 <hr>
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm">
+                        <div class="col-sm-4">
                             <img src="assets/images/logo-icon.png">
-                            <h1 id="company_name"></h1>
                         </div>
-                        <div class="col-sm">
+                        <div class="col-sm-6">
+                            <h3 id="company_name"></h3>
+                        </div>
+                        <div class="col-sm-12">
+                            <h3>Address:</h3>
+                        </div>
+                        <div class="col-sm-12">
+                            <p id="address"></p>
+                        </div>
+                        <div class="col-sm-12">
+                            <h3>Contact Person</h3>
+                        </div>
+                        <div class="col-sm-12">
+                            <p id="contact_person"></p>
+                        </div>
+                        <div class="col-sm-12">
+                            <h3>Contact Information</h3>
+                        </div>
+                        <div class="col-sm-12">
+                            <p>Contact Number: <span id="mobile_num"></span></p>
+                            <p>Telephone Number: <span id="tel"></span></p>
+                            <p>Alternate Contact Number: <span id="alt_number"></span></p>
+                            <p>Email: <span id="email"></span></p>
+                        </div>
+
+                        <div id="buttonsDiv" class="col-sm-12">
+                            <button type="button" class="btn btn-warning">Edit</button>
+                            <button type="button" id="archive" class="btn btn-danger">Archive</button>
+                            <button id="detailBack" type="button" class="btn btn-info" onclick="toggleDiv($('#main'),$('#details'))">Back</button>
                         </div>
                     </div>
                 </div>
@@ -120,7 +144,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="text" name="mobile" class="form-control" placeholder="Mobile No">
+                                        <input type="text" name="mobile" class="form-control"
+                                               placeholder="Mobile No">
                                     </div>
                                 </div>
                                 <div class="row">

@@ -28,8 +28,16 @@ class Recruitments_model extends CI_Model
 
         $this->db->insert('company',$data);
     }
-    public function companies(){
-        $query = $this->db->get('company')->result_array();
+    public function companies($stat){
+        if($stat === '0'){
+            $status = 'registered';
+        }else{
+            $status = 'archived';
+        }
+        $query = $this->db->where('status',$status)->get('company')->result_array();
         return $query;
+    }
+    public function setCompanyStatus($id){
+        $this->db->set('status','archived')->where('company_id',$id)->update('company');
     }
 }
