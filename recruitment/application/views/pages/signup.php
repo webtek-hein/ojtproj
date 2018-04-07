@@ -22,13 +22,13 @@
             <h4>Account Information</h4>
             <div class="col-half">
                 <div class="input-group input-group-icon">
-                <input name="last" type="text" placeholder="Last Name"/>
-                <div class="input-icon"><i class="fa fa-user"></i></div>
+                    <input name="last" type="text" placeholder="Last Name"/>
+                    <div class="input-icon"><i class="fa fa-user"></i>
                 </div>
-            <div class="input-group input-group-icon">
-                <input name="first" type="text" placeholder="First Name"/>
-                <div class="input-icon"><i class="fa fa-user"></i></div>
-            </div>
+                <div class="input-group input-group-icon">
+                    <input name="first" type="text" placeholder="First Name"/>
+                    <div class="input-icon"><i class="fa fa-user"></i>
+                </div>
             </div>
 
             <div class="input-group input-group-icon">
