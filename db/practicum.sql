@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2018 at 10:54 AM
+-- Generation Time: Apr 07, 2018 at 03:09 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `practicum`
 --
+CREATE DATABASE IF NOT EXISTS `practicum` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `practicum`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `appointment`
 --
 
+DROP TABLE IF EXISTS `appointment`;
 CREATE TABLE `appointment` (
   `appt_id` int(45) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -39,15 +42,18 @@ CREATE TABLE `appointment` (
 -- Table structure for table `company`
 --
 
+DROP TABLE IF EXISTS `company`;
 CREATE TABLE `company` (
   `company_id` int(45) NOT NULL,
-  `name` varchar(45) NOT NULL,
-  `address` varchar(80) NOT NULL,
   `contact_person` varchar(45) NOT NULL,
+  `address` varchar(80) NOT NULL,
+  `company_name` varchar(250) NOT NULL,
   `suffix` varchar(10) NOT NULL,
   `email` varchar(45) NOT NULL,
   `tel_num` varchar(45) NOT NULL,
-  `mobile_num` varchar(45) NOT NULL
+  `mobile_num` varchar(45) NOT NULL,
+  `alt_number` varchar(250) NOT NULL,
+  `status` varchar(250) NOT NULL DEFAULT 'registered'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -56,6 +62,7 @@ CREATE TABLE `company` (
 -- Table structure for table `schedule`
 --
 
+DROP TABLE IF EXISTS `schedule`;
 CREATE TABLE `schedule` (
   `sched_id` int(45) NOT NULL,
   `company_id` int(11) NOT NULL,
@@ -75,6 +82,7 @@ CREATE TABLE `schedule` (
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` int(45) NOT NULL,
   `user_name` varchar(45) NOT NULL,
@@ -88,14 +96,6 @@ CREATE TABLE `user` (
   `year` int(11) NOT NULL,
   `user_type` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`user_id`, `user_name`, `password`, `first_name`, `last_name`, `email`, `id_num`, `contact_num`, `course`, `year`, `user_type`) VALUES
-(1, 'famae', '123', 'Famae', 'Pascua', 'famaepascua@gmail.com', 2143735, '09163320433', 'BSIT', 4, 'admin'),
-(3, 'hein', '1234', 'Heinrich', 'Bangui', 'heinrichbangui@gmail.com', 2151287, '09997653851', 'BSIT', 4, 'student');
 
 --
 -- Indexes for dumped tables
@@ -148,7 +148,7 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(45) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
