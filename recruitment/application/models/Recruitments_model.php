@@ -5,7 +5,7 @@ class Recruitments_model extends CI_Model
 {
     public function saveCompany(){
         $company = $this->input->post('company');
-        $address = $this->input->post('add_num').','.$this->input->post('street').' '.$this->input->post('province').
+        $address = '#'.$this->input->post('add_num').','.$this->input->post('street').' '.$this->input->post('province').
             ','.$this->input->post('city');
         $suffix = $this->input->post('suffix');
         $contact = $this->input->post('contact_firstname').' '.
@@ -39,5 +39,8 @@ class Recruitments_model extends CI_Model
     }
     public function setCompanyStatus($id){
         $this->db->set('status','archived')->where('company_id',$id)->update('company');
+    }
+    public function revertCompanyStatus($id){
+        $this->db->set('status','registered')->where('company_id',$id)->update('company');
     }
 }

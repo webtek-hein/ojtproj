@@ -34,7 +34,14 @@ $(document).ready(function () {
 function companyDetails(data) {
     $status = $('#compStatus').val();
     if($status === '1'){
-        $('#buttonsDiv').attr('hidden','hidden');
+        $('#editBtn').attr('hidden','hidden');
+        $('#archive').attr('hidden','hidden');
+        $('#revert').attr('onclick','revertCompany('+data.company_id+')').removeAttr('hidden');
+    }else{
+        $('#editBtn').removeAttr('hidden');
+        $('#archive').removeAttr('hidden').attr('onclick', 'archiveCompany(' + data.company_id + ')');
+        $('#revert').attr('hidden','hidden');
+
     }
 
     toggleDiv($('#details'), $('#main'));
@@ -46,7 +53,6 @@ function companyDetails(data) {
     $('#tel').html(data.tel_num);
     $('#alt_number').html(data.alt_number);
     $('#email').html(data.email);
-    $('#archive').attr('onclick', 'archiveCompany(' + data.company_id + ')');
 }
 
 //toggle hidden class of element
@@ -63,6 +69,18 @@ function archiveCompany(id) {
         url: 'Recruitments/archiveCompany/' + id,
         success: function (result) {
             $companyTable.bootstrapTable('refresh', {url: 'Recruitments/getCompanies/0'});
+            toggleDiv($('#main'), $('#details'));
+        }
+    })
+
+}
+//revert companies
+function revertCompany(id) {
+    var $companyTable = $('#companyTable');
+    $.ajax({
+        url: 'Recruitments/revertCompany/' + id,
+        success: function (result) {
+            $companyTable.bootstrapTable('refresh', {url: 'Recruitments/getCompanies/1'});
             toggleDiv($('#main'), $('#details'));
         }
     })
