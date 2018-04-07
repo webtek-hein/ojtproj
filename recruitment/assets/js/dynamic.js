@@ -19,8 +19,9 @@ $(document).ready(function () {
 });
 //show company Details
 function companyDetails(data) {
-    alert(data.company_id);
     toggleDiv($('#details'),$('#main'));
+    $('#company_name').html(data.company_name);
+
 }
 
 //toggle hidden class of element

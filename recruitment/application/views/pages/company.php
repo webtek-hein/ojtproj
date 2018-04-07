@@ -24,6 +24,17 @@
                 <!--Back Button-->
                 <button type="button" class="btn btn-info" onclick="toggleDiv($('#main'),$('#details'))">
                     Back to main Page</button>
+                <hr>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <img src="assets/images/logo-icon.png">
+                            <h1 id="company_name"></h1>
+                        </div>
+                        <div class="col-sm">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
