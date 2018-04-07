@@ -6,7 +6,7 @@
     <!-- column -->
     <div class="col-sm-12">
         <div class="card">
-            <div class="card-block">
+            <div id="main" class="card-block">
                 <!-- Add company -->
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addCompany">Add Company
                 </button>
@@ -15,21 +15,15 @@
                     <option value="1">Archived</option>
                 </select>
                 <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Logo</th>
-                            <th>Company Name</th>
-                            <th>Settings</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-
-                        </tr>
-                        </tbody>
+                    <table id="companyTable" data-search="true" class="table-no-bordered table">
                     </table>
                 </div>
+
+            </div>
+            <div id="details" hidden class="card-block">
+                <!--Back Button-->
+                <button type="button" class="btn btn-info" onclick="toggleDiv($('#main'),$('#details'))">
+                    Back to main Page</button>
             </div>
         </div>
     </div>
@@ -38,10 +32,10 @@
 <!-- End PAge Content -->
 <!-- ============================================================== -->
 
-<!-- Modal -->
-<div id="addCompany" class="modal fade col-lg-12" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <form method="POST">
+<form method="POST" action='Recruitments/newCompany'>
+    <!-- Modal -->
+    <div id="addCompany" class="modal fade col-lg-12" role="dialog">
+        <div class="modal-dialog modal-lg">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
@@ -51,81 +45,86 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <div class="row">
-                                <div class="col-md-6">
-                                    <label>Comapny Name</label>
-                                    <input type="number" class="form-control">
-                                    <label>Address</label>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="No">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder="Street">
-                                        </div>
+                            <div class="col-md-6">
+                                <label>Comapny Name</label>
+                                <input name="company" type="text" class="form-control">
+                                <label>Address</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="number" name="add_num" class="form-control" placeholder="No">
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input type="text" placeholder="Municipality/Province" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input type="text" placeholder="City" class="form-control">
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <label>Contact Person</label>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input type="text" class="form-control" placeholder="Last Name">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input type="text" class="form-control" placeholder="First Name">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-8">
-                                            <input type="text" class="form-control" placeholder="Middle Name">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <select class="form-control">
-                                                <option>Mr</option>
-                                                <option>Mrs</option>
-                                            </select>
-                                        </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="street" class="form-control" placeholder="Street">
                                     </div>
                                 </div>
-                                <div class="col-md-6 pull-right">
-                                    <label>Contact No:</label>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input type="email" class="form-control" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input type="email" class="form-control" placeholder="Tel. No.">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input type="email" class="form-control" placeholder="Mobile No">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input type="email" class="form-control" placeholder="Alternative Mobile No">
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <input type="file" class="form-control" placeholder="Logo">
-                                        </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" name="province" placeholder="Municipality/Province"
+                                               class="form-control">
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" name="city" placeholder="City" class="form-control">
+                                    </div>
+                                </div>
+                                <hr>
+                                <label>Contact Person</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" name="contact_firstname" class="form-control"
+                                               placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" name="contact_lastname" class="form-control"
+                                               placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <input type="text" name="contact_middlename" class="form-control"
+                                               placeholder="Middle Name">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select name="suffix" class="form-control">
+                                            <option>Mr</option>
+                                            <option>Mrs</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pull-right">
+                                <label>Contact No:</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="email" name="email" class="form-control" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" name="tel" class="form-control" placeholder="Tel. No.">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" name="mobile" class="form-control" placeholder="Mobile No">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" name="alt_mobile" class="form-control"
+                                               placeholder="Alternative Mobile No">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="file" name="logo" class="form-control" placeholder="Logo">
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
 
@@ -137,14 +136,12 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                         <div class="col-md-6 text-center">
-                            <button type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
                         </div>
-
-
 
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
-</div>
+</form>

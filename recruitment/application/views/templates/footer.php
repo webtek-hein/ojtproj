@@ -35,6 +35,11 @@
 <script src="assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
 <!--Custom JavaScript -->
 <script src="assets/js/custom.min.js"></script>
+<!--Bootstrap Table Javascript-->
+<script src="assets/bootstrap-table/bootstrap-table.min.js"></script>
+<!--Dynamic Data-->
+<script src="assets/js/dynamic.js"></script>
+
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
