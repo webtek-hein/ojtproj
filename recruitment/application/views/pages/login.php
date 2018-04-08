@@ -46,7 +46,7 @@ if (isset($this->session->userdata['logged_in'])) {
             action="Accounts/login">
 
                 <div class="wrap-input100 validate-input" data-validate = "Enter username">
-                    <input class="input100" type="text" name="username" placeholder="Username">
+                    <input class="input100" type="number" name="idnumber" placeholder="ID Number">
                     <span class="focus-input100" data-placeholder="&#xe82a;"></span>
                 </div>
 

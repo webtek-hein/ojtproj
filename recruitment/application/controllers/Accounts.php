@@ -12,8 +12,8 @@ class Accounts extends CI_Controller
 
     public function signup()
     {
-        $this->acc->signup();
-        redirect('dashboard');
+            $this->acc->signup();
+            redirect('dashboard');
     }
 
     public function login()
@@ -24,10 +24,22 @@ class Accounts extends CI_Controller
                 'username' => $result->user_name,
                 'user_id' => $result->user_id,
                 'password' => $result->password,
+                'userType' => $result->user_type,
             );
             $this->session->set_userdata('logged_in', $session_data);
-            redirect('dashboard');
+
+
+
+            if(($result->user_type == 'student') || ($result->user_type == 'alumni'))
+            {
+
+                redirect('userDashboard');
+            }else{
+                redirect('dashboard');
+            }
+
         }else{
+            $data['message_display'] = 'Wrong Credentials!';
             redirect('login');
         }
     }

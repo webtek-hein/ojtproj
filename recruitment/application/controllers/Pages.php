@@ -16,18 +16,27 @@ class Pages extends CI_Controller
         if (!file_exists(APPPATH . 'views/pages/' . $page . '.php')) {
             show_404();
         }
-        $user = $this->session->userdata('logged_in');
+
+
+
         if ($page == 'login') {
             $this->load->view('pages/login');
         } elseif ($page == 'signup') {
             $this->load->view('pages/signup');
         } else {
-            $data['title'] = ucfirst($page);
-            $this->load->view('templates/header', $data);
-            $this->load->view('pages/' . $page, $data);
-            $this->load->view('templates/footer');
+            if($this->session->userdata['logged_in']['userType'] == 'admin') {
+                $data['title'] = ucfirst($page);
+                $this->load->view('templates/header', $data);
+                $this->load->view('pages/' . $page, $data);
+                $this->load->view('templates/footer');
+            }else{
+                $this->load->view('templates/userHeader');
+                $this->load->view('pages/userDashboard');
+                $this->load->view('templates/userFooter');
+            }
         };
 
     }
+
 }
 

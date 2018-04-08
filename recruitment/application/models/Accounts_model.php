@@ -20,9 +20,9 @@ class Accounts_model extends CI_Model
     }
     public function login()
     {
-        $username = $this->input->post('username');
+        $username = $this->input->post('idnumber');
         $password = $this->input->post('password');
-        $this->db->where('user_name',$username);
+        $this->db->where('id_num',$username);
         $this->db->where('password',$password);
         if($this->db->count_all_results('user') > 0){
             $query = $this->db->get('user')->row();
