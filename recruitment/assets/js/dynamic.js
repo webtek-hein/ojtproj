@@ -5,7 +5,8 @@ $(document).ready(function () {
     $companyTable.bootstrapTable({
         url: 'Recruitments/getCompanies/0',
         onClickRow: function (data, row) {
-            companyDetails(data);
+            index = row.data('index');
+            companyDetails(data,index);
         },
         columns: [{
             formatter: function (data, row) {
@@ -30,7 +31,7 @@ $(document).ready(function () {
 });
 
 //show company Details
-function companyDetails(data) {
+function companyDetails(data,index) {
     $status = $('#compStatus').val();
     if ($status === '1') {
         $('#editBtn').attr('hidden', 'hidden');
@@ -40,6 +41,7 @@ function companyDetails(data) {
         companyInfo = JSON.stringify(data);
         $('#editBtn').removeAttr('hidden').attr('onclick', 'editCompanyInfo(' + data.company_id + ','+
             companyInfo+')');
+        $('#saveBtn').attr('onclick', 'saveCompanyInfo(' + data.company_id + ','+index+')');
         $('#archive').removeAttr('hidden').attr('onclick', 'archiveCompany(' + data.company_id + ')');
         $('#revert').attr('hidden', 'hidden');
     }
@@ -93,7 +95,7 @@ function editCompanyInfo(id,data) {
     $('#canceltBtn').attr('onclick', 'cancelEditting('+old+')');
     $('.edtInfo').each(function( key, value ) {
         text = value.innerHTML;
-        $('#'+value.id).replaceWith('<input class="form-control" id='+value.id +' value="'+text+'"></input>');
+        $('#'+value.id).replaceWith('<input class="form-control" name="'+value.id+'" id='+value.id +' value="'+text+'"></input>');
     });
     $('#editButtons').removeAttr('hidden');
     $('#mainButtons').attr('hidden', 'hidden');
@@ -104,7 +106,19 @@ function cancelEditting(old) {
     $('#editButtons').attr('hidden','hidden');
     $('#mainButtons').removeAttr('hidden');
 }
-function saveCompanyInfo() {
-    alert('test');
+function saveCompanyInfo(id,index) {
+    data = $('#details :input').serializeArray();
+    $.ajax({
+        url: 'Recruitments/updateCompanyDetails/'+id,
+        type: 'POST',
+        data: data,
+        success: function (result) {
+            $('#companyTable').bootstrapTable('refresh', {url: 'Recruitments/getCompanies/0'});
+            $('#canceltBtn').click();
+            $('#detailBack').click();
+        }
+    })
+
+
 }
 

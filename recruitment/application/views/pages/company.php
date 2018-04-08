@@ -34,7 +34,7 @@
                             <h3>Address:</h3>
                         </div>
                         <div class="col-sm-12">
-                            <p class="edtInfo" id="address"></p>
+                            <p name="address" class="edtInfo" id="address"></p>
                         </div>
                         <div class="col-sm-12">
                             <h3>Contact Person</h3>
@@ -46,10 +46,10 @@
                             <h3>Contact Information</h3>
                         </div>
                         <div class="col-sm-12">
-                            <p>Contact Number: <span class="sInfo edtInfo" id="mobile_num"></span></p>
-                            <p>Telephone Number: <span class="sInfo edtInfo" id="tel"></span></p>
-                            <p>Alternate Contact Number: <span class="sInfo edtInfo" id="alt_number"></span></p>
-                            <p>Email: <span class="sInfo edtInfo" id="email"></span></p>
+                            <p>Contact Number: <span name="mobile" class="sInfo edtInfo" id="mobile_num"></span></p>
+                            <p>Telephone Number: <span name="tel" class="sInfo edtInfo" id="tel"></span></p>
+                            <p>Alternate Contact Number: <span name="alt" class="sInfo edtInfo" id="alt_number"></span></p>
+                            <p>Email: <span class="sInfo edtInfo" name="email" id="email"></span></p>
                         </div>
 
                         <div hidden id="editButtons" class="col-sm-12">
@@ -57,8 +57,6 @@
                             <button id="canceltBtn" type="button" class="btn btn-warning">Cancel</button>
                         </div>
                         <div id="mainButtons" class="col-sm-12">
-                            <button hidden id="saveBtn" onclick="saveCompanyInfo()" type="button" class="btn btn-success">Save</button>
-                            <button hidden id="canceltBtn" type="button" class="btn btn-warning">Cancel</button>
                             <button id="editBtn" type="button" class="btn btn-warning">Edit</button>
                             <button type="button" id="archive" class="btn btn-danger">Archive</button>
                             <button id="detailBack" type="button" class="btn btn-info" onclick="toggleDiv($('#main'),$('#details'))">Back</button>
