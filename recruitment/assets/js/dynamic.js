@@ -1,6 +1,5 @@
 $(document).ready(function () {
-
-//    Company Table
+    //Company Table
     var $companyTable = $('#companyTable');
 
     $companyTable.bootstrapTable({
@@ -26,22 +25,23 @@ $(document).ready(function () {
     //on change select in company
     $('#compStatus').change(function () {
         $stat = $(this).val();
-        $companyTable.bootstrapTable('refresh', {url: 'Recruitments/getCompanies/'+$stat});
+        $companyTable.bootstrapTable('refresh', {url: 'Recruitments/getCompanies/' + $stat});
     });
 });
 
 //show company Details
 function companyDetails(data) {
     $status = $('#compStatus').val();
-    if($status === '1'){
-        $('#editBtn').attr('hidden','hidden');
-        $('#archive').attr('hidden','hidden');
-        $('#revert').attr('onclick','revertCompany('+data.company_id+')').removeAttr('hidden');
-    }else{
-        $('#editBtn').removeAttr('hidden');
+    if ($status === '1') {
+        $('#editBtn').attr('hidden', 'hidden');
+        $('#archive').attr('hidden', 'hidden');
+        $('#revert').attr('onclick', 'revertCompany(' + data.company_id + ')').removeAttr('hidden');
+    } else {
+        companyInfo = JSON.stringify(data);
+        $('#editBtn').removeAttr('hidden').attr('onclick', 'editCompanyInfo(' + data.company_id + ','+
+            companyInfo+')');
         $('#archive').removeAttr('hidden').attr('onclick', 'archiveCompany(' + data.company_id + ')');
-        $('#revert').attr('hidden','hidden');
-
+        $('#revert').attr('hidden', 'hidden');
     }
 
     toggleDiv($('#details'), $('#main'));
@@ -74,6 +74,7 @@ function archiveCompany(id) {
     })
 
 }
+
 //revert companies
 function revertCompany(id) {
     var $companyTable = $('#companyTable');
@@ -86,3 +87,24 @@ function revertCompany(id) {
     })
 
 }
+//editCompanyInfo
+function editCompanyInfo(id,data) {
+    old = JSON.stringify($('#details').html());
+    $('#canceltBtn').attr('onclick', 'cancelEditting('+old+')');
+    $('.edtInfo').each(function( key, value ) {
+        text = value.innerHTML;
+        $('#'+value.id).replaceWith('<input class="form-control" id='+value.id +' value="'+text+'"></input>');
+    });
+    $('#editButtons').removeAttr('hidden');
+    $('#mainButtons').attr('hidden', 'hidden');
+}
+//cancel editting
+function cancelEditting(old) {
+    $('#details').html(old);
+    $('#editButtons').attr('hidden','hidden');
+    $('#mainButtons').removeAttr('hidden');
+}
+function saveCompanyInfo() {
+    alert('test');
+}
+
