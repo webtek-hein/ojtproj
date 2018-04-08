@@ -63,9 +63,9 @@ $(document).ready(function () {
 
     //company options
     //on change options
-    $('#schedTypeOpts').change(function () {
-       $schedType = $(this).val();
-        $scheduleTable.bootstrapTable('refresh', {url: 'Recruitments/getSchedule/' + $schedType});
+    $('#eventTypeOpts').change(function () {
+       $eventType = $(this).val();
+        $scheduleTable.bootstrapTable('refresh', {url: 'Recruitments/getSchedule/' + $eventType});
     });
     $.ajax({
        url:'Recruitments/getCompanies/0',

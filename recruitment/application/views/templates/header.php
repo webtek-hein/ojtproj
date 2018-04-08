@@ -115,13 +115,13 @@ if (isset($this->session->userdata['logged_in'])) {
                         <a href="company" class="waves-effect"><i class="fa  fa-building-o m-r-10" aria-hidden="true"></i>Companies</a>
                     </li>
                     <li>
-                        <a href="schedules" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Schedules</a>
+                        <a href="schedules" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Exam Schedules</a>
                     </li>
                     <li>
                         <a href="user" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Users</a>
                     </li>
                     <li>
-                        <a href="notification" class="waves-effect"><i class="fa fa-globe m-r-10" aria-hidden="true"></i>Notifications</a>
+                        <a href="messages" class="waves-effect"><i class="fa fa-globe m-r-10" aria-hidden="true"></i>Messages</a>
                     </li>
                     <li>
                         <a href="history" class="waves-effect"><i class="fa fa-history m-r-10" aria-hidden="true"></i>History</a>

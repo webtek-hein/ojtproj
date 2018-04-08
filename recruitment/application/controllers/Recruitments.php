@@ -29,8 +29,8 @@ class Recruitments extends CI_Controller
         echo json_encode($this->rec->addSched());
         redirect('schedules');
     }
-    public function getSchedule($schedType){
-        $list = $this->rec->getSched($schedType);
+    public function getSchedule($eventType){
+        $list = $this->rec->getSched($eventType);
         $data = [];
         foreach ($list as $schedule){
             $time = $schedule['start_time'].'-'.$schedule['end_time'] ;

@@ -10,11 +10,10 @@
                 <!-- Add schedule -->
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addSchedule">Add Schedule
                 </button>
-                <select id="schedTypeOpts" class="custom-select pull-right">
+                <select id="eventTypeOpts" class="custom-select pull-right">
                     <option value="All">All</option>
-                    <option value="Exam">Exam</option>
-                    <option value="Orientation">Orientation</option>
-                    <option value="Seminar">Seminar</option>
+                    <option value="Internship">Internship</option>
+                    <option value="Employment">Employment</option>
                 </select>
                 <div class="table-responsive">
                     <table id="scheduleTable" data-search="true">
@@ -47,15 +46,8 @@
                                 </select>
                             </div>
                         </div>
-                        <label>Type and Purpose</label>
+                        <label>Type</label>
                         <div class="row">
-                            <div class="col-md-5">
-                                <select name="type" class="form-control">
-                                    <option value="Exam">Exam</option>
-                                    <option value="Orientation">Orientation</option>
-                                    <option value="Seminar">Seminar</option>
-                                </select>
-                            </div>
                             <div class="col-md-5">
                                 <select name="event" class="form-control">
                                     <option value="Internship">Internship</option>

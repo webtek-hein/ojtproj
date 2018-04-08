@@ -68,7 +68,7 @@ class Recruitments_model extends CI_Model
     public function addSched(){
         $data = array(
             'company_id'=>$this->input->post('company'),
-            'sched_type'=>$this->input->post('type'),
+            'sched_type'=>'Exam',
             'event_type'=>$this->input->post('event'),
             'sched_date'=>$this->input->post('date'),
             'start_time'=>$this->input->post('start'),
@@ -79,10 +79,10 @@ class Recruitments_model extends CI_Model
         );
     $this->db->insert('schedule',$data);
     }
-    public function getSched($schedType){
+    public function getSched($eventType){
         $this->db->join('company','company.company_id = schedule.company_id','inner');
-        if($schedType !== 'All'){
-            $this->db->where('sched_type',$schedType);
+        if($eventType !== 'All'){
+            $this->db->where('event_type',$eventType);
         }
         return $this->db->get('schedule')->result_array();
     }
