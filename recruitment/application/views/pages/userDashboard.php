@@ -1,4 +1,11 @@
-
+<?php
+if (isset($this->session->userdata['logged_in'])) {
+    $username = ($this->session->userdata['logged_in']['username']);
+    $user_id = ($this->session->userdata['logged_in']['user_id']);
+} else {
+    redirect("logout");
+}
+?>
 <!--
 ==================================================
 Slider Section Start
