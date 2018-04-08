@@ -57,9 +57,9 @@
                 <div class="input-icon"><i class="fa-mortar-board"></i></div>
             </div>
             <div class="input-group">
-                <input type="radio" name="gender" value="male" id="gender-male"/>
+                <input type="radio" name="usertype" value="student" id="gender-male"/>
                 <label for="gender-male">Student</label>
-                <input type="radio" name="gender" value="female" id="gender-female"/>
+                <input type="radio" name="usertype" value="alumni" id="gender-female"/>
                 <label for="gender-female">Alumni</label>
             </div>
         </div>

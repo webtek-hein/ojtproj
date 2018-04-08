@@ -13,7 +13,6 @@ class Accounts_model extends CI_Model
             'course'=>$this->input->post('course'),
             'email'=>$this->input->post('email'),
             'year'=>$this->input->post('year'),
-            'user_name'=>$this->input->post('username'),
             'password'=>$this->input->post('password'),
             'user_type'=>$this->input->post('usertype')
         );
