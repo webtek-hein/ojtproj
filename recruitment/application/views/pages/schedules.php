@@ -10,9 +10,11 @@
                 <!-- Add schedule -->
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addSchedule">Add Schedule
                 </button>
-                <select class="custom-select pull-right">
-                    <option selected>Exams</option>
-                    <option value="1">Interview</option>
+                <select id="schedTypeOpts" class="custom-select pull-right">
+                    <option value="All">All</option>
+                    <option value="Exam">Exam</option>
+                    <option value="Orientation">Orientation</option>
+                    <option value="Seminar">Seminar</option>
                 </select>
                 <div class="table-responsive">
                     <table id="scheduleTable" data-search="true">

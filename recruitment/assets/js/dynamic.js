@@ -33,7 +33,7 @@ $(document).ready(function () {
 
     //schedule table
     $scheduleTable.bootstrapTable({
-        url: 'Recruitments/getSchedule',
+        url: 'Recruitments/getSchedule/All',
         onClickRow: function (data, row) {
 
         },
@@ -60,7 +60,13 @@ $(document).ready(function () {
             title: 'Slots'
         }]
     });
+
     //company options
+    //on change options
+    $('#schedTypeOpts').change(function () {
+       $schedType = $(this).val();
+        $scheduleTable.bootstrapTable('refresh', {url: 'Recruitments/getSchedule/' + $schedType});
+    });
     $.ajax({
        url:'Recruitments/getCompanies/0',
         dataType:'JSON',

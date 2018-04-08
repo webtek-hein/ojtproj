@@ -79,8 +79,11 @@ class Recruitments_model extends CI_Model
         );
     $this->db->insert('schedule',$data);
     }
-    public function getSched(){
+    public function getSched($schedType){
         $this->db->join('company','company.company_id = schedule.company_id','inner');
+        if($schedType !== 'All'){
+            $this->db->where('sched_type',$schedType);
+        }
         return $this->db->get('schedule')->result_array();
     }
 }
