@@ -25,5 +25,26 @@ class Recruitments extends CI_Controller
     public function updateCompanyDetails($id){
         echo json_encode($this->rec->updateComp($id));
     }
+    public function addSchedule(){
+        echo json_encode($this->rec->addSched());
+        redirect('schedules');
+    }
+    public function getSchedule(){
+        $list = $this->rec->getSched();
+        $data = [];
+        foreach ($list as $schedule){
+            $time = $schedule['start_time'].'-'.$schedule['end_time'] ;
+            $data[] = array(
+              'date'=>$schedule['sched_date'],
+              'time'=>$time,
+              'location'=>$schedule['location'],
+              'room'=>$schedule['room'],
+              'company'=>$schedule['company_name'],
+              'type'=>$schedule['event_type'],
+              'slots'=>$schedule['slots'],
+            );
+        }
+        echo json_encode($data);
+    }
 
 }

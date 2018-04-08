@@ -1,7 +1,9 @@
 $(document).ready(function () {
     //Company Table
     var $companyTable = $('#companyTable');
+    var $scheduleTable = $('#scheduleTable');
 
+    // company table
     $companyTable.bootstrapTable({
         url: 'Recruitments/getCompanies/0',
         onClickRow: function (data, row) {
@@ -27,6 +29,48 @@ $(document).ready(function () {
     $('#compStatus').change(function () {
         $stat = $(this).val();
         $companyTable.bootstrapTable('refresh', {url: 'Recruitments/getCompanies/' + $stat});
+    });
+
+    //schedule table
+    $scheduleTable.bootstrapTable({
+        url: 'Recruitments/getSchedule',
+        onClickRow: function (data, row) {
+
+        },
+        columns: [{
+            field: 'date',
+            title: 'Date'
+        }, {
+            field: 'time',
+            title: 'Time'
+        }, {
+            field: 'location',
+            title: 'Location'
+        }, {
+            field: 'room',
+            title: 'Room'
+        }, {
+            field: 'company',
+            title: 'Company'
+        }, {
+            field: 'type',
+            title: 'Type'
+        }, {
+            field: 'slots',
+            title: 'Slots'
+        }]
+    });
+    //company options
+    $.ajax({
+       url:'Recruitments/getCompanies/0',
+        dataType:'JSON',
+       success:function (data) {
+           options=[];
+           for(var i=0; i<= data.length-1;i++){
+                options.push('<option value='+data[i].company_id+'>'+data[i].company_name)+'</option>';
+           }
+           $('#companyOptions').html(options);
+       }
     });
 });
 
@@ -76,7 +120,6 @@ function archiveCompany(id) {
     })
 
 }
-
 //revert companies
 function revertCompany(id) {
     var $companyTable = $('#companyTable');
@@ -106,6 +149,7 @@ function cancelEditting(old) {
     $('#editButtons').attr('hidden','hidden');
     $('#mainButtons').removeAttr('hidden');
 }
+//save company information
 function saveCompanyInfo(id,index) {
     data = $('#details :input').serializeArray();
     $.ajax({
