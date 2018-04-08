@@ -22,5 +22,8 @@ class Recruitments extends CI_Controller
     public function revertCompany($id){
         echo json_encode($this->rec->revertCompanyStatus($id));
     }
+    public function getCompanyInfo($id){
+
+    }
 
 }

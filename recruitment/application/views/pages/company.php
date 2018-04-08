@@ -28,31 +28,37 @@
                             <img src="assets/images/logo-icon.png">
                         </div>
                         <div class="col-sm-6">
-                            <h3 id="company_name"></h3>
+                            <h3 class="edtInfo" id="company_name"></h3>
                         </div>
                         <div class="col-sm-12">
                             <h3>Address:</h3>
                         </div>
                         <div class="col-sm-12">
-                            <p id="address"></p>
+                            <p class="edtInfo" id="address"></p>
                         </div>
                         <div class="col-sm-12">
                             <h3>Contact Person</h3>
                         </div>
                         <div class="col-sm-12">
-                            <p id="contact_person"></p>
+                            <p class="edtInfo" id="contact_person"></p>
                         </div>
                         <div class="col-sm-12">
                             <h3>Contact Information</h3>
                         </div>
                         <div class="col-sm-12">
-                            <p>Contact Number: <span id="mobile_num"></span></p>
-                            <p>Telephone Number: <span id="tel"></span></p>
-                            <p>Alternate Contact Number: <span id="alt_number"></span></p>
-                            <p>Email: <span id="email"></span></p>
+                            <p>Contact Number: <span class="sInfo edtInfo" id="mobile_num"></span></p>
+                            <p>Telephone Number: <span class="sInfo edtInfo" id="tel"></span></p>
+                            <p>Alternate Contact Number: <span class="sInfo edtInfo" id="alt_number"></span></p>
+                            <p>Email: <span class="sInfo edtInfo" id="email"></span></p>
                         </div>
 
-                        <div class="col-sm-12">
+                        <div hidden id="editButtons" class="col-sm-12">
+                            <button id="saveBtn" type="button" class="btn btn-success">Save</button>
+                            <button id="canceltBtn" type="button" class="btn btn-warning">Cancel</button>
+                        </div>
+                        <div id="mainButtons" class="col-sm-12">
+                            <button hidden id="saveBtn" onclick="saveCompanyInfo()" type="button" class="btn btn-success">Save</button>
+                            <button hidden id="canceltBtn" type="button" class="btn btn-warning">Cancel</button>
                             <button id="editBtn" type="button" class="btn btn-warning">Edit</button>
                             <button type="button" id="archive" class="btn btn-danger">Archive</button>
                             <button id="detailBack" type="button" class="btn btn-info" onclick="toggleDiv($('#main'),$('#details'))">Back</button>
