@@ -6,7 +6,7 @@
     <!-- column -->
     <div class="col-sm-12">
         <div class="card">
-            <div class="card-block">
+            <div id="main" class="card-block">
                 <!-- Add schedule -->
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addSchedule">Add Schedule
                 </button>
@@ -19,6 +19,93 @@
                     <table id="scheduleTable" data-search="true">
                     </table>
                 </div>
+            </div>
+
+            <div hidden id="details" class="card-block">
+                <div class="detail tabs">
+                    <nav class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-info-tab" data-toggle="tab" href="#nav-info"
+                           role="tab" aria-controls="home" aria-expanded="true">Schedule Information</a>
+                        <a class="nav-item nav-link" id="nav-registered-tab" data-toggle="tab" href="#nav-registered"
+                           role="tab" aria-controls="profile" aria-expanded="false">Registered</a>
+                    </nav>
+
+
+                    <div class="tab-content" id="nav-tabContent">
+                        <hr>
+                        <div class="tab-pane fade active show" id="nav-info"
+                             role="tabpanel" aria-labelledby="nav-info-tab" aria-expanded="true">
+                            <div class="row form-group">
+                                <div class="col-sm-2">
+                                    <label>Company</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <input class="form-control" name="company" type="text" id="company">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-2">
+                                    <label>Description</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <input class="form-control" name="eventType" type="text" id="eventType">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-2">
+                                    <label>Date</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control" type="date" id="date">
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Time</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control" name="time" type="text" id="time">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-2">
+                                    <label>Location</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control" name="location" type="text" id="location">
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Room</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control" name="room" type="text" id="room">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-sm-2">
+                                    <label>Slots</label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <input class="form-control" type="number" name="slots" id="slots">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 text-center">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-success">Submit</button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="nav-registered"
+                             role="tabpanel" aria-labelledby="nav-registered-tab" aria-expanded="false">
+                            <div class="table-responsive">
+                                <table id="appointments" data-search="true">
+                                </table>
+                            </div>
+                        </div>
+                        <hr>
+
+            </div>
             </div>
         </div>
     </div>

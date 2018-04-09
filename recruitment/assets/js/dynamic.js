@@ -35,7 +35,8 @@ $(document).ready(function () {
     $scheduleTable.bootstrapTable({
         url: 'Recruitments/getSchedule/All',
         onClickRow: function (data, row) {
-
+            console.log(data);
+            schedDetails(data);
         },
         columns: [{
             field: 'date',
@@ -106,6 +107,47 @@ function companyDetails(data,index) {
     $('#alt_number').html(data.alt_number);
     $('#email').html(data.email);
 }
+
+//show schedule details
+function schedDetails(data) {
+    toggleDiv($('#details'), $('#main'));
+    //assign dynamic data
+    $('#company').val(data.company);
+    $('#eventType').val(data.type);
+    $('#date').val(data.date);
+    $('#time').val(data.time);
+    $('#location').val(data.location);
+    $('#room').val(data.room);
+    $('#slots').val(data.slots);
+    //appointment table
+    $('#appointments').bootstrapTable({
+        url: 'Recruitments/getSchedule/All',
+        onClickRow: function (data, row) {
+            console.log(data);
+            schedDetails(data);
+        },
+        columns: [{
+            field: 'id_number',
+            title: 'ID No.'
+        }, {
+            field: 'name',
+            title: 'Name'
+        }, {
+            field: 'userType',
+            title: 'User Type'
+        }, {
+            field: 'course',
+            title: 'Course'
+        }, {
+            field: 'year',
+            title: 'Year'
+        }, {
+            field: 'dateReg',
+            title: 'Date Registered'
+        }]
+    });
+}
+
 
 //toggle hidden class of element
 function toggleDiv(elementToShow, elementToHide) {
