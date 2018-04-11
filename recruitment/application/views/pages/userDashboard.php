@@ -55,7 +55,7 @@ About Section Start
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-                    <img src="images/about/about.jpg" alt="">
+<!--                    <img src="images/about.jpg" alt="">-->
                 </div>
             </div>
         </div>

@@ -86,4 +86,15 @@ class Recruitments_model extends CI_Model
         }
         return $this->db->get('schedule')->result_array();
     }
+    public function appointments($id){
+        $this->db->select('sched_id,id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year,appointment_date');
+        $this->db->join('user','user.user_id = appointment.user_id');
+        $this->db->where('appointment.sched_id',$id);
+        return $this->db->get('appointment')->result_array();
+    }
+    public function getAllUsers(){
+        $this->db->select('id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year, first_name,last_name,
+        user_id');
+        return $this->db->get('user')->result_array();
+    }
 }

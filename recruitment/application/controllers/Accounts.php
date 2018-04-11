@@ -21,7 +21,7 @@ class Accounts extends CI_Controller
         $result = $this->acc->login();
         if ($result !== 0) {
             $session_data = array(
-                'username' => $result->user_name,
+                'username' => $result->id_num,
                 'user_id' => $result->user_id,
                 'password' => $result->password,
                 'userType' => $result->user_type,
@@ -30,9 +30,8 @@ class Accounts extends CI_Controller
 
 
 
-            if(($result->user_type == 'student') || ($result->user_type == 'alumni'))
+            if(!$result->user_type == 'admin')
             {
-
                 redirect('userDashboard');
             }else{
                 redirect('dashboard');

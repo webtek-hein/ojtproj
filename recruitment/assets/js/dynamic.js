@@ -35,7 +35,6 @@ $(document).ready(function () {
     $scheduleTable.bootstrapTable({
         url: 'Recruitments/getSchedule/All',
         onClickRow: function (data, row) {
-            console.log(data);
             schedDetails(data);
         },
         columns: [{
@@ -79,6 +78,30 @@ $(document).ready(function () {
            $('#companyOptions').html(options);
        }
     });
+
+    $('#usersTable').bootstrapTable({
+        url: 'Recruitments/getUsers',
+        onClickRow: function (data, row) {
+            schedDetails(data);
+        },
+        columns: [{
+            field: 'id_num',
+            title: 'ID No.'
+        }, {
+            field: 'name',
+            title: 'Name'
+        }, {
+            field: 'user_type',
+            title: 'User Type'
+        }, {
+            field: 'course',
+            title: 'Course'
+        }, {
+            field: 'year',
+            title: 'Year'
+        }]
+    });
+
 });
 
 //show company Details
@@ -121,19 +144,15 @@ function schedDetails(data) {
     $('#slots').val(data.slots);
     //appointment table
     $('#appointments').bootstrapTable({
-        url: 'Recruitments/getSchedule/All',
-        onClickRow: function (data, row) {
-            console.log(data);
-            schedDetails(data);
-        },
+        url: 'Recruitments/getAppointment/'+data.sched_id,
         columns: [{
-            field: 'id_number',
+            field: 'id_num',
             title: 'ID No.'
         }, {
             field: 'name',
             title: 'Name'
         }, {
-            field: 'userType',
+            field: 'user_type',
             title: 'User Type'
         }, {
             field: 'course',
@@ -142,7 +161,7 @@ function schedDetails(data) {
             field: 'year',
             title: 'Year'
         }, {
-            field: 'dateReg',
+            field: 'appointment_date',
             title: 'Date Registered'
         }]
     });
