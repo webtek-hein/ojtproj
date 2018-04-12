@@ -2,45 +2,6 @@
             ==================================================
             Footer Section Start
             ================================================== -->
-<footer id="footer">
-    <div class="container">
-        <div class="col-md-8">
-            <p class="copyright">Copyright: <span><script>document.write(new Date().getFullYear())</script></span> Design and Developed by <a href="http://www.Themefisher.com" target="_blank">Themefisher</a>. <br>
-                Get More
-                <a href="https://themefisher.com/free-bootstrap-templates/" target="_blank">
-                    Free Bootstrap Templates
-                </a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <!-- Social Media -->
-            <ul class="social">
-                <li>
-                    <a href="http://wwww.fb.com/themefisher" class="Facebook">
-                        <i class="ion-social-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://wwww.twitter.com/themefisher" class="Twitter">
-                        <i class="ion-social-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="Linkedin">
-                        <i class="ion-social-linkedin"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://wwww.fb.com/themefisher" class="Google Plus">
-                        <i class="ion-social-googleplus"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-</footer> <!-- /#footer -->
-
 
 <!-- Template Javascript Files
 ================================================== -->
@@ -61,5 +22,25 @@
 <script src="assets/user/plugins/facncybox/jquery.fancybox.js"></script>
 <!-- template main js -->
 <script src="assets/user/js/main.js"></script>
+
+
+
+
+
+<!-- Jquery DataTable Plugin Js -->
+<script src="assets/plugins/jquery-datatable/jquery.dataTables.js"></script>
+<script src="assets/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+<script src="assets/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+<script src="assets/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+<script src="assets/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+<script src="assets/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+<script src="assets/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+<script src="assets/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+<script src="assets/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+<!-- Custom Js -->
+<script src="assets/js/jquery-datatable.js"></script>
+
+
 </body>
 </html>

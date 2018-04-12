@@ -5,7 +5,7 @@
             <div class="col-lg-12 ">
                 <div class="card">
                     <div class="header">
-                        <h2 class="text-center">INTERNSHIP</h2>
+                        <h2 class="text-center">EMPLOYMENT</h2>
                     </div>
                     <div class="body">
                         <div class="body table-responsive">
