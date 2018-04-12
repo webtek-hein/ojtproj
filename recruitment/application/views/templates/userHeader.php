@@ -41,7 +41,7 @@
 ==================================================
 Header Section Start
 ================================================== -->
-<header id="top-bar" class="navbar-fixed-top animated-header">
+<header id="top-bar" class="">
     <div class="container">
         <div class="navbar-header">
             <!-- responsive nav button -->
@@ -74,7 +74,7 @@ Header Section Start
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recruitment<span class="caret"></span></a>
                         <div class="dropdown-menu">
                             <ul>
-                                <li><a href="404.html">Internship</a></li>
+                                <li><a href="userInternship">Internship</a></li>
                                 <li><a href="gallery.html">Employment</a></li>
                             </ul>
                         </div>

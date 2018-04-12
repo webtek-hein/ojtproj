@@ -18,7 +18,7 @@ class Pages extends CI_Controller
         }
 
 
-
+        $this->load->library('session');
         if ($page == 'login') {
             $this->load->view('pages/login');
         } elseif ($page == 'signup') {
@@ -30,9 +30,9 @@ class Pages extends CI_Controller
                 $this->load->view('pages/' . $page, $data);
                 $this->load->view('templates/footer');
             }else{
-                $this->load->view('templates/userHeader');
-                $this->load->view('pages/userDashboard');
-                $this->load->view('templates/userFooter');
+                $data['title'] = ucfirst($page);
+                $this->load->view('templates/userHeader', $data);
+                $this->load->view('pages/'. $page, $data);
             }
         };
 
