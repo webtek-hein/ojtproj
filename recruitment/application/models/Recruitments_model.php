@@ -63,38 +63,66 @@ class Recruitments_model extends CI_Model
             'email' => $this->input->post('email'),
         );
         var_dump($data);
-        return $this->db->update('company',$data,'company_id='.$id);
+        return $this->db->update('company', $data, 'company_id=' . $id);
     }
-    public function addSched(){
+
+    public function addSched()
+    {
         $data = array(
-            'company_id'=>$this->input->post('company'),
-            'sched_type'=>'Exam',
-            'event_type'=>$this->input->post('event'),
-            'sched_date'=>$this->input->post('date'),
-            'start_time'=>$this->input->post('start'),
-            'end_time'=>$this->input->post('end'),
-            'location'=>$this->input->post('location'),
-            'room'=>$this->input->post('room'),
-            'slots'=>$this->input->post('slots')
+            'company_id' => $this->input->post('company'),
+            'sched_type' => 'Exam',
+            'event_type' => $this->input->post('event'),
+            'sched_date' => $this->input->post('date'),
+            'start_time' => $this->input->post('start'),
+            'end_time' => $this->input->post('end'),
+            'location' => $this->input->post('location'),
+            'room' => $this->input->post('room'),
+            'slots' => $this->input->post('slots'),
+            'defaultSlot' => $this->input->post('slots')
         );
-    $this->db->insert('schedule',$data);
+        $this->db->insert('schedule', $data);
     }
-    public function getSched($eventType){
-        $this->db->join('company','company.company_id = schedule.company_id','inner');
-        if($eventType !== 'All'){
-            $this->db->where('event_type',$eventType);
+
+    public function getSched($eventType)
+    {
+        $this->db->select('appointment.user_id,company_name,schedule.*,');
+        $this->db->join('appointment', 'appointment.sched_id = schedule.sched_id', 'left');
+        $this->db->join('company', 'company.company_id = schedule.company_id', 'inner');
+        if ($eventType !== 'All') {
+            $this->db->where('event_type', $eventType);
         }
+        $this->db->group_by('schedule.sched_id,appointment.user_id');
         return $this->db->get('schedule')->result_array();
     }
-    public function appointments($id){
+
+    public function appointments($id)
+    {
         $this->db->select('sched_id,id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year,appointment_date');
-        $this->db->join('user','user.user_id = appointment.user_id');
-        $this->db->where('appointment.sched_id',$id);
+        $this->db->join('user', 'user.user_id = appointment.user_id');
+        $this->db->where('appointment.sched_id', $id);
         return $this->db->get('appointment')->result_array();
     }
-    public function getAllUsers(){
+
+    public function getAllUsers()
+    {
         $this->db->select('id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year, first_name,last_name,
         user_id');
         return $this->db->get('user')->result_array();
+    }
+
+    public function register($sched_id)
+    {
+        $user_id = $this->session->userdata['logged_in']['user_id'];
+        $data = array(
+            'user_id' => $user_id,
+            'sched_id' => $sched_id,
+        );
+        $this->db->set($data);
+        $this->db->set('appointment_date','CURDATE()',FALSE);
+        $this->db->insert('appointment');
+
+        $this->db->set('slots','slots-1',FALSE);
+        $this->db->where('sched_id',$sched_id);
+        $this->db->update('schedule');
     }
 }

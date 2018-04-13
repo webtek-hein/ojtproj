@@ -1,3 +1,11 @@
+<?php
+if (isset($this->session->userdata['logged_in'])) {
+    $username = ($this->session->userdata['logged_in']['username']);
+    $user_id = ($this->session->userdata['logged_in']['user_id']);
+} else {
+    redirect("logout");
+}
+?>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -33,6 +41,8 @@
     <link rel="stylesheet" href="assets/user/plugins/facncybox/jquery.fancybox.css">
     <!-- template main css file -->
     <link rel="stylesheet" href="assets/user/css/style.css">
+    <!--bootstrap table-->
+    <link rel="stylesheet" href="assets/bootstrap-table/bootstrap-table.min.css">
 </head>
 <body>
 
@@ -66,7 +76,7 @@ Header Section Start
             <div class="main-menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html" >Home</a>
+                        <a href="dashboard" >Home</a>
                     </li>
                     <li><a href="about.html">Appointments</a></li>
                     <li><a href="service.html">Companies</a></li>
@@ -94,7 +104,7 @@ Header Section Start
                         <div class="dropdown-menu">
                             <ul>
                                 <li><a href="blog-fullwidth.html">Settings</a></li>
-                                <li><a href="blog-left-sidebar.html">Logout</a></li>
+                                <li><a href="Accounts/logout">Logout</a></li>
                             </ul>
                         </div>
                     </li>

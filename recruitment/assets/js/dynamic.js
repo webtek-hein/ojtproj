@@ -8,7 +8,7 @@ $(document).ready(function () {
         url: 'Recruitments/getCompanies/0',
         onClickRow: function (data, row) {
             index = row.data('index');
-            companyDetails(data,index);
+            companyDetails(data, index);
         },
         columns: [{
             formatter: function (data, row) {
@@ -64,19 +64,19 @@ $(document).ready(function () {
     //company options
     //on change options
     $('#eventTypeOpts').change(function () {
-       $eventType = $(this).val();
+        $eventType = $(this).val();
         $scheduleTable.bootstrapTable('refresh', {url: 'Recruitments/getSchedule/' + $eventType});
     });
     $.ajax({
-       url:'Recruitments/getCompanies/0',
-        dataType:'JSON',
-       success:function (data) {
-           options=[];
-           for(var i=0; i<= data.length-1;i++){
-                options.push('<option value='+data[i].company_id+'>'+data[i].company_name)+'</option>';
-           }
-           $('#companyOptions').html(options);
-       }
+        url: 'Recruitments/getCompanies/0',
+        dataType: 'JSON',
+        success: function (data) {
+            options = [];
+            for (var i = 0; i <= data.length - 1; i++) {
+                options.push('<option value=' + data[i].company_id + '>' + data[i].company_name) + '</option>';
+            }
+            $('#companyOptions').html(options);
+        }
     });
 
     $('#usersTable').bootstrapTable({
@@ -105,7 +105,7 @@ $(document).ready(function () {
 });
 
 //show company Details
-function companyDetails(data,index) {
+function companyDetails(data, index) {
     $status = $('#compStatus').val();
     if ($status === '1') {
         $('#editBtn').attr('hidden', 'hidden');
@@ -113,9 +113,9 @@ function companyDetails(data,index) {
         $('#revert').attr('onclick', 'revertCompany(' + data.company_id + ')').removeAttr('hidden');
     } else {
         companyInfo = JSON.stringify(data);
-        $('#editBtn').removeAttr('hidden').attr('onclick', 'editCompanyInfo(' + data.company_id + ','+
-            companyInfo+')');
-        $('#saveBtn').attr('onclick', 'saveCompanyInfo(' + data.company_id + ','+index+')');
+        $('#editBtn').removeAttr('hidden').attr('onclick', 'editCompanyInfo(' + data.company_id + ',' +
+            companyInfo + ')');
+        $('#saveBtn').attr('onclick', 'saveCompanyInfo(' + data.company_id + ',' + index + ')');
         $('#archive').removeAttr('hidden').attr('onclick', 'archiveCompany(' + data.company_id + ')');
         $('#revert').attr('hidden', 'hidden');
     }
@@ -144,7 +144,7 @@ function schedDetails(data) {
     $('#slots').val(data.slots);
     //appointment table
     $('#appointments').bootstrapTable({
-        url: 'Recruitments/getAppointment/'+data.sched_id,
+        url: 'Recruitments/getAppointment/' + data.sched_id,
         columns: [{
             field: 'id_num',
             title: 'ID No.'
@@ -187,6 +187,7 @@ function archiveCompany(id) {
     })
 
 }
+
 //revert companies
 function revertCompany(id) {
     var $companyTable = $('#companyTable');
@@ -199,28 +200,31 @@ function revertCompany(id) {
     })
 
 }
+
 //editCompanyInfo
-function editCompanyInfo(id,data) {
+function editCompanyInfo(id, data) {
     old = JSON.stringify($('#details').html());
-    $('#canceltBtn').attr('onclick', 'cancelEditting('+old+')');
-    $('.edtInfo').each(function( key, value ) {
+    $('#canceltBtn').attr('onclick', 'cancelEditting(' + old + ')');
+    $('.edtInfo').each(function (key, value) {
         text = value.innerHTML;
-        $('#'+value.id).replaceWith('<input class="form-control" name="'+value.id+'" id='+value.id +' value="'+text+'"></input>');
+        $('#' + value.id).replaceWith('<input class="form-control" name="' + value.id + '" id=' + value.id + ' value="' + text + '"></input>');
     });
     $('#editButtons').removeAttr('hidden');
     $('#mainButtons').attr('hidden', 'hidden');
 }
+
 //cancel editting
 function cancelEditting(old) {
     $('#details').html(old);
-    $('#editButtons').attr('hidden','hidden');
+    $('#editButtons').attr('hidden', 'hidden');
     $('#mainButtons').removeAttr('hidden');
 }
+
 //save company information
-function saveCompanyInfo(id,index) {
+function saveCompanyInfo(id, index) {
     data = $('#details :input').serializeArray();
     $.ajax({
-        url: 'Recruitments/updateCompanyDetails/'+id,
+        url: 'Recruitments/updateCompanyDetails/' + id,
         type: 'POST',
         data: data,
         success: function (result) {
@@ -231,5 +235,15 @@ function saveCompanyInfo(id,index) {
     })
 
 
+}
+
+//appointment 
+function appointmentAction($sched_id,$action) {
+    $.ajax({
+        url: 'Recruitments/userAppointments/'+ $sched_id +'/'+ $action,
+        success: function (result) {
+            location.reload();
+        }
+    })
 }
 

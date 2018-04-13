@@ -45,19 +45,42 @@ class Recruitments extends CI_Controller
     public function getSchedule($eventType)
     {
         $list = $this->rec->getSched($eventType);
+        $user_id = $this->session->userdata['logged_in']['user_id'];
+        $userType = $this->session->userdata['logged_in']['userType'];
+
         $data = [];
         foreach ($list as $schedule) {
             $time = $schedule['start_time'] . '-' . $schedule['end_time'];
-            $data[] = array(
-                'sched_id' => $schedule['sched_id'],
-                'date' => $schedule['sched_date'],
-                'time' => $time,
-                'location' => $schedule['location'],
-                'room' => $schedule['room'],
-                'company' => $schedule['company_name'],
-                'type' => $schedule['event_type'],
-                'slots' => $schedule['slots'],
-            );
+            if($userType !== 'admin'){
+                if($user_id !== $schedule['user_id']){
+                    $data[] = array(
+                        'sched_id' => $schedule['sched_id'],
+                        'date' => $schedule['sched_date'],
+                        'time' => $time,
+                        'location' => $schedule['location'],
+                        'room' => $schedule['room'],
+                        'company' => $schedule['company_name'],
+                        'type' => $schedule['event_type'],
+                        'slots' => $schedule['slots'],
+                        'register'=>'<a onclick="appointmentAction('.$schedule['sched_id'].',0)" 
+                        class="btn btn-danger">Register</a>',
+                        'view'=>'<a onclick="appointmentAction('.$schedule['sched_id'].',1)" 
+                         class="btn btn-success">View</a>'
+                    );
+                }
+            }else{
+                $data[] = array(
+                    'sched_id' => $schedule['sched_id'],
+                    'date' => $schedule['sched_date'],
+                    'time' => $time,
+                    'location' => $schedule['location'],
+                    'room' => $schedule['room'],
+                    'company' => $schedule['company_name'],
+                    'type' => $schedule['event_type'],
+                    'slots' => $schedule['slots']
+                );
+            }
+
         }
         echo json_encode($data);
     }
@@ -66,7 +89,17 @@ class Recruitments extends CI_Controller
     {
         echo json_encode($this->rec->appointments($id));
     }
-    public function getUsers(){
+
+    public function getUsers()
+    {
         echo json_encode($this->rec->getAllUsers());
     }
+    public function userAppointments($sched_id,$action){
+       if($action === '0'){
+           echo json_encode($this->rec->register($sched_id));
+       }else{
+           echo 1;
+       }
+    }
+
 }

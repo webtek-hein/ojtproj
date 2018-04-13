@@ -28,8 +28,6 @@ class Accounts extends CI_Controller
             );
             $this->session->set_userdata('logged_in', $session_data);
 
-
-
             if(!$result->user_type == 'admin')
             {
                 redirect('userDashboard');

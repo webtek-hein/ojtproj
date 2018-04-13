@@ -22,6 +22,12 @@
 <script src="assets/user/plugins/facncybox/jquery.fancybox.js"></script>
 <!-- template main js -->
 <script src="assets/user/js/main.js"></script>
+<!--Bootstrap table JS-->
+<script src="assets/bootstrap-table/bootstrap-table.min.js"></script>
+<!--Dynamic JS-->
+<script src="assets/js/dynamic.js"></script>
+
+
 
 
 

@@ -90,7 +90,11 @@ if (isset($this->session->userdata['logged_in'])) {
                 <!-- ============================================================== -->
                 <ul class="navbar-nav my-lg-0">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Accounts/logout">Logout</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
