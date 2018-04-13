@@ -35,7 +35,7 @@ $(document).ready(function () {
     $('#userCompany').bootstrapTable({
         url: 'Recruitments/getCompanies/0',
         onClickRow: function (data, row) {
-            alert('test');
+            userCompanydetails(data);
         },
         rowStyle:function rowStyle(row, index) {
             return {
@@ -162,8 +162,16 @@ function companyDetails(data, index) {
     $('#tel').html(data.tel_num);
     $('#alt_number').html(data.alt_number);
     $('#email').html(data.email);
+    if(data.about !== null){
+        $('#desc').html(data.about);
+    }else{
+        $('#desc').html('<button onclick="addDesc()" class="btn btn-primary">Add description</button>');
+    }
 }
-
+//add description
+function addDesc() {
+    alert('test');
+}
 //show schedule details
 function schedDetails(data) {
     toggleDiv($('#details'), $('#main'));
@@ -280,3 +288,16 @@ function appointmentAction($sched_id,$action) {
     })
 }
 
+//view company
+function userCompanydetails(data) {
+    $('#info').removeAttr('hidden');
+    $('#noComp').attr('hidden','hidden');
+    $('#address').html(data.address);
+    $('#contact').html(data.mobile_num);
+    if(data.about !== null){
+        $('#aboutUs').html(data.about);
+    }else{
+        $('#aboutUs').html('No description.');
+    }
+
+}

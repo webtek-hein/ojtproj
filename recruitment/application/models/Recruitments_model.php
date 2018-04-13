@@ -15,6 +15,8 @@ class Recruitments_model extends CI_Model
         $tel = $this->input->post('tel');
         $mobile = $this->input->post('mobile');
         $alt = $this->input->post('alt_mobile');
+        $desc = $this->input->post('description');
+
 
         $data = array(
             'contact_person' => $contact,
@@ -24,7 +26,8 @@ class Recruitments_model extends CI_Model
             'email' => $email,
             'tel_num' => $tel,
             'mobile_num' => $mobile,
-            'alt_number' => $alt
+            'alt_number' => $alt,
+            'about' => $desc
         );
 
         $this->db->insert('company', $data);

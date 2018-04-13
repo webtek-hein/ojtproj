@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2018 at 02:55 AM
+-- Generation Time: Apr 13, 2018 at 07:21 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -41,10 +41,7 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`appt_id`, `user_id`, `sched_id`, `appointment_date`, `status`) VALUES
-(10, 1, 2, '2018-04-13', 'ongoing'),
-(11, 1, 3, '2018-04-13', 'ongoing'),
-(12, 1, 1, '2018-04-13', 'ongoing'),
-(13, 1, 4, '2018-04-13', 'ongoing');
+(14, 1, 1, '2018-04-13', 'ongoing');
 
 -- --------------------------------------------------------
 
@@ -62,6 +59,7 @@ CREATE TABLE `company` (
   `tel_num` varchar(45) NOT NULL,
   `mobile_num` varchar(45) NOT NULL,
   `alt_number` varchar(250) NOT NULL,
+  `about` text,
   `status` varchar(250) NOT NULL DEFAULT 'registered'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -69,9 +67,10 @@ CREATE TABLE `company` (
 -- Dumping data for table `company`
 --
 
-INSERT INTO `company` (`company_id`, `contact_person`, `address`, `company_name`, `suffix`, `email`, `tel_num`, `mobile_num`, `alt_number`, `status`) VALUES
-(1, 'Bangui Paragas Heinrich', '#2,Ortigas Avenue Manila,Pasig City', 'Trend Micro', 'Mr', 'hb@gmail.com', '112-122-313', '+632 995 6200', '+63 917 805 8104', 'registered'),
-(2, 'Bacani test Bench', '#1,Marikina Manila,Pasay', 'Accenture', 'Mr', 'bench@gmail.com', '1231298', '901238120938', '2109832190', 'registered');
+INSERT INTO `company` (`company_id`, `contact_person`, `address`, `company_name`, `suffix`, `email`, `tel_num`, `mobile_num`, `alt_number`, `about`, `status`) VALUES
+(1, 'Bangui Paragas Heinrich', '#2,Ortigas Avenue Manila,Pasig City', 'Trend Micro', 'Mr', 'hb@gmail.com', '112-122-313', '+632 995 6200', '+63 917 805 8104', NULL, 'registered'),
+(2, 'Bacani test Bench', '#1,Marikina Manila,Pasay', 'Accenture', 'Mr', 'bench@gmail.com', '1231298', '901238120938', '2109832190', NULL, 'registered'),
+(3, 'ttest test test', '#1,test test,test', 'Hein', 'Mr', 'test@gmail.com', '094499', '09449', '094949', 'galing galing\r\n', 'registered');
 
 -- --------------------------------------------------------
 
@@ -98,7 +97,7 @@ CREATE TABLE `schedule` (
 --
 
 INSERT INTO `schedule` (`sched_id`, `company_id`, `sched_type`, `event_type`, `sched_date`, `start_time`, `end_time`, `location`, `room`, `slots`, `defaultSlot`) VALUES
-(1, 1, 'Exam', 'Internship', '2018-04-08', '01:00', '13:00', 'test', 'test', 399, 0),
+(1, 1, 'Exam', 'Internship', '2018-04-08', '01:00', '13:00', 'test', 'test', 398, 0),
 (2, 1, 'Exam', 'Employment', '2018-04-08', '01:00', '13:00', 'test', '12312', 2, 0),
 (3, 1, 'Exam', 'Employment', '2018-04-13', '08:00', '17:00', 'Bakakeng, SLU', 'D423', 197, 0),
 (4, 1, 'Exam', 'Employment', '2018-05-04', '17:00', '20:00', 'SLU, Main Campus', 'Prince Bernhard Gym', 399, 400);
@@ -166,12 +165,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `appt_id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `appt_id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `company_id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `company_id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `schedule`
 --

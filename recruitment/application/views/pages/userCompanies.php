@@ -1,7 +1,7 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row clearfix">
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <div class="card">
                     <div class="header">
                         <h2 class="text-center">COMPANIES</h2>
@@ -21,42 +21,32 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-6">
                 <div class="card">
                     <div class="header">
                         <h2 class="text-center">ABOUT</h2>
                     </div>
                     <div class="body">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <h1>Mahal ko</h1>
-                                <h1>Mahal ko</h1>
-                                <h1>Mahal ko</h1>
-                                <h1>Mahal ko</h1>
-                                <h1>Mahal ko</h1>
-                                <h1>Mahal ko</h1>
+                        <p id="noComp">No Company Selected. Please select a company from the list.</p>
+                        <div id="info" hidden >
+                            <div class="row row-eq-height">
+                            <div class="col-sm-4">
+                                <img class="img-responsive center-block" src="assets/images/logo-icon.png">
                             </div>
-                            <div class="col-md-2">
-                                <h1>O</h1>
-                                <h1>O</h1>
-                                <h1>O</h1>
-                                <h1>O</h1>
-                                <h1>O</h1>
-                                <h1>O</h1>
-                            </div>
-                            <div class="col-md-5">
-                                <h1>Mahal Ako</h1>
-                                <h1>Mahal Ako</h1>
-                                <h1>Mahal Ako</h1>
-                                <h1>Mahal Ako</h1>
-                                <h1>Mahal Ako</h1>
-                                <h1>Mahal Ako</h1>
+                            <div class="col-sm-6">
+                                <p class="col-sm-12">Address: <span id="address">Lcati</span></p>
+                                <p class="col-sm-12">Contact No: <span id="contact">Lcati</span></p>
                             </div>
                         </div>
-
+                            <div class="col-sm-12">
+                            <h3 class="col-sm-12">About Us</h3>
+                            <p class="col-sm-12" id="aboutUs">Testing testing</p>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
