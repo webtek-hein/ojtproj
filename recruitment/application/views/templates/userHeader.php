@@ -93,9 +93,9 @@ Header Section Start
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Schedules<span class="caret"></span></a>
                         <div class="dropdown-menu">
                             <ul>
-                                <li><a href="blog-fullwidth.html">Exam</a></li>
-                                <li><a href="blog-left-sidebar.html">Interview</a></li>
-                                <li><a href="blog-right-sidebar.html">Seminar</a></li>
+                                <li><a href="userSchedulesExam">Exam</a></li>
+                                <li><a href="userSchedulesInterview">Interview</a></li>
+                                <li><a href="userSchedulesSeminar">Seminar</a></li>
                             </ul>
                         </div>
                     </li>
