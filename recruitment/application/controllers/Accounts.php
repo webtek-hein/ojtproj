@@ -25,6 +25,7 @@ class Accounts extends CI_Controller
                 'user_id' => $result->user_id,
                 'password' => $result->password,
                 'userType' => $result->user_type,
+                'name' => $result->first_name . " " . $result->last_name,
             );
             $this->session->set_userdata('logged_in', $session_data);
 

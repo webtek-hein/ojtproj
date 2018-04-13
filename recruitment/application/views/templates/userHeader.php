@@ -100,7 +100,12 @@ Header Section Start
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <?php
+                                $a = $this->session->userdata['logged_in'];
+                                echo $a['name'];
+                            ?>
+                        <span class="caret"></span></a>
                         <div class="dropdown-menu">
                             <ul>
                                 <li><a href="blog-fullwidth.html">Settings</a></li>
