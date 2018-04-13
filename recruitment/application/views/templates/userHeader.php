@@ -102,8 +102,7 @@ Header Section Start
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <?php
-                                $a = $this->session->userdata['logged_in'];
-                                echo $a['name'];
+                                echo $this->session->userdata['logged_in']['name'];
                             ?>
                         <span class="caret"></span></a>
                         <div class="dropdown-menu">

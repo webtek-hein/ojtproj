@@ -94,6 +94,7 @@ class Recruitments extends CI_Controller
     {
         echo json_encode($this->rec->getAllUsers());
     }
+
     public function userAppointments($sched_id,$action){
        if($action === '0'){
            echo json_encode($this->rec->register($sched_id));
@@ -101,5 +102,26 @@ class Recruitments extends CI_Controller
            echo 1;
        }
     }
+
+    public function getAppointmentPerUser(){
+        $list = $this->rec->appoitnmentPerUser();
+        $data = [];
+        foreach ($list as $schedule) {
+            $time = $schedule['start_time'] . '-' . $schedule['end_time'];
+                $data[] = array(
+                    'sched_id' => $schedule['sched_id'],
+                    'date' => $schedule['sched_date'],
+                    'time' => $time,
+                    'location' => $schedule['location'],
+                    'room' => $schedule['room'],
+                    'company' => $schedule['company_name'],
+                    'type' => $schedule['event_type'],
+                    'slots' => $schedule['slots']
+                );
+        }
+        echo json_encode($data);
+    }
+
+
 
 }

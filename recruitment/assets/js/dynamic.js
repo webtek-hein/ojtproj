@@ -10,6 +10,11 @@ $(document).ready(function () {
             index = row.data('index');
             companyDetails(data, index);
         },
+        rowStyle:function rowStyle(row, index) {
+            return {
+                css: {"cursor": "pointer"}
+            };
+        },
         columns: [{
             formatter: function (data, row) {
                 return '<img src="assets/images/logo-icon.png"></img>';
@@ -25,6 +30,34 @@ $(document).ready(function () {
             width: '85%'
         }]
     });
+
+    //userCompany Table
+    $('#userCompany').bootstrapTable({
+        url: 'Recruitments/getCompanies/0',
+        onClickRow: function (data, row) {
+            alert('test');
+        },
+        rowStyle:function rowStyle(row, index) {
+            return {
+                css: {"cursor": "pointer"}
+            };
+        },
+        columns: [{
+            formatter: function (data, row) {
+                return '<img src="assets/images/logo-icon.png"></img>';
+            },
+            field: 'logo',
+            title: '',
+            align: 'center',
+            width: '15%'
+        }, {
+            field: 'company_name',
+            title: 'Company Name',
+            align: 'left',
+            width: '85%'
+        }]
+    });
+
     //on change select in company
     $('#compStatus').change(function () {
         $stat = $(this).val();

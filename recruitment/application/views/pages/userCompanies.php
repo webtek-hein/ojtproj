@@ -8,10 +8,8 @@
                     </div>
                     <div class="body">
                         <div class="body table-responsive">
-                            <table class="table table-bordered table-striped table-hover"
-                                   data-toggle="table"
+                            <table id="userCompany" class="table table-bordered table-striped table-hover"
                                    data-search="true"
-                                   data-url="Recruitments/getSchedule/Employment"
                                    data-pagination="true">
                                 <thead>
                                 <tr>
@@ -60,6 +58,5 @@
                 </div>
             </div>
         </div>
-        <!-- #END# Basic Examples -->
     </div>
 </section>

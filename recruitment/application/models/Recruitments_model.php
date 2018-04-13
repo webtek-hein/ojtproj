@@ -125,4 +125,14 @@ class Recruitments_model extends CI_Model
         $this->db->where('sched_id',$sched_id);
         $this->db->update('schedule');
     }
+    public function appoitnmentPerUser(){
+        $user_id = $this->session->userdata['logged_in']['user_id'];
+
+        $this->db->select('company_name,schedule.*');
+        $this->db->join('schedule', 'schedule.sched_id = appointment.sched_id','inner');
+        $this->db->join('company', 'company.company_id = schedule.company_id','inner');
+        $this->db->where('appointment.user_id',$user_id);
+        return $this->db->get('appointment')->result_array();
+
+    }
 }
