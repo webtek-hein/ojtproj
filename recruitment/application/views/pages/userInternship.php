@@ -9,72 +9,26 @@
                     </div>
                     <div class="body">
                         <div class="body table-responsive">
-                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Time</th>
-                                    <th>Location</th>
-                                    <th>Room</th>
-                                    <th>Company</th>
-                                    <th>Type</th>
-                                    <th>Slots</th>
-                                    <th></th>
-                                    <th></th>
-
-                                </tr>
-                                </thead>
-                                <tr class="text-center">
-                                    <td>Wlng ka date</td>
-                                    <td>Alast Dos</td>
-                                    <td>CR</td>
-                                    <td>D403</td>
-                                    <td>Yeah</td>
-                                    <td>Kita</td>
-                                    <td>100</td>
-                                    <td><a class="btn btn-danger">Register</a></td>
-                                    <td><a class="btn btn-success">View</a></td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td>Wlng ka date</td>
-                                    <td>Alast Dos</td>
-                                    <td>CR</td>
-                                    <td>D403</td>
-                                    <td>Yeah</td>
-                                    <td>Kita</td>
-                                    <td>100</td>
-                                    <td><a class="btn btn-danger">Register</a></td>
-                                    <td><a class="btn btn-success">View</a></td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td>Wlng ka date</td>
-                                    <td>Alast Dos</td>
-                                    <td>CR</td>
-                                    <td>D403</td>
-                                    <td>Yeah</td>
-                                    <td>Kita</td>
-                                    <td>100</td>
-                                    <td><a class="btn btn-danger">Register</a></td>
-                                    <td><a class="btn btn-success">View</a></td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td>Wlng ka date</td>
-                                    <td>Alast Dos</td>
-                                    <td>CR</td>
-                                    <td>D403</td>
-                                    <td>Yeah</td>
-                                    <td>Kita</td>
-                                    <td>100</td>
-                                    <td><a class="btn btn-danger">Register</a></td>
-                                    <td><a class="btn btn-success">View</a></td>
-                                </tr>
-
-                                <tbody>
-
-                                </tbody>
-                            </table>
-
-
+                            <div class="body table-responsive">
+                                <table class="table table-bordered table-striped table-hover"
+                                       data-toggle="table"
+                                       data-search="true"
+                                       data-url="Recruitments/getSchedule/Internship"
+                                       data-pagination="true">
+                                    <thead>
+                                    <tr>
+                                        <th data-field="date">Date</th>
+                                        <th data-field="time">Time</th>
+                                        <th data-field="location">Location</th>
+                                        <th data-field="room">Room</th>
+                                        <th data-field="company">Company</th>
+                                        <th data-field="type">Type</th>
+                                        <th data-field="slots">Slots</th>
+                                        <th data-field="register"></th>
+                                        <th data-field="view"></th>
+                                    </tr>
+                                    </thead>
+                                </table>
                         </div>
                     </div>
                 </div>
