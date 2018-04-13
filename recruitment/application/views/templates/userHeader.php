@@ -78,7 +78,7 @@ Header Section Start
                     <li>
                         <a href="dashboard" >Home</a>
                     </li>
-                    <li><a href="about.html">Appointments</a></li>
+                    <li><a href="userAppointment">Appointments</a></li>
                     <li><a href="service.html">Companies</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recruitment<span class="caret"></span></a>
