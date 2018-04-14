@@ -111,9 +111,10 @@ $(document).ready(function () {
             $('#companyOptions').html(options);
         }
     });
-
-    $('#usersTable').bootstrapTable({
-        url: 'Recruitments/getUsers',
+    // users table
+    var $userTable = $('#usersTable');
+    $userTable.bootstrapTable({
+        url: 'Recruitments/getUsers/registered',
         onClickRow: function (data, row) {
             schedDetails(data);
         },
@@ -134,7 +135,11 @@ $(document).ready(function () {
             title: 'Year'
         }]
     });
-
+    //on change status
+    $('#userStatus').change(function () {
+       $status = $(this).val();
+        $userTable.bootstrapTable('refresh', {url: 'Recruitments/getUsers/'+$status});
+    });
 });
 
 //show company Details

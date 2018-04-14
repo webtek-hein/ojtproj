@@ -29,13 +29,13 @@ class Recruitments_model extends CI_Model
             'alt_number' => $alt,
             'about' => $desc
         );
-        if (!$this->upload->do_upload('logo')) {
-            $uploadedDetails = $this->upload->display_errors();
-        } else {
-            $uploadedDetails = $this->upload->data();
-        }
-        print_r($uploadedDetails);
-        die;
+//        if (!$this->upload->do_upload('logo')) {
+//            $uploadedDetails = $this->upload->display_errors();
+//        } else {
+//            $uploadedDetails = $this->upload->data();
+//        }
+//        print_r($uploadedDetails);
+//        die;
 
         $this->db->insert('company', $data);
     }
@@ -113,10 +113,11 @@ class Recruitments_model extends CI_Model
         return $this->db->get('appointment')->result_array();
     }
 
-    public function getAllUsers()
+    public function getUser($status)
     {
         $this->db->select('id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year, first_name,last_name,
         user_id');
+        $this->db->where('status',$status);
         return $this->db->get('user')->result_array();
     }
 

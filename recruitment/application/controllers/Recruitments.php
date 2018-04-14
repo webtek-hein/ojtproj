@@ -8,13 +8,13 @@ class Recruitments extends CI_Controller
         parent::__construct();
         $this->load->helper(array('url'));
         $this->load->model('Recruitments_model', 'rec');
-
-        $config['upload_path']          = './uploads/';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 100;
-        $config['max_width']            = 1024;
-        $config['max_height']           = 768;
-        $this->load->library('upload', $config);
+//
+//        $config['upload_path']          = './uploads/';
+//        $config['allowed_types']        = 'gif|jpg|png';
+//        $config['max_size']             = 100;
+//        $config['max_width']            = 1024;
+//        $config['max_height']           = 768;
+//        $this->load->library('upload', $config);
     }
 
     public function newCompany()
@@ -97,9 +97,9 @@ class Recruitments extends CI_Controller
         echo json_encode($this->rec->appointments($id));
     }
 
-    public function getUsers()
+    public function getUsers($status)
     {
-        echo json_encode($this->rec->getAllUsers());
+        echo json_encode($this->rec->getUser($status));
     }
 
     public function userAppointments($sched_id,$action){

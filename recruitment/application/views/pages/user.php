@@ -6,10 +6,9 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-block">
-                <select class="custom-select pull-right">
-                    <option selected>Registered</option>
-                    <option value="1">Archived</option>
-
+                <select id="userStatus" class="custom-select pull-right">
+                    <option selected value="registered">Registered</option>
+                    <option value="archived">Archived</option>
                 </select>
                 <div class="table-responsive">
                     <table class="table" id="usersTable">
