@@ -29,6 +29,13 @@ class Recruitments_model extends CI_Model
             'alt_number' => $alt,
             'about' => $desc
         );
+        if (!$this->upload->do_upload('logo')) {
+            $uploadedDetails = $this->upload->display_errors();
+        } else {
+            $uploadedDetails = $this->upload->data();
+        }
+        print_r($uploadedDetails);
+        die;
 
         $this->db->insert('company', $data);
     }
@@ -121,21 +128,44 @@ class Recruitments_model extends CI_Model
             'sched_id' => $sched_id,
         );
         $this->db->set($data);
-        $this->db->set('appointment_date','CURDATE()',FALSE);
+        $this->db->set('appointment_date', 'CURDATE()', FALSE);
         $this->db->insert('appointment');
 
-        $this->db->set('slots','slots-1',FALSE);
-        $this->db->where('sched_id',$sched_id);
+        $this->db->set('slots', 'slots-1', FALSE);
+        $this->db->where('sched_id', $sched_id);
         $this->db->update('schedule');
     }
-    public function appoitnmentPerUser(){
+
+    public function appoitnmentPerUser()
+    {
         $user_id = $this->session->userdata['logged_in']['user_id'];
 
         $this->db->select('company_name,schedule.*');
-        $this->db->join('schedule', 'schedule.sched_id = appointment.sched_id','inner');
-        $this->db->join('company', 'company.company_id = schedule.company_id','inner');
-        $this->db->where('appointment.user_id',$user_id);
+        $this->db->join('schedule', 'schedule.sched_id = appointment.sched_id', 'inner');
+        $this->db->join('company', 'company.company_id = schedule.company_id', 'inner');
+        $this->db->where('appointment.user_id', $user_id);
         return $this->db->get('appointment')->result_array();
 
+    }
+
+    public function editSched()
+    {
+        $time = explode('-', $this->input->post('time'));
+        $start_time = $time[0];
+        $end_time = $time[1];
+        $id = $this->input->post('id');
+
+        $data = array(
+            'start_time' => $start_time,
+            'end_time' => $end_time,
+            'sched_date' => $this->input->post('date'),
+            'location' => $this->input->post('location'),
+            'room' => $this->input->post('room'),
+            'slots' => $this->input->post('slots'),
+        );
+
+        $this->db->set($data);
+        $this->db->where('sched_id',$id);
+        $this->db->update('schedule');
     }
 }

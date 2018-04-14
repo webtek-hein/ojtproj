@@ -176,13 +176,14 @@ function addDesc() {
 function schedDetails(data) {
     toggleDiv($('#details'), $('#main'));
     //assign dynamic data
-    $('#company').val(data.company);
-    $('#eventType').val(data.type);
+    $('#company').html(data.company);
+    $('#eventType').html(data.type);
     $('#date').val(data.date);
     $('#time').val(data.time);
     $('#location').val(data.location);
     $('#room').val(data.room);
     $('#slots').val(data.slots);
+    $('#schedSub').val(data.sched_id);
     //appointment table
     $('#appointments').bootstrapTable({
         url: 'Recruitments/getAppointment/' + data.sched_id,

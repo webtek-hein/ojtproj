@@ -8,6 +8,13 @@ class Recruitments extends CI_Controller
         parent::__construct();
         $this->load->helper(array('url'));
         $this->load->model('Recruitments_model', 'rec');
+
+        $config['upload_path']          = './uploads/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 100;
+        $config['max_width']            = 1024;
+        $config['max_height']           = 768;
+        $this->load->library('upload', $config);
     }
 
     public function newCompany()
@@ -105,7 +112,7 @@ class Recruitments extends CI_Controller
 
     public function getAppointmentPerUser(){
         $list = $this->rec->appoitnmentPerUser();
-        $data = [];
+        $data = array();
         foreach ($list as $schedule) {
             $time = $schedule['start_time'] . '-' . $schedule['end_time'];
                 $data[] = array(
@@ -122,6 +129,10 @@ class Recruitments extends CI_Controller
         echo json_encode($data);
     }
 
+    public function editSchedule(){
+        echo json_encode($this->rec->editSched());
+        redirect('schedules');
+    }
 
 
 }

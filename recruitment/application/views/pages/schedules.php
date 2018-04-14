@@ -35,66 +35,69 @@
                         <hr>
                         <div class="tab-pane fade active show" id="nav-info"
                              role="tabpanel" aria-labelledby="nav-info-tab" aria-expanded="true">
-                            <div class="row form-group">
-                                <div class="col-sm-2">
-                                    <label>Company</label>
+                            <form method="POST" action="Recruitments/editSchedule">
+                                <div class="row form-group">
+                                    <div class="col-sm-3">
+                                        <label>Company</label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="company"></p>
+                                    </div>
                                 </div>
-                                <div class="col-sm-10">
-                                    <input class="form-control" name="company" type="text" id="company">
+                                <div class="row form-group">
+                                    <div class="col-sm-3">
+                                        <label>Description</label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="eventType"></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col-sm-2">
-                                    <label>Description</label>
+                                <div class="row form-group">
+                                    <div class="col-sm-2">
+                                        <label>Date</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" type="date" name="date" id="date">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label>Time</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" name="time" type="text" id="time">
+                                    </div>
                                 </div>
-                                <div class="col-sm-10">
-                                    <input class="form-control" name="eventType" type="text" id="eventType">
+                                <div class="row form-group">
+                                    <div class="col-sm-2">
+                                        <label>Location</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" name="location" type="text" id="location">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label>Room</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" name="room" type="text" id="room">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col-sm-2">
-                                    <label>Date</label>
+                                <div class="row form-group">
+                                    <div class="col-sm-2">
+                                        <label>Slots</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" type="number" name="slots" id="slots">
+                                    </div>
                                 </div>
-                                <div class="col-sm-4">
-                                    <input class="form-control" type="date" id="date">
-                                </div>
-                                <div class="col-sm-2">
-                                    <label>Time</label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input class="form-control" name="time" type="text" id="time">
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col-sm-2">
-                                    <label>Location</label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input class="form-control" name="location" type="text" id="location">
-                                </div>
-                                <div class="col-sm-2">
-                                    <label>Room</label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input class="form-control" name="room" type="text" id="room">
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col-sm-2">
-                                    <label>Slots</label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input class="form-control" type="number" name="slots" id="slots">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 text-center">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success">Submit</button>
+                                <div class="row">
+                                    <div class="col-md-6 text-center">
+                                        <button type="button" class="btn btn-default" onclick="toggleDiv($('#main'),
+                                        $('#details'))">Close
+                                        </button>
+                                        <button type="submit" name="id" id="schedSub" class="btn btn-success">Submit</button>
 
+                                    </div>
                                 </div>
-                            </div>
-
+                            </form>
                         </div>
                         <div class="tab-pane fade" id="nav-registered"
                              role="tabpanel" aria-labelledby="nav-registered-tab" aria-expanded="false">
@@ -105,97 +108,97 @@
                         </div>
                         <hr>
 
-            </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- ============================================================== -->
-<!-- End PAge Content -->
-<!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
 
-<!-- Modal -->
-<div id="addSchedule" class="modal fade col-lg-12" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <form method="POST" action="Recruitments/addSchedule">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">New Schedule</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Company Name</label>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <select name="company" class="form-control" id="companyOptions">
-                                </select>
-                            </div>
-                        </div>
-                        <label>Type</label>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <select name="event" class="form-control">
-                                    <option value="Internship">Internship</option>
-                                    <option value="Employment">Employment</option>
-                                </select>
-                            </div>
-                        </div>
-                        <label>Date and Time</label>
-                        <div class="row">
-
-                            <div class="col-md-4">
-                                <input type="date" name="date" class="form-control">
-                            </div>
-                            <div>
-                                <p>From</p>
-                            </div>
-                            <div class="col-md-2">
-                                <input type="time" name="start" class="form-control">
-                            </div>
-                            <div>
-                                <p>TO</p>
-                            </div>
-                            <div class="col-md-3">
-                                <input type="time" name="end" class="form-control">
-                            </div>
-
-                        </div>
-                        <div class="row">
-
-                        </div>
-                        <label>Location and Room</label>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input name="location" type="text" placeholder="Location" class="form-control">
-                            </div>
-                            <div class="col-md-3">
-                                <input name="room" type="text" placeholder="Room" class="form-control">
-                            </div>
-                        </div>
-                        <label>Slots</label>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <input name="slots" type="number" class="form-control">
-                            </div>
-                        </div>
-
+    <!-- Modal -->
+    <div id="addSchedule" class="modal fade col-lg-12" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <form method="POST" action="Recruitments/addSchedule">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">New Schedule</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="row">
-                        <div class="col-md-6 text-center">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                        <div class="col-md-6 text-center">
-                            <button type="submit" class="btn btn-success">Submit</button>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <select name="company" class="form-control" id="companyOptions">
+                                    </select>
+                                </div>
+                            </div>
+                            <label>Type</label>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <select name="event" class="form-control">
+                                        <option value="Internship">Internship</option>
+                                        <option value="Employment">Employment</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label>Date and Time</label>
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <input type="date" name="date" class="form-control">
+                                </div>
+                                <div>
+                                    <p>From</p>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="time" name="start" class="form-control">
+                                </div>
+                                <div>
+                                    <p>TO</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="time" name="end" class="form-control">
+                                </div>
+
+                            </div>
+                            <div class="row">
+
+                            </div>
+                            <label>Location and Room</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input name="location" type="text" placeholder="Location" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <input name="room" type="text" placeholder="Room" class="form-control">
+                                </div>
+                            </div>
+                            <label>Slots</label>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <input name="slots" type="number" class="form-control">
+                                </div>
+                            </div>
+
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 </div>
 </div>
