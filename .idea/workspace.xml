@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="09e281c4-03b3-4036-b8d0-c0f993b364f6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recruitment/application/views/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/views/pages/login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,8 +38,8 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="39" column="135" selection-start-line="39" selection-start-column="135" selection-end-line="39" selection-end-column="135" />
+            <state relative-caret-position="239">
+              <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -384,7 +383,7 @@
       <workItem from="1523397859188" duration="31000" />
       <workItem from="1523486776189" duration="973000" />
       <workItem from="1523536685898" duration="12278000" />
-      <workItem from="1523746059798" duration="6887000" />
+      <workItem from="1523746059798" duration="7619000" />
     </task>
     <task id="LOCAL-00001" summary="Add Company Modal">
       <created>1523029155703</created>
@@ -491,11 +490,25 @@
       <option name="project" value="LOCAL" />
       <updated>1523754826853</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Apple Pen">
+      <created>1523757000795</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1523757000795</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Apple Pen">
+      <created>1523757129211</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1523757129211</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40754000" />
+    <option name="totallyTimeSpent" value="41486000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -554,7 +567,8 @@
     <MESSAGE value="Ehue" />
     <MESSAGE value="Soil" />
     <MESSAGE value="Bantay Bata 163" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bantay Bata 163" />
+    <MESSAGE value="Apple Pen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Apple Pen" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/recruitment/application/models/Accounts_model.php">
@@ -897,8 +911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="39" column="135" selection-start-line="39" selection-start-column="135" selection-end-line="39" selection-end-column="135" />
+        <state relative-caret-position="239">
+          <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
         </state>
       </provider>
     </entry>
