@@ -78,6 +78,10 @@ class Recruitments_model extends CI_Model
 
     public function addSched()
     {
+        $slots = null;
+        if($this->input->post('slots') !== null){
+            $slots = $this->input->post('slots');
+        }
         $data = array(
             'company_id' => $this->input->post('company'),
             'sched_type' => 'Exam',
@@ -87,17 +91,22 @@ class Recruitments_model extends CI_Model
             'end_time' => $this->input->post('end'),
             'location' => $this->input->post('location'),
             'room' => $this->input->post('room'),
-            'slots' => $this->input->post('slots'),
-            'defaultSlot' => $this->input->post('slots')
+            'slots' => $slots,
+            'defaultSlot' => $slots
         );
         $this->db->insert('schedule', $data);
     }
 
-    public function getSched($eventType)
+    public function getSched($page,$eventType)
     {
         $this->db->select('appointment.user_id,company_name,schedule.*,');
         $this->db->join('appointment', 'appointment.sched_id = schedule.sched_id', 'left');
         $this->db->join('company', 'company.company_id = schedule.company_id', 'inner');
+        if($page === 'schedules'){
+            $this->db->where_in('event_type',array('Internship','Employment'));
+        }else{
+            $this->db->where_in('event_type',array('Seminar','Orientation'));
+        }
         if ($eventType !== 'All') {
             $this->db->where('event_type', $eventType);
         }

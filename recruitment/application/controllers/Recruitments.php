@@ -43,15 +43,15 @@ class Recruitments extends CI_Controller
         echo json_encode($this->rec->updateComp($id));
     }
 
-    public function addSchedule()
+    public function addSchedule($page)
     {
         echo json_encode($this->rec->addSched());
-        redirect('schedules');
+        redirect($page);
     }
 
-    public function getSchedule($eventType)
+    public function getSchedule($page,$eventType)
     {
-        $list = $this->rec->getSched($eventType);
+        $list = $this->rec->getSched($page,$eventType);
         $user_id = $this->session->userdata['logged_in']['user_id'];
         $userType = $this->session->userdata['logged_in']['userType'];
 

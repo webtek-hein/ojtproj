@@ -10,7 +10,7 @@
                 <!-- Add schedule -->
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addSchedule">Add Schedule
                 </button>
-                <select id="eventTypeOpts" class="custom-select pull-right">
+                <select id="schedTypeOpts" class="custom-select pull-right">
                     <option value="All">All</option>
                     <option value="Internship">Internship</option>
                     <option value="Employment">Employment</option>
@@ -120,7 +120,7 @@
     <!-- Modal -->
     <div id="addSchedule" class="modal fade col-lg-12" role="dialog">
         <div class="modal-dialog modal-lg">
-            <form method="POST" action="Recruitments/addSchedule">
+            <form method="POST" action="Recruitments/addSchedule/schedules">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">

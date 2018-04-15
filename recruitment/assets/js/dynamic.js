@@ -2,6 +2,7 @@ $(document).ready(function () {
     //Company Table
     var $companyTable = $('#companyTable');
     var $scheduleTable = $('#scheduleTable');
+    var $eventTable = $('#eventTable');
 
     // company table
     $companyTable.bootstrapTable({
@@ -66,7 +67,7 @@ $(document).ready(function () {
 
     //schedule table
     $scheduleTable.bootstrapTable({
-        url: 'Recruitments/getSchedule/All',
+        url: 'Recruitments/getSchedule/schedules/All',
         onClickRow: function (data, row) {
             schedDetails(data);
         },
@@ -94,11 +95,43 @@ $(document).ready(function () {
         }]
     });
 
+    //event table
+    $eventTable.bootstrapTable({
+        url: 'Recruitments/getSchedule/events/All',
+        onClickRow: function (data, row) {
+            schedDetails(data);
+        },
+        columns: [{
+            field: 'date',
+            title: 'Date'
+        }, {
+            field: 'time',
+            title: 'Time'
+        }, {
+            field: 'location',
+            title: 'Location'
+        }, {
+            field: 'room',
+            title: 'Room'
+        }, {
+            field: 'company',
+            title: 'Company'
+        }, {
+            field: 'type',
+            title: 'Type'
+        }]
+    });
+
+
     //company options
     //on change options
+    $('#schedTypeOpts').change(function () {
+        $eventType = $(this).val();
+        $scheduleTable.bootstrapTable('refresh', {url: 'Recruitments/getSchedule/schedules/' + $eventType});
+    });
     $('#eventTypeOpts').change(function () {
         $eventType = $(this).val();
-        $scheduleTable.bootstrapTable('refresh', {url: 'Recruitments/getSchedule/' + $eventType});
+        $eventTable.bootstrapTable('refresh', {url: 'Recruitments/getSchedule/events/' + $eventType});
     });
     $.ajax({
         url: 'Recruitments/getCompanies/0',

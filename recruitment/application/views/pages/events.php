@@ -8,15 +8,15 @@
         <div class="card">
             <div id="main" class="card-block">
                 <!-- Add schedule -->
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addSchedule">Add Schedule
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addSchedule">Add Event
                 </button>
                 <select id="eventTypeOpts" class="custom-select pull-right">
                     <option value="All">All</option>
-                    <option value="Internship">Internship</option>
-                    <option value="Employment">Employment</option>
+                    <option value="Seminar">Seminar</option>
+                    <option value="Orientation">Orientation</option>
                 </select>
                 <div class="table-responsive">
-                    <table id="scheduleTable" data-search="true">
+                    <table id="eventTable" data-search="true">
                     </table>
                 </div>
             </div>
@@ -80,14 +80,6 @@
                                         <input class="form-control" name="room" type="text" id="room">
                                     </div>
                                 </div>
-                                <div class="row form-group">
-                                    <div class="col-sm-2">
-                                        <label>Slots</label>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <input class="form-control" type="number" name="slots" id="slots">
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <div class="col-md-6 text-center">
                                         <button type="button" class="btn btn-default" onclick="toggleDiv($('#main'),
@@ -120,11 +112,11 @@
     <!-- Modal -->
     <div id="addSchedule" class="modal fade col-lg-12" role="dialog">
         <div class="modal-dialog modal-lg">
-            <form method="POST" action="Recruitments/addSchedule">
+            <form method="POST" action="Recruitments/addSchedule/events">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">New Schedule</h4>
+                        <h4 class="modal-title">New Event</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -140,8 +132,8 @@
                             <div class="row">
                                 <div class="col-md-5">
                                     <select name="event" class="form-control">
-                                        <option value="Internship">Internship</option>
-                                        <option value="Employment">Employment</option>
+                                        <option value="Seminar">Seminar</option>
+                                        <option value="Orientation">Orientation</option>
                                     </select>
                                 </div>
                             </div>
@@ -177,13 +169,6 @@
                                     <input name="room" type="text" placeholder="Room" class="form-control">
                                 </div>
                             </div>
-                            <label>Slots</label>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <input name="slots" type="number" class="form-control">
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                     <div class="modal-footer">
