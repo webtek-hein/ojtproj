@@ -4,14 +4,14 @@
             <div class="col-lg-12 ">
                 <div class="card">
                     <div class="header">
-                        <h2 class="text-center">EXAM SCHEDULES</h2>
+                        <h2 class="text-center">ORIENTATION SCHEDULES</h2>
                     </div>
                     <div class="body">
                         <div class="body table-responsive">
                             <table class="table table-bordered table-striped table-hover"
                                    data-toggle="table"
                                    data-search="true"
-                                   data-url="Recruitments/getSchedule/Employment"
+                                   data-url="Recruitments/getSchedule/events/Orientation"
                                    data-pagination="true">
                                 <thead>
                                 <tr>
@@ -21,7 +21,6 @@
                                     <th data-field="room">Room</th>
                                     <th data-field="company">Company</th>
                                     <th data-field="type">Type</th>
-                                    <th data-field="slots">Slots</th>
                                     <th data-field="register"></th>
                                     <th data-field="view"></th>
                                 </tr>

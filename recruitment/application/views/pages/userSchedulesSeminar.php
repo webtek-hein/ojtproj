@@ -11,7 +11,7 @@
                             <table class="table table-bordered table-striped table-hover"
                                    data-toggle="table"
                                    data-search="true"
-                                   data-url="Recruitments/getSchedule/Employment"
+                                   data-url="Recruitments/getSchedule/events/Seminar"
                                    data-pagination="true">
                                 <thead>
                                 <tr>
@@ -21,7 +21,6 @@
                                     <th data-field="room">Room</th>
                                     <th data-field="company">Company</th>
                                     <th data-field="type">Type</th>
-                                    <th data-field="slots">Slots</th>
                                     <th data-field="register"></th>
                                     <th data-field="view"></th>
                                 </tr>
