@@ -34,10 +34,10 @@ if (isset($this->session->userdata['logged_in'])) {
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <!--===============================================================================================-->
 </head>
-<body>
+<body background="images/bg-02.jpg">
 
 <div class="limiter">
-    <div class="container-login100" style="background-image: url('assets/images/bg-03.jpg');">
+    <div class="container-login100" style="background: url('assets/images/fam.jpg'); position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1; ">
         <div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
 					Account Login
