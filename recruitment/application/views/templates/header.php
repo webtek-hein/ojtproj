@@ -122,6 +122,9 @@ if (isset($this->session->userdata['logged_in'])) {
                         <a href="schedules" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Exam Schedules</a>
                     </li>
                     <li>
+                        <a href="events" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Events</a>
+                    </li>
+                    <li>
                         <a href="user" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Users</a>
                     </li>
                     <li>

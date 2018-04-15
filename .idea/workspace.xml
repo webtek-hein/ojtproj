@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09e281c4-03b3-4036-b8d0-c0f993b364f6" name="Default" comment="User Module Recruitment">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="09e281c4-03b3-4036-b8d0-c0f993b364f6" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/recruitment/application/views/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/views/templates/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recruitment/application/views/templates/userHeader.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/views/templates/userHeader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,29 +62,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userSchedulesInterview.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/userSchedulesInterview.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userSchedulesSeminar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/userSchedulesSeminar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userHeader.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="userHeader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/userHeader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132">
-              <caret line="87" column="68" selection-start-line="87" selection-start-column="68" selection-end-line="87" selection-end-column="68" />
+            <state relative-caret-position="281">
+              <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userFooter.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/userFooter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="124" column="128" selection-start-line="124" selection-start-column="128" selection-end-line="124" selection-end-column="128" />
             </state>
           </provider>
         </entry>
@@ -147,6 +146,7 @@
         <option value="$PROJECT_DIR$/recruitment/application/controllers/Accounts.php" />
         <option value="$PROJECT_DIR$/recruitment/application/views/pages/userCompanies.php" />
         <option value="$PROJECT_DIR$/recruitment/application/views/templates/userHeader.php" />
+        <option value="$PROJECT_DIR$/recruitment/application/views/templates/header.php" />
       </list>
     </option>
   </component>
@@ -387,7 +387,7 @@
       <workItem from="1523397859188" duration="31000" />
       <workItem from="1523486776189" duration="973000" />
       <workItem from="1523536685898" duration="12278000" />
-      <workItem from="1523746059798" duration="2906000" />
+      <workItem from="1523746059798" duration="4082000" />
     </task>
     <task id="LOCAL-00001" summary="Add Company Modal">
       <created>1523029155703</created>
@@ -473,11 +473,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523593016222</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Ehue">
+      <created>1523752917059</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1523752917059</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36773000" />
+    <option name="totallyTimeSpent" value="37949000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -533,7 +540,8 @@
     <MESSAGE value="Added UI for Schedules Menu" />
     <MESSAGE value="Fixed Session Naming" />
     <MESSAGE value="User Module Company" />
-    <option name="LAST_COMMIT_MESSAGE" value="User Module Company" />
+    <MESSAGE value="Ehue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ehue" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/recruitment/application/models/Accounts_model.php">
@@ -739,13 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/userFooter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/assets/js/jquery-datatable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -756,13 +757,6 @@
     <entry file="file://$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1173" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-224">
-          <caret line="88" column="30" selection-start-line="88" selection-start-column="26" selection-end-line="88" selection-end-column="30" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/userInternship.php">
@@ -865,8 +859,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/userHeader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="87" column="68" selection-start-line="87" selection-start-column="68" selection-end-line="87" selection-end-column="68" />
+        <state relative-caret-position="281">
+          <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/userFooter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="124" column="128" selection-start-line="124" selection-start-column="128" selection-end-line="124" selection-end-column="128" />
         </state>
       </provider>
     </entry>

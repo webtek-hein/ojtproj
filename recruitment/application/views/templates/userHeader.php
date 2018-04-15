@@ -98,7 +98,7 @@ Header Section Start
                             </ul>
                         </div>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown pull-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <?php
                                 echo $this->session->userdata['logged_in']['name'];
