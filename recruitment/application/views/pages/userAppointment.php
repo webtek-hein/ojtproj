@@ -21,7 +21,6 @@
                                     <th data-field="room">Room</th>
                                     <th data-field="company">Company</th>
                                     <th data-field="type">Type</th>
-                                    <th data-field="slots">Slots</th>
                                 </tr>
                                 </thead>
                             </table>
