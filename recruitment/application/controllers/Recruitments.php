@@ -8,15 +8,11 @@ class Recruitments extends CI_Controller
         parent::__construct();
         $this->load->helper(array('url'));
         $this->load->model('Recruitments_model', 'rec');
-//
-//        $config['upload_path']          = './uploads/';
-//        $config['allowed_types']        = 'gif|jpg|png';
-//        $config['max_size']             = 100;
-//        $config['max_width']            = 1024;
-//        $config['max_height']           = 768;
-//        $this->load->library('upload', $config);
-    }
 
+        $config['upload_path']          =  './uploads/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $this->load->library('upload', $config);
+    }
     public function newCompany()
     {
         echo json_encode($this->rec->saveCompany());

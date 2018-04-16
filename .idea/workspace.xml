@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="09e281c4-03b3-4036-b8d0-c0f993b364f6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recruitment/application/views/pages/company.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/views/pages/company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recruitment/assets/js/dynamic.js" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/assets/js/dynamic.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,82 +20,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Accounts_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recruitment/application/models/Accounts_model.php">
+      <file leaf-file-name="company.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/company.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+            <state relative-caret-position="281">
+              <caret line="17" column="43" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recruitment/application/models/index.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recruitment/application/views/index.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/login.php">
+      <file leaf-file-name="Recruitments.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+            <state relative-caret-position="468">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schedules.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/schedules.php">
+      <file leaf-file-name="Recruitments_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
+            <state relative-caret-position="578">
+              <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userFooter.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/userFooter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userHeader.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/userHeader.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="events.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/events.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-665" />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="dynamic.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recruitment/assets/js/dynamic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="104" column="25" lean-forward="true" selection-start-line="102" selection-start-column="3" selection-end-line="104" selection-end-column="25" />
+            <state relative-caret-position="357">
+              <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -107,6 +67,10 @@
       <find>admin</find>
       <find>prof</find>
       <find>ajax</find>
+      <find>type=&quot;files</find>
+      <find>table</find>
+      <find>getC</find>
+      <find>companyTable</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,7 +80,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/recruitment/application/views/pages/company.php" />
         <option value="$PROJECT_DIR$/recruitment/application/views/pages/schedules.php" />
         <option value="$PROJECT_DIR$/recruitment/application/views/pages/signup.php" />
         <option value="$PROJECT_DIR$/user/index.html" />
@@ -136,6 +99,10 @@
         <option value="$PROJECT_DIR$/recruitment/application/views/templates/userHeader.php" />
         <option value="$PROJECT_DIR$/recruitment/application/views/templates/header.php" />
         <option value="$PROJECT_DIR$/recruitment/application/views/pages/login.php" />
+        <option value="$PROJECT_DIR$/recruitment/application/views/pages/company.php" />
+        <option value="$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php" />
+        <option value="$PROJECT_DIR$/recruitment/assets/js/dynamic.js" />
+        <option value="$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php" />
       </list>
     </option>
   </component>
@@ -145,9 +112,15 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/admin/monster-lite/assets/plugins/flot/package.json" />
+      <path value="$PROJECT_DIR$/recruitment/assets/plugins/flot/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2" />
-    <option name="y" value="2" />
+    <option name="x" value="363" />
+    <option name="y" value="113" />
     <option name="width" value="1364" />
     <option name="height" value="736" />
   </component>
@@ -156,7 +129,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -173,60 +145,18 @@
               <item name="ojtproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="ojtproject" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="recruitment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ojtproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ojtproject" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="recruitment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ojtproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ojtproject" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="recruitment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ojtproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ojtproject" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="recruitment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ojtproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ojtproject" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="recruitment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ojtproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ojtproject" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="recruitment" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ojtproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ojtproject" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="recruitment" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -241,120 +171,6 @@
       <recent name="C:\wamp64\www\ojtproject\recruitment\assets" />
       <recent name="C:\wamp64\www\ojtproject\recruitment\application\views\userDashboard" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/db/practicum.sql</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/recruitment/application/views/pages/user.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/recruitment/assets/js/dynamic.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -384,6 +200,7 @@
       <workItem from="1523486776189" duration="973000" />
       <workItem from="1523536685898" duration="12278000" />
       <workItem from="1523746059798" duration="7619000" />
+      <workItem from="1523888228801" duration="11424000" />
     </task>
     <task id="LOCAL-00001" summary="Add Company Modal">
       <created>1523029155703</created>
@@ -508,7 +325,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41486000" />
+    <option name="totallyTimeSpent" value="52910000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -520,10 +337,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2685325" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2675906" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3288364" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -537,11 +353,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -774,11 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1173" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/userInternship.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -828,13 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/company.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2465">
-          <caret line="145" column="30" selection-start-line="145" selection-start-column="30" selection-end-line="145" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -849,13 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/assets/js/dynamic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="104" column="25" lean-forward="true" selection-start-line="102" selection-start-column="3" selection-end-line="104" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/userCompanies.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -865,54 +662,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="2108">
           <caret line="124" column="39" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/events.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-665" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/userHeader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
+        <state relative-caret-position="1785">
           <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/application/models/Accounts_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/application/models/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/application/views/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/schedules.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/views/templates/userFooter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/schedules.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
-          <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recruitment/application/models/Accounts_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recruitment/system/core/Controller.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/company.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recruitment/assets/js/dynamic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>

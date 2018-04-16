@@ -86,7 +86,7 @@
 <!-- End PAge Content -->
 <!-- ============================================================== -->
 
-<form method="POST" action='Recruitments/newCompany'>
+<form method="POST" action='Recruitments/newCompany'  enctype="multipart/form-data">
     <!-- Modal -->
     <div id="addCompany" class="modal fade col-lg-12" role="dialog">
         <div class="modal-dialog modal-lg">
@@ -139,6 +139,7 @@
                         <select name="suffix" class="col-md-5 form-control">
                             <option>Mr</option>
                             <option>Mrs</option>
+                            <option>Ms</option>
                         </select>
                     </div>
                     <p>Contact Information</p>
@@ -161,7 +162,7 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="file" name="logo" class="form-control" placeholder="Logo">
+                        <input type="file" name="logo" class="form-control" size="20" placeholder="Logo">
                     </div>
                     <div class="form-group">
                         <label>Description</label>

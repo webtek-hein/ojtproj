@@ -17,8 +17,9 @@ $(document).ready(function () {
             };
         },
         columns: [{
-            formatter: function (data, row) {
-                return '<img src="assets/images/logo-icon.png"></img>';
+            formatter: function (row, data) {
+                console.log();
+                return '<img src="./uploads/'+data.image_url+'" height="42" width="42"></img>';
             },
             field: 'logo',
             title: '',

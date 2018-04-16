@@ -29,13 +29,16 @@ class Recruitments_model extends CI_Model
             'alt_number' => $alt,
             'about' => $desc
         );
-//        if (!$this->upload->do_upload('logo')) {
-//            $uploadedDetails = $this->upload->display_errors();
-//        } else {
-//            $uploadedDetails = $this->upload->data();
-//        }
-//        print_r($uploadedDetails);
-//        die;
+        if ( ! $this->upload->do_upload('logo'))
+        {
+            print_r($this->upload->display_errors());
+            die;
+        }
+        else
+        {
+            $upload_data = $this->upload->data();
+            $data['image_url'] = $file_name = $upload_data['file_name'];
+        }
 
         $this->db->insert('company', $data);
     }
