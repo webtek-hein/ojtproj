@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2018 at 11:13 PM
--- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- Generation Time: Apr 16, 2018 at 08:53 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -36,15 +38,6 @@ CREATE TABLE `appointment` (
   `status` varchar(45) NOT NULL DEFAULT 'ongoing'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `appointment`
---
-
-INSERT INTO `appointment` (`appt_id`, `user_id`, `sched_id`, `appointment_date`, `status`) VALUES
-(14, 1, 1, '2018-04-13', 'ongoing'),
-(15, 1, 2, '2018-04-13', 'ongoing'),
-(16, 1, 4, '2018-04-13', 'ongoing');
-
 -- --------------------------------------------------------
 
 --
@@ -62,18 +55,16 @@ CREATE TABLE `company` (
   `mobile_num` varchar(45) NOT NULL,
   `alt_number` varchar(250) NOT NULL,
   `about` text,
-  `status` varchar(250) NOT NULL DEFAULT 'registered'
+  `status` varchar(250) NOT NULL DEFAULT 'registered',
+  `image_url` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `company`
 --
 
-INSERT INTO `company` (`company_id`, `contact_person`, `address`, `company_name`, `suffix`, `email`, `tel_num`, `mobile_num`, `alt_number`, `about`, `status`) VALUES
-(1, 'Bangui Paragas Heinrich', '#2,Ortigas Avenue Manila,Pasig City', 'Trend Micro', 'Mr', 'hb@gmail.com', '112-122-313', '+632 995 6200', '+63 917 805 8104', NULL, 'registered'),
-(2, 'Bacani test Bench', '#1,Marikina Manila,Pasay', 'Accenture', 'Mr', 'bench@gmail.com', '1231298', '901238120938', '2109832190', NULL, 'registered'),
-(3, 'ttest test test', '#1,test test,test', 'Hein', 'Mr', 'test@gmail.com', '094499', '09449', '094949', 'galing galing\r\n', 'registered'),
-(4, '  ', '#, ,', '', 'Mr', '', '', '', '', '', 'registered');
+INSERT INTO `company` (`company_id`, `contact_person`, `address`, `company_name`, `suffix`, `email`, `tel_num`, `mobile_num`, `alt_number`, `about`, `status`, `image_url`) VALUES
+(1, 'test test test', '#1,ortigas  Manila,Pasig City', 'Trend Micro', 'Mr', 'test@gmail.com', '06545646846', '06453468', '09847689', 'Trend Micro Inc. is a Japanese multinational cyber security & defense company founded in Los Angeles, California with global headquarters in Tokyo, Japan, a R&D center in Taipei, Taiwan, and regional headquarters in Asia, Europe and the Americas.', 'registered', 'Trend-Micro-Logo.png');
 
 -- --------------------------------------------------------
 
@@ -94,16 +85,6 @@ CREATE TABLE `schedule` (
   `slots` int(6) NOT NULL,
   `defaultSlot` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `schedule`
---
-
-INSERT INTO `schedule` (`sched_id`, `company_id`, `sched_type`, `event_type`, `sched_date`, `start_time`, `end_time`, `location`, `room`, `slots`, `defaultSlot`) VALUES
-(1, 1, 'Exam', 'Internship', '2018-04-12', '01:00', '13:00', 'test', 'test', 50, 0),
-(2, 1, 'Exam', 'Employment', '2018-04-08', '01:00', '13:00', 'test13', '12312', 5, 0),
-(3, 1, 'Exam', 'Employment', '2018-04-13', '08:00', '17:00', 'Bakakeng, SLU', 'D423', 200, 0),
-(4, 1, 'Exam', 'Employment', '2018-05-04', '17:00', '20:00', 'SLU, Main Campus', 'Prince Bernhard Gym', 398, 400);
 
 -- --------------------------------------------------------
 
@@ -169,22 +150,27 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `appt_id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `appt_id` int(45) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `company_id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `company_id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `sched_id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `sched_id` int(45) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(45) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
