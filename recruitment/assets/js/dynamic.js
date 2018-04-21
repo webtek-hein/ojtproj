@@ -120,6 +120,9 @@ $(document).ready(function () {
         }, {
             field: 'type',
             title: 'Type'
+        }, {
+            field: 'slots',
+            title: 'Slots'
         }]
     });
 
