@@ -80,6 +80,7 @@ Header Section Start
                     </li>
                     <li><a href="userAppointment">Appointments</a></li>
                     <li><a href="userCompanies">Companies</a></li>
+                    <li><a href="userInquire">Inquire</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registration<span class="caret"></span></a>
                         <div class="dropdown-menu">
