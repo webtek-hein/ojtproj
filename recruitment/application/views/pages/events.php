@@ -169,6 +169,12 @@
                                     <input name="room" type="text" placeholder="Room" class="form-control">
                                 </div>
                             </div>
+                            <label>Slots</label>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <input name="slots" type="number" class="form-control">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
