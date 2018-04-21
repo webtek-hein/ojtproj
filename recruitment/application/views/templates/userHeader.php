@@ -81,18 +81,11 @@ Header Section Start
                     <li><a href="userAppointment">Appointments</a></li>
                     <li><a href="userCompanies">Companies</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exam Schedules<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registration<span class="caret"></span></a>
                         <div class="dropdown-menu">
                             <ul>
                                 <li><a href="userInternship">Internship</a></li>
                                 <li><a href="userEmployment">Employment</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events<span class="caret"></span></a>
-                        <div class="dropdown-menu">
-                            <ul>
                                 <li><a href="userSchedulesExam">Orientation</a></li>
                                 <li><a href="userSchedulesSeminar">Seminar</a></li>
                             </ul>
