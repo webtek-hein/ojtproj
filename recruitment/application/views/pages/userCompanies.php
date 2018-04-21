@@ -31,7 +31,7 @@
                         <div id="info" hidden >
                             <div class="row row-eq-height">
                             <div class="col-sm-4">
-                                <img class="img-responsive center-block" src="assets/images/logo-icon.png">
+                                <img id="companyImage" class="img-responsive center-block" height="42" width="42">
                             </div>
                             <div class="col-sm-6">
                                 <p class="col-sm-12">Address: <span id="address">Lcati</span></p>

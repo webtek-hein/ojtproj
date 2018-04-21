@@ -45,8 +45,8 @@ $(document).ready(function () {
             };
         },
         columns: [{
-            formatter: function (data, row) {
-                return '<img src="assets/images/logo-icon.png"></img>';
+            formatter: function (row, data) {
+                return '<img src="./uploads/'+data.image_url+'" height="42" width="42"></img>';
             },
             field: 'logo',
             title: '',
@@ -195,6 +195,7 @@ function companyDetails(data, index) {
     toggleDiv($('#details'), $('#main'));
     //assign dynamic data
     $('#company_name').html(data.company_name);
+    $('#companyImage').attr('src','./uploads/'+data.image_url);
     $('#address').html(data.address);
     $('#contact_person').html(data.contact_person);
     $('#mobile_num').html(data.mobile_num);
@@ -334,6 +335,7 @@ function userCompanydetails(data) {
     $('#noComp').attr('hidden','hidden');
     $('#address').html(data.address);
     $('#contact').html(data.mobile_num);
+    $('#companyImage').attr('src','./uploads/'+data.image_url);
     if(data.about !== null){
         $('#aboutUs').html(data.about);
     }else{

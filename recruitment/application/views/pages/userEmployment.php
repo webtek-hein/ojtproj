@@ -11,7 +11,7 @@
                             <table class="table table-bordered table-striped table-hover"
                                    data-toggle="table"
                                    data-search="true"
-                                   data-url="Recruitments/getSchedule/Employment"
+                                   data-url="Recruitments/getSchedule/schedules/Employment"
                                    data-pagination="true">
                                 <thead>
                                 <tr>

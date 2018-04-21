@@ -25,7 +25,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-4">
-                            <img src="assets/images/logo-icon.png">
+                            <img id="companyImage" height="42" width="42">
                         </div>
                         <div class="col-sm-6">
                             <h3 class="edtInfo" id="company_name"></h3>

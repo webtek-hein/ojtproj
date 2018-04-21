@@ -13,7 +13,7 @@
                                 <table class="table table-bordered table-striped table-hover"
                                        data-toggle="table"
                                        data-search="true"
-                                       data-url="Recruitments/getSchedule/Internship"
+                                       data-url="Recruitments/getSchedule/schedules/Internship"
                                        data-pagination="true">
                                     <thead>
                                     <tr>
