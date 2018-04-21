@@ -80,12 +80,22 @@
                                         <input class="form-control" name="room" type="text" id="room">
                                     </div>
                                 </div>
+                                <div class="row form-group">
+                                    <div class="col-sm-2">
+                                        <label>Slots</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input id="slots" name="slots" type="number" class="form-control">
+                                    </div>
+                                </div>
+
                                 <div class="row">
                                     <div class="col-md-6 text-center">
                                         <button type="button" class="btn btn-default" onclick="toggleDiv($('#main'),
                                         $('#details'))">Close
                                         </button>
-                                        <button type="submit" name="id" id="schedSub" class="btn btn-success">Submit</button>
+                                        <button type="submit" name="id" id="schedSub" class="btn btn-success">Submit
+                                        </button>
 
                                     </div>
                                 </div>
