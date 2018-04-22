@@ -153,7 +153,7 @@ $(document).ready(function () {
     $userTable.bootstrapTable({
         url: 'Recruitments/getUsers/registered',
         onClickRow: function (data, row) {
-            schedDetails(data);
+            userDetails(data);
         },
         columns: [{
             field: 'id_num',
@@ -344,5 +344,14 @@ function userCompanydetails(data) {
     }else{
         $('#aboutUs').html('No description.');
     }
+
+}
+function userDetails(data){
+    toggleDiv($('#details'), $('#main'));
+    $('#name').html(data.name);
+    $('#id_num').html(data.id_num);
+    $('#user_type').html(data.user_type);
+    $('#course').html(data.course);
+    $('#year').html(data.year);    
 
 }

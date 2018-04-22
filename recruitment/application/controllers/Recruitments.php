@@ -128,10 +128,10 @@ class Recruitments extends CI_Controller
         echo json_encode($data);
     }
 
-    public function editSchedule()
+    public function editSchedule($page)
     {
         echo json_encode($this->rec->editSched());
-        redirect('schedules');
+        redirect($page);
     }
 
     public function sendMessage()

@@ -31,11 +31,11 @@
                     </nav>
 
 
-                    <div class="tab-content" id="nav-tabContent">
-                        <hr>
+                        <div class="tab-content" id="nav-tabContent">
+                            <hr>
                         <div class="tab-pane fade active show" id="nav-info"
                              role="tabpanel" aria-labelledby="nav-info-tab" aria-expanded="true">
-                            <form method="POST" action="Recruitments/editSchedule">
+                            <form method="POST" action="Recruitments/editSchedule/events">
                                 <div class="row form-group">
                                     <div class="col-sm-3">
                                         <label>Company</label>
