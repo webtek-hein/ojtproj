@@ -102,11 +102,30 @@ class Recruitments_model extends CI_Model
 
     public function getSched($page,$eventType)
     {
+        $userID = $this->session->userdata['logged_in']['user_id'];
+        $userType = $this->session->userdata['logged_in']['userType'];
+
+        $compID = $this->db->select('company_id,sched_date,start_time,end_time')
+            -> where('user_id',$userID)
+            ->join('schedule','schedule.sched_id = appointment.sched_id','inner')
+            ->get('appointment')->result_array();
+
+        $data = array();
+        foreach ($compID as $c){
+            $data[] = $c['company_id'];
+        }
+
+
         $this->db->select('appointment.user_id,company_name,schedule.*,');
         $this->db->join('appointment', 'appointment.sched_id = schedule.sched_id', 'left');
         $this->db->join('company', 'company.company_id = schedule.company_id', 'inner');
+
+
         if($page === 'schedules'){
             $this->db->where_in('event_type',array('Internship','Employment'));
+            if($userType === 'student'){
+                $this->db->where_not_in('schedule.company_id',$data);
+            }
         }else{
             $this->db->where_in('event_type',array('Seminar','Orientation'));
         }
