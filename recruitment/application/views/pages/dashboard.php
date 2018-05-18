@@ -1,24 +1,40 @@
 <!-- Start Page Content -->
 <!-- ============================================================== -->
-<!-- Row -->
-<div class="row">
-    <!-- column -->
-    <div class="col-sm-12">
-        <div class="card">
-            <div class="card-block">
-                <h4 class="card-title">Welcome to SCIS Recruitment Portal</h4>
+
+<!--
+==================================================
+Slider Section Start
+================================================== -->
+<section id="hero-area" >
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="block wow fadeInUp" data-wow-delay=".3s">
+                <!-- Slider -->
+                <section class="cd-intro">
+                    <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s" >
+                    <span>WELCOME TO SCIS RECRUITMENT PORTAL</span><br>
+                    </h1>
+                    </section> <!-- cd-intro -->
+                    <!-- /.slider -->
+                </div>
             </div>
         </div>
     </div>
-    <!-- column -->
-</div>
-<!-- Row -->
-<!-- Row -->
+</section><!--/#main-slider-->
+
+<!--
+==================================================
+Upcoming Events  Start
+================================================== -->
+<section id="about">
+    <div class="container">
+        <!-- Row -->
 <div class="row">
     <div class="col-sm-12">
         <div class="card">
             <div class="card-block">
-                <h4 class="card-title">Upcoming Events</h4>
+                <h1 class="title wow fadeInDown" data-wow-delay=".3s">Upcoming Events</h1>
                 <div class="table-responsive m-t-40">
                     <table class="table stylish-table">
                         <thead>
@@ -51,6 +67,9 @@
     </div>
 </div>
 <!-- Row -->
+    </div>
+</section> <!-- /#upcomingevents -->
+
 <!-- ============================================================== -->
 <!-- End PAge Content -->
 <!-- ============================================================== -->

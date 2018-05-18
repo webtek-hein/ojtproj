@@ -65,8 +65,8 @@ Header Section Start
 
             <!-- logo -->
             <div class="navbar-brand">
-                <a href="index.html" >
-                    <img src="assets/user/images/logo.png" alt="">
+                <a>
+                    <img src="assets/images/logo.png" alt="">
                 </a>
             </div>
             <!-- /logo -->
@@ -97,7 +97,7 @@ Header Section Start
                             <?php
                                 echo $this->session->userdata['logged_in']['name'];
                             ?>
-                        <span class="caret"></span></a>
+                        <!<span class="caret"></span></a>
                         <div class="dropdown-menu">
                             <ul>
                                 <li><a href="blog-fullwidth.html">Settings</a></li>

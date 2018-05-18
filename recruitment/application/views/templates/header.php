@@ -60,18 +60,8 @@ if (isset($this->session->userdata['logged_in'])) {
             <div class="navbar-header">
                 <a class="navbar-brand" href="dashboard">
                     <!-- Logo icon -->
-                    <b>
-                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                        <!-- Dark Logo icon -->
-                        <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-
-                    </b>
+                    <img src="assets/images/logo.png" alt="homepage" class="dark-logo" />
                     <!--End Logo icon -->
-                    <!-- Logo text -->
-                    <span>
-                            <!-- dark Logo text -->
-                            <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                        </span>
                 </a>
             </div>
             <!-- ============================================================== -->
@@ -119,16 +109,16 @@ if (isset($this->session->userdata['logged_in'])) {
                         <a href="company" class="waves-effect"><i class="fa  fa-building-o m-r-10" aria-hidden="true"></i>Companies</a>
                     </li>
                     <li>
-                        <a href="schedules" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Exam Schedules</a>
+                        <a href="schedules" class="waves-effect"><i class="fa  fa-file-text-o m-r-10" aria-hidden="true"></i>Exam Schedules</a>
                     </li>
                     <li>
-                        <a href="events" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Events</a>
+                        <a href="events" class="waves-effect"><i class="fa fa-calendar m-r-10" aria-hidden="true"></i>Events</a>
                     </li>
                     <li>
                         <a href="user" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Users</a>
                     </li>
                     <li>
-                        <a href="messages" class="waves-effect"><i class="fa fa-globe m-r-10" aria-hidden="true"></i>Messages</a>
+                        <a href="messages" class="waves-effect"><i class="fa fa-envelope-o m-r-10" aria-hidden="true"></i>Messages</a>
                     </li>
                     <li>
                         <a href="history" class="waves-effect"><i class="fa fa-history m-r-10" aria-hidden="true"></i>History</a>
@@ -153,11 +143,7 @@ if (isset($this->session->userdata['logged_in'])) {
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <div class="row page-titles">
-                <div class="col-md-6 col-8 align-self-center">
-                    <h3 class="text-themecolor m-b-0 m-t-0">Home</h3>
-                </div>
-            </div>
+            
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->

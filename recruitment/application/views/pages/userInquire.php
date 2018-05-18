@@ -5,6 +5,7 @@
                 <div class="card">
                     <div class="header">
                         <h2 class="text-center">NOTE</h2>
+                        <p>Messages will be sent to the admin.</p>
                     </div>
                     <div class="body">
                         
