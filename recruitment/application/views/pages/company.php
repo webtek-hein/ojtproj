@@ -1,5 +1,5 @@
 <!-- ============================================================== -->
-<!-- Start Page Content -->
+<!-- Start of Page Content -->
 <!-- ============================================================== -->
 
 <div class="row">
@@ -83,22 +83,24 @@
     </div>
 </div>
 <!-- ============================================================== -->
-<!-- End PAge Content -->
+<!-- End of Page Content -->
 <!-- ============================================================== -->
 
 <form method="POST" action='Recruitments/newCompany'  enctype="multipart/form-data">
-    <!-- Modal -->
+<!-- ============================================================== -->
+<!-- Modal -->
+<!-- ============================================================== -->
     <div id="addCompany" class="modal fade col-lg-12" role="dialog">
         <div class="modal-dialog modal-lg">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">New Company</h4>
+                    <h4 class="modal-title">Add Company</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group ">
-                        <label class="col-md-11">Company Name</label>
+                        <label>Company Name</label>
                         <input name="company" type="text" class="col-md-11 form-control">
                     </div>
                     <p class="col-md-12">Address</p>
@@ -106,63 +108,65 @@
                     <div class="form-group">
                         <label class="col-md-3">No</label>
                         <label class="col-md-8">Street</label>
-
-                        <input type="number" name="add_num" class="col-md-3 form-control" placeholder="No">
-                        <input type="text" name="street" class="col-md-8 form-control" placeholder="Street">
+                        <input type="number" name="add_num" class="col-md-3 form-control">
+                        <input type="text" name="street" class="col-md-8 form-control">
+                    </div>
+                    <div class="form-group">
                         <label class="col-md-12">Municipality/Province</label>
-
-                        <input type="text" name="province" placeholder="Municipality/Province"
-                               class="col-md-11 form-control">
+                        <input type="text" name="province" class="col-md-11 form-control">
+                    </div>
+                    <div class="form-group">
                         <label class="col-md-12">City</label>
-
-                        <input type="text" name="city" placeholder="City" class="col-md-11 form-control">
+                        <input type="text" name="city" class="col-md-11 form-control">
                     </div>
                     <p>Contact Person</p>
                     <hr>
                     <div class="row form-group">
-                        <div class="col-md-5">
-                            <label>First Name</label>
-                            <input type="text" name="contact_firstname" class="form-control"
-                                   placeholder="First Name">
+                        <div class="col-md-3">
+                            <label class="col-md-0">First Name</label>
+                            <input type="text" name="contact_firstname" class="form-control">
                         </div>
-                        <div class="col-md-6">
-                            <label>Last Name</label>
-                            <input type="text" name="contact_lastname" class="form-control"
-                                   placeholder="Last Name">
+                        <div class="col-md-3">
+                            <label class="col-md-0">Last Name</label>
+                            <input type="text" name="contact_lastname" class="form-control">
                         </div>
-                        <div class="col-md-5">
-                            <label>Middle Name</label>
-                            <label class="col-md-4">Suffix</label>
-                            <input type="text" name="contact_middlename" class="col-md-5 form-control"
-                                   placeholder="Middle Name">
+                        <div class="col-md-3">
+                            <label class="col-md-0">Middle Name</label>
+                            <input type="text" name="contact_middlename" class="form-control">
                         </div>
-                        <select name="suffix" class="col-md-5 form-control">
+                        <div class="col-md-2">
+                        <label class="col-md-2">Suffix</label>
+                            <select name="suffix" class="form-control">
                             <option>Mr</option>
                             <option>Mrs</option>
                             <option>Ms</option>
-                        </select>
+                            </select>
+                        </div>
+                        
                     </div>
                     <p>Contact Information</p>
                     <hr>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Email">
+                        <input type="email" name="email" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="tel" class="form-control" placeholder="Tel. No.">
+                        <label>Telephone No.</label>
+                        <input type="text" name="tel" class="form-control">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="mobile" class="form-control"
-                               placeholder="Mobile No">
+                        <label>Mobile No.</label>
+                        <input type="text" name="mobile" class="form-control">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="alt_mobile" class="form-control"
-                               placeholder="Alternative Mobile No">
+                        <label>Alternative Mobile No.</label>
+                        <input type="text" name="alt_mobile" class="form-control">
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="file" name="logo" class="form-control" size="20" placeholder="Logo">
+                        <label>Logo</label>
+                        <input type="file" name="logo" class="form-control" size="20">
                     </div>
                     <div class="form-group">
                         <label>Description</label>
@@ -185,6 +189,9 @@
         </div>
 
     </div>
+<!-- ============================================================== -->
+<!-- End of Modal -->
+<!-- ============================================================== -->
     </div>
     </div>
 </form>

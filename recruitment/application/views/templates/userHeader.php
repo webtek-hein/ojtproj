@@ -51,7 +51,7 @@ if (isset($this->session->userdata['logged_in'])) {
 ==================================================
 Header Section Start
 ================================================== -->
-<header id="top-bar" class="">
+<header id="top-bar" class="navbar-fixed-top animated-header">
     <div class="container">
         <div class="navbar-header">
             <!-- responsive nav button -->
@@ -97,7 +97,7 @@ Header Section Start
                             <?php
                                 echo $this->session->userdata['logged_in']['name'];
                             ?>
-                        <!<span class="caret"></span></a>
+                        </a>
                         <div class="dropdown-menu">
                             <ul>
                                 <li><a href="blog-fullwidth.html">Settings</a></li>

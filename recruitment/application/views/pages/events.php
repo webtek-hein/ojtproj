@@ -119,44 +119,49 @@
     <!-- End PAge Content -->
     <!-- ============================================================== -->
 
-    <!-- Modal -->
+<!-- ============================================================== -->
+<!-- Modal -->
+<!-- ============================================================== -->
     <div id="addSchedule" class="modal fade col-lg-12" role="dialog">
         <div class="modal-dialog modal-lg">
             <form method="POST" action="Recruitments/addSchedule/events">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">New Event</h4>
+                        <h4 class="modal-title">Add Event</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    <div class="modal-body">
+                       <div class="modal-body">
                         <div class="form-group">
-                            <label>Company Name</label>
+                            <div class="form-group">
+                            <label class="col-md-8">Company Name</label>
+                            <label class="col-md-3">Type</label>
+                            
                             <div class="row">
-                                <div class="col-md-10">
+                                <div class="col-md-8">
                                     <select name="company" class="form-control" id="companyOptions">
                                     </select>
                                 </div>
-                            </div>
-                            <label>Type</label>
-                            <div class="row">
-                                <div class="col-md-5">
+
+                                <div class="col-md-3">
                                     <select name="event" class="form-control">
                                         <option value="Seminar">Seminar</option>
                                         <option value="Orientation">Orientation</option>
                                     </select>
                                 </div>
                             </div>
-                            <label>Date and Time</label>
+                            </div>
+                            
+                            <div class="form-group">
+                            <label class="col-md-8">Date and Time</label>
                             <div class="row">
-
-                                <div class="col-md-4">
+                                <div class="col-md-5">
                                     <input type="date" name="date" class="form-control">
                                 </div>
                                 <div>
                                     <p>From</p>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <input type="time" name="start" class="form-control">
                                 </div>
                                 <div>
@@ -165,12 +170,12 @@
                                 <div class="col-md-3">
                                     <input type="time" name="end" class="form-control">
                                 </div>
-
                             </div>
-                            <div class="row">
-
                             </div>
-                            <label>Location and Room</label>
+
+                            <div class="form-group">
+                            <label class="col-md-9">Location and Room</label>
+                            <label class="col-md-2">Slots</label>
                             <div class="row">
                                 <div class="col-md-6">
                                     <input name="location" type="text" placeholder="Location" class="form-control">
@@ -178,12 +183,11 @@
                                 <div class="col-md-3">
                                     <input name="room" type="text" placeholder="Room" class="form-control">
                                 </div>
-                            </div>
-                            <label>Slots</label>
-                            <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-2">
                                     <input name="slots" type="number" class="form-control">
                                 </div>
+                            </div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -201,5 +205,8 @@
             </form>
         </div>
     </div>
+<!-- ============================================================== -->
+<!-- End of Modal -->
+<!-- ============================================================== -->
 </div>
 </div>
