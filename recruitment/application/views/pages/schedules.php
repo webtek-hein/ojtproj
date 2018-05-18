@@ -198,7 +198,8 @@
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
+                <!-- End of Modal content-->
                     
                     </form>
                 </div> 
