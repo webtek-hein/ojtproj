@@ -57,13 +57,13 @@
                                         <label>Date</label>
                                     </div>
                                     <div class="col-sm-4">
-                                        <input class="form-control" type="date" name="date" id="date">
+                                        <input class="form-control" type="date" name="date" id="date" required>
                                     </div>
                                     <div class="col-sm-2">
                                         <label>Time</label>
                                     </div>
                                     <div class="col-sm-4">
-                                        <input class="form-control" name="time" type="text" id="time">
+                                        <input class="form-control" name="time" type="text" id="time" required>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -71,13 +71,13 @@
                                         <label>Location</label>
                                     </div>
                                     <div class="col-sm-4">
-                                        <input class="form-control" name="location" type="text" id="location">
+                                        <input class="form-control" name="location" type="text" id="location" required>
                                     </div>
                                     <div class="col-sm-2">
                                         <label>Room</label>
                                     </div>
                                     <div class="col-sm-4">
-                                        <input class="form-control" name="room" type="text" id="room">
+                                        <input class="form-control" name="room" type="text" id="room" required>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -85,7 +85,7 @@
                                         <label>Slots</label>
                                     </div>
                                     <div class="col-sm-4">
-                                        <input class="form-control" type="number" name="slots" id="slots">
+                                        <input class="form-control" type="number" name="slots" id="slots" required>
                                     </div>
                                 </div>
                                 <div class="row">

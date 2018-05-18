@@ -101,38 +101,38 @@
                 <div class="modal-body">
                     <div class="form-group ">
                         <label>Company Name</label>
-                        <input name="company" type="text" class="col-md-11 form-control">
+                        <input name="company" type="text" class="col-md-11 form-control" required>
                     </div>
                     <p class="col-md-12">Address</p>
                     <hr>
                     <div class="form-group">
                         <label class="col-md-3">No</label>
                         <label class="col-md-8">Street</label>
-                        <input type="number" name="add_num" class="col-md-3 form-control">
-                        <input type="text" name="street" class="col-md-8 form-control">
+                        <input type="number" name="add_num" class="col-md-3 form-control" required>
+                        <input type="text" name="street" class="col-md-8 form-control" required>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Municipality/Province</label>
-                        <input type="text" name="province" class="col-md-11 form-control">
+                        <input type="text" name="province" class="col-md-11 form-control" required>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">City</label>
-                        <input type="text" name="city" class="col-md-11 form-control">
+                        <input type="text" name="city" class="col-md-11 form-control" required>
                     </div>
                     <p>Contact Person</p>
                     <hr>
                     <div class="row form-group">
                         <div class="col-md-3">
                             <label class="col-md-0">First Name</label>
-                            <input type="text" name="contact_firstname" class="form-control">
+                            <input type="text" name="contact_firstname" class="form-control" required>
                         </div>
                         <div class="col-md-3">
                             <label class="col-md-0">Last Name</label>
-                            <input type="text" name="contact_lastname" class="form-control">
+                            <input type="text" name="contact_lastname" class="form-control" required>
                         </div>
                         <div class="col-md-3">
                             <label class="col-md-0">Middle Name</label>
-                            <input type="text" name="contact_middlename" class="form-control">
+                            <input type="text" name="contact_middlename" class="form-control" required>
                         </div>
                         <div class="col-md-2">
                         <label class="col-md-2">Suffix</label>
@@ -148,25 +148,25 @@
                     <hr>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" name="email" class="form-control">
+                        <input type="email" name="email" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label>Telephone No.</label>
-                        <input type="text" name="tel" class="form-control">
+                        <input type="text" name="tel" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Mobile No.</label>
-                        <input type="text" name="mobile" class="form-control">
+                        <input type="text" name="mobile" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Alternative Mobile No.</label>
-                        <input type="text" name="alt_mobile" class="form-control">
+                        <input type="text" name="alt_mobile" class="form-control" required>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label>Logo</label>
-                        <input type="file" name="logo" class="form-control" size="20">
+                        <input type="file" name="logo" class="form-control" size="20" required>
                     </div>
                     <div class="form-group">
                         <label>Description</label>
