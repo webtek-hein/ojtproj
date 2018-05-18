@@ -124,7 +124,9 @@ class Recruitments_model extends CI_Model
         if($page === 'schedules'){
             $this->db->where_in('event_type',array('Internship','Employment'));
             if($userType === 'student'){
-                $this->db->where_not_in('schedule.company_id',$data);
+                if(!empty($data)){
+                    $this->db->where_not_in('schedule.company_id',$data);
+                }
             }
         }else{
             $this->db->where_in('event_type',array('Seminar','Orientation'));
@@ -155,17 +157,41 @@ class Recruitments_model extends CI_Model
     public function register($sched_id)
     {
         $user_id = $this->session->userdata['logged_in']['user_id'];
-        $data = array(
-            'user_id' => $user_id,
-            'sched_id' => $sched_id,
-        );
-        $this->db->set($data);
-        $this->db->set('appointment_date', 'CURDATE()', FALSE);
-        $this->db->insert('appointment');
 
-        $this->db->set('slots', 'slots-1', FALSE);
-        $this->db->where('sched_id', $sched_id);
-        $this->db->update('schedule');
+        $appointments = $this->db->where('user_id',$user_id)
+            ->join('schedule','schedule.sched_id = appointment.sched_id','left')
+            ->get('appointment')->result_array();
+        $schedules = $this->db->where('sched_id',$sched_id)->get('schedule')->row();
+        $counter = 0;
+        foreach ($appointments as $a){
+            //if appointment and schedule have the same date
+            if($a['appointment_date'] === $schedules->sched_date){
+
+                if($a['start_time'] ===  $schedules->start_time ||
+                    ($a['start_time'] < $schedules->start_time &&
+                        $schedules->end_time < $a['start_time']) ||
+                    ($schedules->start_time < $a['end_time'])
+                ){
+                    $counter++;
+                }
+            }
+        }
+        if($counter > 1){
+            return false;
+        }else{
+            $data = array(
+                'user_id' => $user_id,
+                'sched_id' => $sched_id,
+            );
+            $this->db->set($data);
+            $this->db->set('appointment_date', 'CURDATE()', FALSE);
+            $this->db->insert('appointment');
+
+            $this->db->set('slots', 'slots-1', FALSE);
+            $this->db->where('sched_id', $sched_id);
+            $this->db->update('schedule');
+            return true;
+        }
     }
 
     public function appoitnmentPerUser()

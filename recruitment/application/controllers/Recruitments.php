@@ -44,6 +44,7 @@ class Recruitments extends CI_Controller
     {
         echo json_encode($this->rec->addSched());
         redirect($page);
+
     }
 
     public function getSchedule($page, $eventType)

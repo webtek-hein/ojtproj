@@ -124,11 +124,11 @@
 <!-- ============================================================== -->
     <div id="addSchedule" class="modal fade col-lg-12" role="dialog">
         <div class="modal-dialog modal-lg">
-            <form method="POST" action="Recruitments/addSchedule/schedules">
+            <form method="POST" action="Recruitments/addSchedule/events">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Add Exam Schedule</h4>
+                        <h4 class="modal-title">Add Event Schedule</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">

@@ -14,7 +14,8 @@ class Accounts_model extends CI_Model
             'email' => $this->input->post('email'),
             'year' => $this->input->post('year'),
             'password' => $this->input->post('password'),
-            'user_type' => $this->input->post('usertype')
+            'user_type' => $this->input->post('usertype'),
+            'status' => 'pending'
         );
         $this->db->insert('user', $data);
     }

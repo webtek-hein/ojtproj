@@ -8,6 +8,7 @@
             <div id="main" class="card-block">
                 <select id="userStatus" class="custom-select pull-right">
                     <option selected value="registered">Registered</option>
+                    <option value="pending">Pending</option>
                     <option value="archived">Archived</option>
                 </select>
                 <div class="table-responsive">

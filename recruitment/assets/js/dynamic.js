@@ -175,7 +175,36 @@ $(document).ready(function () {
     //on change status
     $('#userStatus').change(function () {
        $status = $(this).val();
-        $userTable.bootstrapTable('refresh', {url: 'Recruitments/getUsers/'+$status});
+       if($status === 'pending'){
+           $userTable.bootstrapTable('destroy');
+           $userTable.bootstrapTable({
+               url: 'Recruitments/getUsers/'+$status,
+               columns: [{
+                   field: 'id_num',
+                   title: 'ID No.'
+               }, {
+                   field: 'name',
+                   title: 'Name'
+               }, {
+                   field: 'user_type',
+                   title: 'User Type'
+               }, {
+                   field: 'course',
+                   title: 'Course'
+               }, {
+                   field: 'year',
+                   title: 'Year'
+               }, {
+                   title: 'Action',
+                   formatter: function (data) {
+                       return '<button class="btn btn-primary">Accept</button><button class="btn btn-primary">Deny</button>'
+                   }
+               }]
+           });
+
+       }else{
+           $userTable.bootstrapTable('refresh', {url: 'Recruitments/getUsers/'+$status});
+       }
     });
 });
 
@@ -327,7 +356,11 @@ function appointmentAction($sched_id,$action) {
     $.ajax({
         url: 'Recruitments/userAppointments/'+ $sched_id +'/'+ $action,
         success: function (result) {
-            location.reload();
+           if(result === 'false'){
+               alert('There is a conflict in your time. Please choose a different schedule.');
+           }else{
+               location.reload();
+           }
         }
     })
 }

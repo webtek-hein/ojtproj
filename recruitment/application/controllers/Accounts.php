@@ -19,7 +19,7 @@ class Accounts extends CI_Controller
     public function login()
     {
         $result = $this->acc->login();
-        if ($result !== 0) {
+        if ($result !== 0 && $result->status !== 'pending') {
             $session_data = array(
                 'username' => $result->id_num,
                 'user_id' => $result->user_id,
