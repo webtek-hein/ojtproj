@@ -29,13 +29,10 @@ class Recruitments_model extends CI_Model
             'alt_number' => $alt,
             'about' => $desc
         );
-        if ( ! $this->upload->do_upload('logo'))
-        {
+        if (!$this->upload->do_upload('logo')) {
             print_r($this->upload->display_errors());
             die;
-        }
-        else
-        {
+        } else {
             $upload_data = $this->upload->data();
             $data['image_url'] = $file_name = $upload_data['file_name'];
         }
@@ -82,7 +79,7 @@ class Recruitments_model extends CI_Model
     public function addSched()
     {
         $slots = null;
-        if($this->input->post('slots') !== null){
+        if ($this->input->post('slots') !== null) {
             $slots = $this->input->post('slots');
         }
         $data = array(
@@ -100,18 +97,18 @@ class Recruitments_model extends CI_Model
         $this->db->insert('schedule', $data);
     }
 
-    public function getSched($page,$eventType)
+    public function getSched($page, $eventType)
     {
         $userID = $this->session->userdata['logged_in']['user_id'];
         $userType = $this->session->userdata['logged_in']['userType'];
 
         $compID = $this->db->select('company_id,sched_date,start_time,end_time')
-            -> where('user_id',$userID)
-            ->join('schedule','schedule.sched_id = appointment.sched_id','inner')
+            ->where('user_id', $userID)
+            ->join('schedule', 'schedule.sched_id = appointment.sched_id', 'inner')
             ->get('appointment')->result_array();
 
         $data = array();
-        foreach ($compID as $c){
+        foreach ($compID as $c) {
             $data[] = $c['company_id'];
         }
 
@@ -121,15 +118,15 @@ class Recruitments_model extends CI_Model
         $this->db->join('company', 'company.company_id = schedule.company_id', 'inner');
 
 
-        if($page === 'schedules'){
-            $this->db->where_in('event_type',array('Internship','Employment'));
-            if($userType === 'student'){
-                if(!empty($data)){
-                    $this->db->where_not_in('schedule.company_id',$data);
+        if ($page === 'schedules') {
+            $this->db->where_in('event_type', array('Internship', 'Employment'));
+            if ($userType === 'student') {
+                if (!empty($data)) {
+                    $this->db->where_not_in('schedule.company_id', $data);
                 }
             }
-        }else{
-            $this->db->where_in('event_type',array('Seminar','Orientation'));
+        } else {
+            $this->db->where_in('event_type', array('Seminar', 'Orientation'));
         }
         if ($eventType !== 'All') {
             $this->db->where('event_type', $eventType);
@@ -150,7 +147,7 @@ class Recruitments_model extends CI_Model
     {
         $this->db->select('id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year, first_name,last_name,
         user_id');
-        $this->db->where('status',$status);
+        $this->db->where('status', $status);
         return $this->db->get('user')->result_array();
     }
 
@@ -158,27 +155,29 @@ class Recruitments_model extends CI_Model
     {
         $user_id = $this->session->userdata['logged_in']['user_id'];
 
-        $appointments = $this->db->where('user_id',$user_id)
-            ->join('schedule','schedule.sched_id = appointment.sched_id','left')
+        $appointments = $this->db->where('user_id', $user_id)
+            ->join('schedule', 'schedule.sched_id = appointment.sched_id', 'left')
             ->get('appointment')->result_array();
-        $schedules = $this->db->where('sched_id',$sched_id)->get('schedule')->row();
+        $schedules = $this->db->where('sched_id', $sched_id)->get('schedule')->row();
         $counter = 0;
-        foreach ($appointments as $a){
+        if (!empty($appointments)) {
+            foreach ($appointments as $a) {
             //if appointment and schedule have the same date
-            if($a['appointment_date'] === $schedules->sched_date){
-
-                if($a['start_time'] ===  $schedules->start_time ||
-                    ($a['start_time'] < $schedules->start_time &&
-                        $schedules->end_time < $a['start_time']) ||
-                    ($schedules->start_time < $a['end_time'])
-                ){
-                    $counter++;
+                if ($a['appointment_date'] === $schedules->sched_date) {
+                    if ($a['start_time'] === $schedules->start_time ||
+                        ($a['start_time'] < $schedules->start_time &&
+                            $schedules->end_time < $a['start_time']) ||
+                        ($schedules->start_time < $a['end_time'])
+                    ) {
+                        $counter++;
+                    }
                 }
             }
         }
-        if($counter > 1){
+
+        if ($counter >= 1) {
             return false;
-        }else{
+        } else {
             $data = array(
                 'user_id' => $user_id,
                 'sched_id' => $sched_id,
@@ -223,7 +222,7 @@ class Recruitments_model extends CI_Model
         );
 
         $this->db->set($data);
-        $this->db->where('sched_id',$id);
+        $this->db->where('sched_id', $id);
         $this->db->update('schedule');
     }
 }

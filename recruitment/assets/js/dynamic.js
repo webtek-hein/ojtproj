@@ -195,9 +195,11 @@ $(document).ready(function () {
                    field: 'year',
                    title: 'Year'
                }, {
+                   field: 'id_num',
                    title: 'Action',
                    formatter: function (data) {
-                       return '<button class="btn btn-primary">Accept</button><button class="btn btn-primary">Deny</button>'
+                       return '<button onclick="userAction('+data+',0)" class="btn btn-primary">Accept</button>' +
+                           '<button onclick="userAction('+data+',1)" class="btn btn-primary">Deny</button>'
                    }
                }]
            });
@@ -207,6 +209,7 @@ $(document).ready(function () {
        }
     });
 });
+
 
 //show company Details
 function companyDetails(data, index) {
@@ -387,4 +390,15 @@ function userDetails(data){
     $('#course').html(data.course);
     $('#year').html(data.year);    
 
+}
+
+//user Action
+
+function userAction($user_id,$action) {
+    $.ajax({
+        url: 'Accounts/userAction/'+$user_id+'/'+$action,
+        success: function (result) {
+            location.reload()
+        }
+    })
 }

@@ -35,4 +35,16 @@ class Accounts_model extends CI_Model
             return 0;
         }
     }
+
+    public function userAction($idnum,$action){
+        if($action === '0'){
+            $this->db->set('status','registered');
+            $this->db->where('id_num',$idnum);
+            $this->db->update('user');
+        }else{
+            $this->db->set('status','rejected');
+            $this->db->where('id_num',$idnum);
+            $this->db->update('user');
+        }
+    }
 }

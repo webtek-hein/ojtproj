@@ -42,6 +42,7 @@ class Accounts extends CI_Controller
             redirect('login');
         }
     }
+
     public function logout(){
         // Removing session data
         $sess_array = array(
@@ -51,5 +52,9 @@ class Accounts extends CI_Controller
         $this->session->sess_destroy();
         $data['message_display'] = 'Successfully Logout';
         redirect('login');
+    }
+
+    public function userAction($userID,$action){
+        $this->acc->userAction($userID,$action);
     }
 }
