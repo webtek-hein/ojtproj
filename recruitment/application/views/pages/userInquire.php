@@ -1,5 +1,5 @@
-<section class="content">
-    <div class="container-fluid">
+<section id="service-page" class="pages service-page">
+    <div class="container">
         <div class="row clearfix">
             <div class="col-lg-5">
                 <div class="card">
@@ -19,7 +19,7 @@
                     </div>
                     <div class="body">
                         <div class="body table-responsive">
-                            <textarea rows="20" cols="90"></textarea>
+                            <textarea rows="20" cols="70"></textarea>
                         </div>
                         <button type="button" onclick="">Send</button>
                     </div>

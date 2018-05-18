@@ -1,5 +1,5 @@
-<section class="content">
-    <div class="container-fluid">
+<section id="service-page" class="pages service-page">
+    <div class="container">
         <div class="row clearfix">
             <div class="col-lg-12 ">
                 <div class="card">
@@ -23,7 +23,6 @@
                                     <th data-field="type">Type</th>
                                     <th data-field="slots">Slots</th>
                                     <th data-field="register"></th>
-                                    <th data-field="view"></th>
                                 </tr>
                                 </thead>
                             </table>

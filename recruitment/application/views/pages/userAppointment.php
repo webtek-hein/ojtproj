@@ -1,5 +1,5 @@
-<section class="content">
-    <div class="container-fluid">
+<section id="service-page" class="pages service-page">
+    <div class="container">
         <div class="row clearfix">
             <div class="col-lg-12 ">
                 <div class="card">
