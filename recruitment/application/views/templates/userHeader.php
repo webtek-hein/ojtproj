@@ -66,7 +66,7 @@ Header Section Start
             <!-- logo -->
             <div class="navbar-brand">
                 <a>
-                    <img src="assets/images/logo.png" alt="">
+                    <img src="assets/images/userlogo.png" alt="">
                 </a>
             </div>
             <!-- /logo -->

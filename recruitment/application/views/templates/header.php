@@ -60,7 +60,7 @@ if (isset($this->session->userdata['logged_in'])) {
             <div class="navbar-header">
                 <a class="navbar-brand" href="dashboard">
                     <!-- Logo icon -->
-                    <img src="assets/images/logo.png" alt="homepage" class="dark-logo" />
+                    <img src="assets/images/logo2.png" alt="homepage" class="dark-logo" />
                     <!--End Logo icon -->
                 </a>
             </div>
