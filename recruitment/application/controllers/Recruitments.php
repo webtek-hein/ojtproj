@@ -171,4 +171,8 @@ class Recruitments extends CI_Controller
             echo 'Success to send email';
         }
     }
+
+    public function getEvents(){
+        echo json_encode($this->rec->getEvents());
+    }
 }

@@ -101,23 +101,23 @@
                 <div class="modal-body">
                     <div class="form-group ">
                         <label>Company Name</label>
-                        <input name="company" type="text" class="col-md-11 form-control" required>
+                        <input required name="company" type="text" class="col-md-11 form-control" required>
                     </div>
                     <p class="col-md-12">Address</p>
                     <hr>
                     <div class="form-group">
                         <label class="col-md-3">No</label>
                         <label class="col-md-8">Street</label>
-                        <input type="number" name="add_num" class="col-md-3 form-control" required>
-                        <input type="text" name="street" class="col-md-8 form-control" required>
+                        <input required type="number" name="add_num" class="col-md-3 form-control" required>
+                        <input required type="text" name="street" class="col-md-8 form-control" required>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Municipality/Province</label>
-                        <input type="text" name="province" class="col-md-11 form-control" required>
+                        <input required type="text" name="province" class="col-md-11 form-control" required>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">City</label>
-                        <input type="text" name="city" class="col-md-11 form-control" required>
+                        <input required type="text" name="city" class="col-md-11 form-control" required>
                     </div>
                     <p>Contact Person</p>
                     <hr>
@@ -148,20 +148,20 @@
                     <hr>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" name="email" class="form-control" required>
+                        <input required type="email" name="email" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label>Telephone No.</label>
-                        <input type="text" name="tel" class="form-control" required>
+                        <input required type="text" name="tel" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Mobile No.</label>
-                        <input type="text" name="mobile" class="form-control" required>
+                        <input required type="text" name="mobile" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Alternative Mobile No.</label>
-                        <input type="text" name="alt_mobile" class="form-control" required>
+                        <input required type="text" name="alt_mobile" class="form-control" required>
                     </div>
                     <hr>
                     <div class="form-group">

@@ -36,30 +36,7 @@ Upcoming Events  Start
             <div class="card-block">
                 <h1 class="title wow fadeInDown" data-wow-delay=".3s">Upcoming Events</h1>
                 <div class="table-responsive m-t-40">
-                    <table class="table stylish-table">
-                        <thead>
-                        <tr>
-                            <th>Company</th>
-                            <th colspan="2">Event</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Location</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                        </tr>
-                        <tr>
-                        </tr>
-                        <tr>
-                        </tr>
-                        <tr>
-                        </tr>
-                        <tr>
-                        </tr>
-                        <tr>
-                        </tr>
-                        </tbody>
+                    <table id="events" class="table stylish-table">
                     </table>
                 </div>
             </div>

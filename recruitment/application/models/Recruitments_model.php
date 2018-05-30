@@ -225,4 +225,12 @@ class Recruitments_model extends CI_Model
         $this->db->where('sched_id', $id);
         $this->db->update('schedule');
     }
+
+    public function getEvents(){
+        return $this->db->select('company_name,event_type,sched_date,location')
+            ->join('company','company.company_id = schedule.company_id','inner')
+            ->where('event_type','Seminar')
+            ->order_by('sched_date','ASC')
+            ->get('schedule',5)->result_array();
+    }
 }

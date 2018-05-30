@@ -3,6 +3,7 @@ $(document).ready(function () {
     var $companyTable = $('#companyTable');
     var $scheduleTable = $('#scheduleTable');
     var $eventTable = $('#eventTable');
+    var $dashboardEvents = $('#events');
 
     // company table
     $companyTable.bootstrapTable({
@@ -102,6 +103,7 @@ $(document).ready(function () {
         onClickRow: function (data, row) {
             schedDetails(data);
         },
+
         columns: [{
             field: 'date',
             title: 'Date'
@@ -123,6 +125,32 @@ $(document).ready(function () {
         }, {
             field: 'slots',
             title: 'Slots'
+        }]
+    });
+
+    //dashboard events
+    $dashboardEvents.bootstrapTable({
+        url: 'Recruitments/getEvents',
+        onClickRow: function (data, row) {
+            window.location = 'userSchedulesSeminar';
+        },
+        rowStyle:function rowStyle(row, index) {
+            return {
+                css: {"cursor": "pointer"}
+            };
+        },
+        columns: [{
+            field: 'company_name',
+            title: 'Company'
+        }, {
+            field: 'event_type',
+            title: 'Event'
+        }, {
+            field: 'sched_date',
+            title: 'Date'
+        },  {
+            field: 'location',
+            title: 'Location'
         }]
     });
 
@@ -300,6 +328,7 @@ function archiveCompany(id) {
         success: function (result) {
             $companyTable.bootstrapTable('refresh', {url: 'Recruitments/getCompanies/0'});
             toggleDiv($('#main'), $('#details'));
+            alert('Company has been removed from the list.')
         }
     })
 

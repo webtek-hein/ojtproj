@@ -156,19 +156,19 @@
                             <label class="col-md-8">Date and Time</label>
                             <div class="row">
                                 <div class="col-md-5">
-                                    <input type="date" name="date" class="form-control">
+                                    <input required type="date" name="date" class="form-control">
                                 </div>
                                 <div>
                                     <p>From</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="time" name="start" class="form-control">
+                                    <input required type="time" name="start" class="form-control">
                                 </div>
                                 <div>
                                     <p>TO</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="time" name="end" class="form-control">
+                                    <input required type="time" name="end" class="form-control">
                                 </div>
                             </div>
                             </div>
@@ -178,13 +178,13 @@
                             <label class="col-md-2">Slots</label>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input name="location" type="text" placeholder="Location" class="form-control">
+                                    <input required name="location" type="text" placeholder="Location" class="form-control">
                                 </div>
                                 <div class="col-md-3">
-                                    <input name="room" type="text" placeholder="Room" class="form-control">
+                                    <input required name="room" type="text" placeholder="Room" class="form-control">
                                 </div>
                                 <div class="col-md-2">
-                                    <input name="slots" type="number" class="form-control">
+                                    <input required name="slots" type="number" class="form-control">
                                 </div>
                             </div>
                             </div>
