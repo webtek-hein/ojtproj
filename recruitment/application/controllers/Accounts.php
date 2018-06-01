@@ -57,4 +57,9 @@ class Accounts extends CI_Controller
     public function userAction($userID,$action){
         $this->acc->userAction($userID,$action);
     }
+
+    public function editUser(){
+        $this->acc->editInfo();
+        redirect('user');
+    }
 }

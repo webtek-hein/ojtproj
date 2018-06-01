@@ -47,4 +47,18 @@ class Accounts_model extends CI_Model
             $this->db->update('user');
         }
     }
+
+    public function editInfo(){
+        $data = array(
+            'id_num'=>$this->input->post('idnum'),
+            'first_name'=>$this->input->post('fname'),
+            'last_name'=>$this->input->post('lname'),
+            'user_type'=>$this->input->post('usertype'),
+            'course'=>$this->input->post('course'),
+            'year'=>$this->input->post('year')
+        );
+        $this->db->set($data);
+        $this->db->where('user_id',$this->input->post('user_id'));
+        $this->db->update('user');
+    }
 }

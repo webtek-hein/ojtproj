@@ -132,11 +132,16 @@ $(document).ready(function () {
     $dashboardEvents.bootstrapTable({
         url: 'Recruitments/getEvents',
         onClickRow: function (data, row) {
-            window.location = 'userSchedulesSeminar';
+            var position = $('#position').val();
+            var link = 'userSchedulesSeminar';
+            if(position === 'admin'){
+                link = 'schedules';
+            }
+            window.location = link;
         },
-        rowStyle:function rowStyle(row, index) {
+        rowStyle:function rowStyle() {
             return {
-                css: {"cursor": "pointer"}
+                css: {'cursor':'pointer'}
             };
         },
         columns: [{
@@ -202,7 +207,7 @@ $(document).ready(function () {
     });
     //on change status
     $('#userStatus').change(function () {
-       $status = $(this).val();
+       var $status = $(this).val();
        if($status === 'pending'){
            $userTable.bootstrapTable('destroy');
            $userTable.bootstrapTable({
@@ -227,14 +232,73 @@ $(document).ready(function () {
                    title: 'Action',
                    formatter: function (data) {
                        return '<button onclick="userAction('+data+',0)" class="btn btn-primary">Accept</button>' +
-                           '<button onclick="userAction('+data+',1)" class="btn btn-primary">Deny</button>'
+                           '<button onclick="userAction('+data+',1)" class="btn btn-primary">Deny</button>';
                    }
                }]
            });
 
+       }else if($status === 'registered'){
+           $userTable.bootstrapTable('destroy');
+           $userTable.bootstrapTable({
+               url: 'Recruitments/getUsers/'+$status,
+               onClickRow: function (data, row) {
+                   userDetails(data);
+               },
+               columns: [{
+                   field: 'id_num',
+                   title: 'ID No.'
+               }, {
+                   field: 'name',
+                   title: 'Name'
+               }, {
+                   field: 'user_type',
+                   title: 'User Type'
+               }, {
+                   field: 'course',
+                   title: 'Course'
+               }, {
+                   field: 'year',
+                   title: 'Year'
+               }]
+           });
        }else{
-           $userTable.bootstrapTable('refresh', {url: 'Recruitments/getUsers/'+$status});
+           $userTable.bootstrapTable('destroy');
+           $userTable.bootstrapTable({
+               url: 'Recruitments/getUsers/'+$status,
+               onClickRow: function (data, row) {
+                   archDetails(data);
+               },
+               columns: [{
+                   field: 'id_num',
+                   title: 'ID No.'
+               }, {
+                   field: 'name',
+                   title: 'Name'
+               }, {
+                   field: 'user_type',
+                   title: 'User Type'
+               }, {
+                   field: 'course',
+                   title: 'Course'
+               }, {
+                   field: 'year',
+                   title: 'Year'
+               }]
+           });
        }
+    });
+
+    //archive user
+    $('#archive').click(function () {
+        var id = $('#saveBtn').val();
+        $.ajax({
+            url: 'Recruitments/archiveUser/' + id,
+            success: function () {
+                $userTable.bootstrapTable('refresh', {url: 'Recruitments/getUsers/registered'});
+                toggleDiv($('#main'), $('#details'));
+                alert('User archived.');
+            }
+        });
     });
 });
 
@@ -330,7 +394,7 @@ function archiveCompany(id) {
             toggleDiv($('#main'), $('#details'));
             alert('Company has been removed from the list.')
         }
-    })
+    });
 
 }
 
@@ -413,11 +477,30 @@ function userCompanydetails(data) {
 }
 function userDetails(data){
     toggleDiv($('#details'), $('#main'));
-    $('#name').html(data.name);
-    $('#id_num').html(data.id_num);
-    $('#user_type').html(data.user_type);
-    $('#course').html(data.course);
-    $('#year').html(data.year);    
+    if(data.user_type === 'admin'){
+        $('#userDv').attr('hidden','hidden');
+        $('#yearDv').attr('hidden','hidden');
+    }
+    $('#firstname').val(data.first_name);
+    $('#lastname').val(data.last_name);
+    $('#id_num').val(data.id_num);
+    $('#user_type').val(data.user_type);
+    $('#course').val(data.course);
+    $('#year').val(data.year);
+    $('#saveBtn').val(data.user_id);
+
+}
+
+function archDetails(data){
+    toggleDiv($('#details'), $('#main'));
+
+    $('#firstname').replaceWith('<p>'+data.first_name+'</p>');
+    $('#lastname').replaceWith('<p>'+data.last_name+'</p>');
+    $('#idnum').replaceWith('<p>'+data.id_num+'</p>');
+    $('#user_type').replaceWith('<p>'+data.user_type+'</p>');
+    $('#course').replaceWith('<p>'+data.course+'</p>');
+    $('#year').replaceWith('<p>'+data.year+'</p>');
+    $('#saveBtn').val(data.user_id);
 
 }
 

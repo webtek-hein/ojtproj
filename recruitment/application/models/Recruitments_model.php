@@ -145,8 +145,7 @@ class Recruitments_model extends CI_Model
 
     public function getUser($status)
     {
-        $this->db->select('id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year, first_name,last_name,
-        user_id');
+        $this->db->select('id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year, first_name,last_name,user_id');
         $this->db->where('status', $status);
         return $this->db->get('user')->result_array();
     }
@@ -232,5 +231,10 @@ class Recruitments_model extends CI_Model
             ->where('event_type','Seminar')
             ->order_by('sched_date','ASC')
             ->get('schedule',5)->result_array();
+    }
+    public function archiveUser($id){
+        $this->db->set('status','archived');
+        $this->db->where('user_id',$id);
+        $this->db->update('user');
     }
 }
