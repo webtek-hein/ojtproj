@@ -36,7 +36,7 @@ Upcoming Events  Start
             <div class="card-block">
                 <h1 class="title wow fadeInDown" data-wow-delay=".3s">Upcoming Events</h1>
                 <div class="table-responsive m-t-40">
-                    <input id="position" hidden value="<?=$this->session->userdata['logged_in']['userType']?>">
+                    <input id="position" type="hidden" value="<?=$this->session->userdata['logged_in']['userType']?>">
                     <table id="events" class="table stylish-table">
                     </table>
                 </div>

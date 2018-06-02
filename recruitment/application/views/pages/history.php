@@ -7,19 +7,7 @@
         <div class="card">
             <div class="card-block">
                 <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Activity</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-
-                        </tr>
-                        </tbody>
+                    <table id="historyTBL" class="table">
                     </table>
                 </div>
             </div>

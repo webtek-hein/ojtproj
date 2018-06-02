@@ -205,6 +205,33 @@ $(document).ready(function () {
             title: 'Year'
         }]
     });
+
+    $('#historyTBL').bootstrapTable({
+        url: 'Recruitments/logs',
+        columns: [ {
+            width: '30%',
+            field: 'timestamp',
+            title: 'Timestamp',
+            formatter: function (date) {
+                var date = new Date(date);
+                var options = {
+                    weekday: "long", year: "numeric", month: "short",
+                    day: "numeric", hour: "2-digit", minute: "2-digit"
+                };
+
+                return date.toLocaleTimeString("en-us", options);
+            }
+        }, {
+            width: '50%',
+            field: 'activity',
+            title: 'Activity',
+
+        }, {
+            width: '20%',
+            field: 'name',
+            title: 'User'
+        }]
+    });
     //on change status
     $('#userStatus').change(function () {
        var $status = $(this).val();
@@ -475,6 +502,7 @@ function userCompanydetails(data) {
     }
 
 }
+
 function userDetails(data){
     toggleDiv($('#details'), $('#main'));
     if(data.user_type === 'admin'){

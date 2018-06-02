@@ -178,4 +178,8 @@ class Recruitments extends CI_Controller
     public function archiveUser($id){
         $this->rec->archiveUser($id);
     }
+
+    public function logs(){
+        echo json_encode($this->rec->getLogs());
+    }
 }
