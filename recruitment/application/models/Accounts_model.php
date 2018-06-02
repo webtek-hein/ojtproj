@@ -41,18 +41,29 @@ class Accounts_model extends CI_Model
             $this->db->set('status','registered');
             $this->db->where('id_num',$idnum);
             $this->db->update('user');
+            $this->recordLogs('Accepted user with id number '.$idnum.'.');
         }else{
             $this->db->set('status','rejected');
             $this->db->where('id_num',$idnum);
             $this->db->update('user');
+            $this->recordLogs('Rejected user with id number'.$idnum.'.');
         }
     }
-
+    public function recordLogs($text){
+        $user_id = $this->session->userdata['logged_in']['user_id'];
+        $this->db->insert('logs',array(
+            'activity'=> $text,
+            'user_id'=>$user_id
+        ));
+    }
     public function editInfo(){
+        $fname = $this->input->post('fname');
+        $lname = $this->input->post('lname');
+
         $data = array(
             'id_num'=>$this->input->post('idnum'),
-            'first_name'=>$this->input->post('fname'),
-            'last_name'=>$this->input->post('lname'),
+            'first_name'=>$fname,
+            'last_name'=>$lname,
             'user_type'=>$this->input->post('usertype'),
             'course'=>$this->input->post('course'),
             'year'=>$this->input->post('year')
@@ -60,5 +71,9 @@ class Accounts_model extends CI_Model
         $this->db->set($data);
         $this->db->where('user_id',$this->input->post('user_id'));
         $this->db->update('user');
+
+
+        $this->recordLogs('Updated information of '.$fname.' '.$lname.'.');
+
     }
 }

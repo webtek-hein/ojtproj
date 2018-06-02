@@ -316,7 +316,7 @@ $(document).ready(function () {
     });
 
     //archive user
-    $('#archive').click(function () {
+    $('#archiveUser').click(function () {
         var id = $('#saveBtn').val();
         $.ajax({
             url: 'Recruitments/archiveUser/' + id,
@@ -419,7 +419,7 @@ function archiveCompany(id) {
         success: function (result) {
             $companyTable.bootstrapTable('refresh', {url: 'Recruitments/getCompanies/0'});
             toggleDiv($('#main'), $('#details'));
-            alert('Company has been removed from the list.')
+            alert('Company has been removed from the list.');
         }
     });
 

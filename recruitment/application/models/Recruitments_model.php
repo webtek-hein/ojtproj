@@ -36,8 +36,9 @@ class Recruitments_model extends CI_Model
             $upload_data = $this->upload->data();
             $data['image_url'] = $file_name = $upload_data['file_name'];
         }
-
         $this->db->insert('company', $data);
+        $this->recordLogs('Added '.$company.' as new company.');
+
     }
 
     public function companies($stat)
@@ -50,15 +51,27 @@ class Recruitments_model extends CI_Model
         $query = $this->db->where('status', $status)->get('company')->result_array();
         return $query;
     }
-
+    public function recordLogs($text){
+        $user_id = $this->session->userdata['logged_in']['user_id'];
+        $this->db->insert('logs',array(
+            'activity'=> $text,
+            'user_id'=>$user_id
+        ));
+    }
     public function setCompanyStatus($id)
     {
         $this->db->set('status', 'archived')->where('company_id', $id)->update('company');
+        $company = $this->db->select('company_name')->where('company_id',$id)->get('company')->row()->company_name;
+        $this->recordLogs($company.' has been archived.');
+
     }
 
     public function revertCompanyStatus($id)
     {
         $this->db->set('status', 'registered')->where('company_id', $id)->update('company');
+        $company = $this->db->select('company_name')->where('company_id',$id)->get('company')->row()->company_name;
+
+        $this->recordLogs($company.' has been reverted.');
     }
 
     public function updateComp($id)
@@ -72,7 +85,10 @@ class Recruitments_model extends CI_Model
             'alt_number' => $this->input->post('alt_number'),
             'email' => $this->input->post('email'),
         );
-        var_dump($data);
+        $company = $this->db->select('company_name')->where('company_id',$id)->get('company')->row()->company_name;
+
+        $this->recordLogs('Updated information of '.$company);
+
         return $this->db->update('company', $data, 'company_id=' . $id);
     }
 
@@ -82,10 +98,12 @@ class Recruitments_model extends CI_Model
         if ($this->input->post('slots') !== null) {
             $slots = $this->input->post('slots');
         }
+        $id = $this->input->post('company');
+        $event = $this->input->post('event');
         $data = array(
-            'company_id' => $this->input->post('company'),
+            'company_id' => $id,
             'sched_type' => 'Exam',
-            'event_type' => $this->input->post('event'),
+            'event_type' => $event,
             'sched_date' => $this->input->post('date'),
             'start_time' => $this->input->post('start'),
             'end_time' => $this->input->post('end'),
@@ -94,7 +112,13 @@ class Recruitments_model extends CI_Model
             'slots' => $slots,
             'defaultSlot' => $slots
         );
+
+        $company = $this->db->select('company_name')->where('company_id',$id)->get('company')->row()->company_name;
+
         $this->db->insert('schedule', $data);
+
+        $this->recordLogs('Added exam schedule for '.$event.' under '.$company.'.');
+
     }
 
     public function getSched($page, $eventType)
@@ -223,6 +247,15 @@ class Recruitments_model extends CI_Model
         $this->db->set($data);
         $this->db->where('sched_id', $id);
         $this->db->update('schedule');
+
+        $schedule = $this->db->select('company_name,event_type')
+            ->join('company','company.company_id = schedule.company_id','inner')
+            ->where('sched_id',$id)->get('schedule')->row();
+        $event = $schedule->event_type;
+        $company = $schedule->company_name;
+
+        $this->recordLogs('Updated exam schedule for '.$event.' under '.$company.'.');
+
     }
 
     public function getEvents(){
@@ -236,5 +269,20 @@ class Recruitments_model extends CI_Model
         $this->db->set('status','archived');
         $this->db->where('user_id',$id);
         $this->db->update('user');
+
+        $name = $this->db->select('CONCAT(first_name," ",last_name) as name')
+            ->where('user_id',$id)
+            ->get('user')->row()->name;
+
+
+        $this->recordLogs('Archived user '.$name.'.');
+
     }
+    public function getLogs(){
+        return $this->db->select('logs.*,CONCAT(user.first_name," ",user.last_name) as name')
+            ->join('user','user.user_id = logs.user_id','inner')
+            ->order_by('logs.timestamp','DESC')
+            ->get('logs')->result_array();
+    }
+
 }

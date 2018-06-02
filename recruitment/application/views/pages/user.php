@@ -50,7 +50,7 @@
                         <input type="text" class="form-control" id="year" name="year">
                     </div>
                     <button name='user_id' id="saveBtn" type="submit" class="btn btn-success">Save</button>
-                    <button type="button" id="archive" class="btn btn-danger">Archive</button>
+                    <button type="button" id="archiveUser" class="btn btn-danger">Archive</button>
                     <button id="detailBack" type="button" class="btn btn-info"
                             onclick="toggleDiv($('#main'),$('#details'))">Back
                     </button>
