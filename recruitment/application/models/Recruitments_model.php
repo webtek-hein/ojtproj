@@ -137,7 +137,7 @@ class Recruitments_model extends CI_Model
         }
 
 
-        $this->db->select('appointment.user_id,company_name,schedule.*,');
+        $this->db->select('appointment.user_id,company_name,schedule.*');
         $this->db->join('appointment', 'appointment.sched_id = schedule.sched_id', 'left');
         $this->db->join('company', 'company.company_id = schedule.company_id', 'inner');
 
@@ -152,9 +152,17 @@ class Recruitments_model extends CI_Model
         } else {
             $this->db->where_in('event_type', array('Seminar', 'Orientation'));
         }
-        if ($eventType !== 'All') {
+        if ($eventType !== 'All' && $eventType !== 'DONE') {
             $this->db->where('event_type', $eventType);
         }
+        if($eventType !== 'DONE'){
+            $this->db->where('sched_date >=','date(NOW())',FALSE)
+                ->where('start_time >=','time(NOW())',FALSE);
+        }else{
+            $this->db->where('sched_date <','date(NOW())',FALSE)
+                ->where('end_time <','time(NOW())',FALSE);
+        }
+
         $this->db->group_by('schedule.sched_id,appointment.user_id');
         return $this->db->get('schedule')->result_array();
     }
@@ -163,14 +171,20 @@ class Recruitments_model extends CI_Model
     {
         $this->db->select('sched_id,id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year,appointment_date');
         $this->db->join('user', 'user.user_id = appointment.user_id');
-        $this->db->where('appointment.sched_id', $id);
+        $this->db->where('appointment.sched_id', $id)
+            ->where('sched_date >=','date(NOW())',FALSE)
+            ->where('start_time >=','time(NOW())',FALSE);
         return $this->db->get('appointment')->result_array();
     }
 
     public function getUser($status)
     {
         $this->db->select('id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year, first_name,last_name,user_id');
-        $this->db->where('status', $status);
+        if($status === 'registered'){
+            $this->db->where_in('status', array('alumni','registered'));
+        }else{
+            $this->db->where('status', $status);
+        }
         return $this->db->get('user')->result_array();
     }
 
@@ -216,7 +230,7 @@ class Recruitments_model extends CI_Model
         }
     }
 
-    public function appoitnmentPerUser()
+    public function appoitnmentPerUser($status)
     {
         $user_id = $this->session->userdata['logged_in']['user_id'];
 
@@ -224,6 +238,14 @@ class Recruitments_model extends CI_Model
         $this->db->join('schedule', 'schedule.sched_id = appointment.sched_id', 'inner');
         $this->db->join('company', 'company.company_id = schedule.company_id', 'inner');
         $this->db->where('appointment.user_id', $user_id);
+        if($status === 'ongoing'){
+            $this->db->where('sched_date >=','date(NOW())',FALSE)
+                ->where('start_time >=','time(NOW())',FALSE);
+        }else{
+            $this->db->where('sched_date <','date(NOW())',FALSE)
+                ->where('start_time <','time(NOW())',FALSE);
+        }
+
         return $this->db->get('appointment')->result_array();
 
     }
@@ -262,9 +284,12 @@ class Recruitments_model extends CI_Model
         return $this->db->select('company_name,event_type,sched_date,location')
             ->join('company','company.company_id = schedule.company_id','inner')
             ->where('event_type','Seminar')
+            ->where('sched_date >=','date(NOW())',FALSE)
+            ->where('start_time >=','time(NOW())',FALSE)
             ->order_by('sched_date','ASC')
             ->get('schedule',5)->result_array();
     }
+
     public function archiveUser($id){
         $this->db->set('status','archived');
         $this->db->where('user_id',$id);
@@ -278,11 +303,40 @@ class Recruitments_model extends CI_Model
         $this->recordLogs('Archived user '.$name.'.');
 
     }
+
     public function getLogs(){
         return $this->db->select('logs.*,CONCAT(user.first_name," ",user.last_name) as name')
             ->join('user','user.user_id = logs.user_id','inner')
             ->order_by('logs.timestamp','DESC')
             ->get('logs')->result_array();
+    }
+
+    public function message(){
+        $message = $this->input->post('message');
+        $to = $this->input->post('to');
+        $senderID = $this->session->userdata['logged_in']['user_id'];
+
+        $query = $this->db->select('user_id')->where('email',$to)->where('user_type','admin')->get('user');
+        if($query->num_rows() === 1){
+            $userID = $query->row()->user_id;
+            $this->db->insert('messages',array('message'=>$message,'senderID'=>$senderID,'userID'=>$userID));
+            if($this->db->insert_id()){
+                return array('success-message'=>'Message Sent');
+            }else{
+                return array('failed-message'=>'Message Sent');
+            }
+        }else{
+            return array('err-message'=>'Email not registered or email is not an admin.');
+        }
+    }
+
+    public function viewMsg(){
+        return $this->db
+            ->select('messages.*,CONCAT(user.first_name," ",user.last_name) as name')
+            ->join('user','user.user_id = messages.userID')
+            ->where('userID',$this->session->userdata['logged_in']['user_id'])
+            ->get('messages')
+            ->result_array();
     }
 
 }

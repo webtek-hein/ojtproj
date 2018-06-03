@@ -43,6 +43,11 @@ class Accounts_model extends CI_Model
             $this->db->where('id_num',$idnum);
             $this->db->update('user');
             $this->recordLogs('Accepted user with id number '.$idnum.'.');
+        }else if($action === '2'){
+            $this->db->set('status','alumni');
+            $this->db->where('id_num',$idnum);
+            $this->db->update('user');
+            $this->recordLogs('Reverted user with id number '.$idnum.'.');
         }else{
             $this->db->set('status','rejected');
             $this->db->where('id_num',$idnum);

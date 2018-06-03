@@ -179,7 +179,7 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                         <div class="col-md-6 text-center">
-                            <button type="submit" class="btn btn-success">Submit</button>
+                            <button id="companySub" type="submit" class="btn btn-success">Submit</button>
                         </div>
 
                     </div>
