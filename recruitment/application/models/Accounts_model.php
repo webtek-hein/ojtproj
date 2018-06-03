@@ -26,7 +26,8 @@ class Accounts_model extends CI_Model
         $password = $this->input->post('password');
 
         $this->db->where('id_num', $username);
-        $this->db->where('password', $password);
+        $this->db->where('password', $password)
+        ->where_in('status',array('registered','alumni'));
         $query = $this->db->get('user')->row();
 
         if (isset($query)) {

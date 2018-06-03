@@ -14,6 +14,7 @@
                     <option value="All">All</option>
                     <option value="Seminar">Seminar</option>
                     <option value="Orientation">Orientation</option>
+                    <option value="DONE">Done</option>
                 </select>
                 <div class="table-responsive">
                     <table id="eventTable" data-search="true">

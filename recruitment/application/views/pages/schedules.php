@@ -14,6 +14,7 @@
                     <option value="All">All</option>
                     <option value="Internship">Internship</option>
                     <option value="Employment">Employment</option>
+                    <option value="DONE">Done</option>
                 </select>
                 <div class="table-responsive">
                     <table id="scheduleTable" data-search="true">

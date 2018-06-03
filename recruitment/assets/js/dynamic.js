@@ -159,6 +159,29 @@ $(document).ready(function () {
         }]
     });
 
+    //messages
+    $('#messages').bootstrapTable({
+        url: 'Recruitments/viewMessages',
+        onClickRow: function (data, row) {
+
+        },
+        rowStyle:function rowStyle() {
+            return {
+                css: {'cursor':'pointer'}
+            };
+        },
+        columns: [{
+            field: 'timestamp',
+            title: 'Timestamp'
+        }, {
+            field: 'message',
+            title: 'Message'
+        }, {
+            field: 'name',
+            title: 'From'
+        }]
+    });
+
 
     //company options
     //on change options
@@ -232,6 +255,7 @@ $(document).ready(function () {
             title: 'User'
         }]
     });
+
     //on change status
     $('#userStatus').change(function () {
        var $status = $(this).val();

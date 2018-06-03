@@ -43,17 +43,6 @@ class Accounts extends CI_Controller
         }
     }
 
-    public function logout(){
-        // Removing session data
-        $sess_array = array(
-            'username' => ''
-        );
-        $this->session->unset_userdata('logged_in', $sess_array);
-        $this->session->sess_destroy();
-        $data['message_display'] = 'Successfully Logout';
-        redirect('login');
-    }
-
     public function userAction($userID,$action){
         $this->acc->userAction($userID,$action);
     }
@@ -61,5 +50,20 @@ class Accounts extends CI_Controller
     public function editUser(){
         $this->acc->editInfo();
         redirect('user');
+    }
+    /**
+     * Destroy session of a logged-in user
+     * then will be redirected to the
+     * login page.
+     */
+    public function logout()
+    {
+        $sess_array = array(
+            'username' => ''
+        );
+        $this->session->unset_userdata('logged_in', $sess_array);
+        $this->session->sess_destroy();
+        $data['message_display'] = 'Successfully Logout';
+        redirect('login');
     }
 }

@@ -6,11 +6,7 @@
     <div class="col-sm-12">
         <div class="card">
             <div class="card-block">
-                <tbody>
-                <tr>
-
-                </tr>
-                </tbody>
+                <table id="messages" class="table">
                 </table>
             </div>
         </div>
