@@ -4,14 +4,14 @@
             <div class="col-lg-12 ">
                 <div class="card">
                     <div class="header">
-                        <h2 class="text-center">Ongoing Appointments</h2>
+                        <h2 class="text-center">Finished Appointments</h2>
                     </div>
                     <div class="body">
                         <div class="body table-responsive">
                             <table class="table table-bordered table-striped table-hover"
                                    data-toggle="table"
                                    data-search="true"
-                                   data-url="Recruitments/getAppointmentPerUser/ongoing"
+                                   data-url="Recruitments/getAppointmentPerUser/finished"
                                    data-pagination="true">
                                 <thead>
                                 <tr>

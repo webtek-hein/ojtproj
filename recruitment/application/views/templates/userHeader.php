@@ -78,7 +78,13 @@ Header Section Start
                     <li>
                         <a href="dashboard" >Home</a>
                     </li>
-                    <li><a href="userAppointment">Appointments</a></li>
+                    <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#">Appointments<span class="caret"></span></a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="userAppointment">Ongoing</a></li>
+                                <li><a href="finAppointments">Finished</a></li>
+                            </ul>
+                        </div></li>
                     <li><a href="userCompanies">Companies</a></li>
                     <li><a href="userInquire">Inquire</a></li>
                     <li class="dropdown">
@@ -100,7 +106,6 @@ Header Section Start
                         </a>
                         <div class="dropdown-menu">
                             <ul>
-                                <li><a href="blog-fullwidth.html">Settings</a></li>
                                 <li><a href="Accounts/logout">Logout</a></li>
                             </ul>
                         </div>
