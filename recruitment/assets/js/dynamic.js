@@ -1,4 +1,23 @@
 $(document).ready(function () {
+    //validate file size
+    $('#companySub').click(function () {
+        var file = $('input[name=logo]');
+
+        //check whether browser fully supports all File API
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            //get the file size and file type from file input field
+            var fsize = file[0].files[0].size;
+
+            if (fsize > 1048576) //do something if file size more than 1 mb (1048576)
+            {
+                alert('File size too big.');
+                file.replaceWith(file.val('').clone(true));
+            }
+
+        } else {
+            alert('Upload not supported.');
+        }
+    });
     //Company Table
     var $companyTable = $('#companyTable');
     var $scheduleTable = $('#scheduleTable');
@@ -8,11 +27,13 @@ $(document).ready(function () {
     // company table
     $companyTable.bootstrapTable({
         url: 'Recruitments/getCompanies/0',
+        showExport: true,
+        exportTypes: ['pdf','excel'],
         onClickRow: function (data, row) {
             index = row.data('index');
             companyDetails(data, index);
         },
-        rowStyle:function rowStyle(row, index) {
+        rowStyle: function rowStyle(row, index) {
             return {
                 css: {"cursor": "pointer"}
             };
@@ -20,7 +41,7 @@ $(document).ready(function () {
         columns: [{
             formatter: function (row, data) {
                 console.log();
-                return '<img src="./uploads/'+data.image_url+'" height="42" width="42"></img>';
+                return '<img src="./uploads/' + data.image_url + '" height="42" width="42"></img>';
             },
             field: 'logo',
             title: '',
@@ -40,14 +61,14 @@ $(document).ready(function () {
         onClickRow: function (data, row) {
             userCompanydetails(data);
         },
-        rowStyle:function rowStyle(row, index) {
+        rowStyle: function rowStyle(row, index) {
             return {
                 css: {"cursor": "pointer"}
             };
         },
         columns: [{
             formatter: function (row, data) {
-                return '<img src="./uploads/'+data.image_url+'" height="42" width="42"></img>';
+                return '<img src="./uploads/' + data.image_url + '" height="42" width="42"></img>';
             },
             field: 'logo',
             title: '',
@@ -134,14 +155,14 @@ $(document).ready(function () {
         onClickRow: function (data, row) {
             var position = $('#position').val();
             var link = 'userSchedulesSeminar';
-            if(position === 'admin'){
+            if (position === 'admin') {
                 link = 'schedules';
             }
             window.location = link;
         },
-        rowStyle:function rowStyle() {
+        rowStyle: function rowStyle() {
             return {
-                css: {'cursor':'pointer'}
+                css: {'cursor': 'pointer'}
             };
         },
         columns: [{
@@ -153,7 +174,7 @@ $(document).ready(function () {
         }, {
             field: 'sched_date',
             title: 'Date'
-        },  {
+        }, {
             field: 'location',
             title: 'Location'
         }]
@@ -165,9 +186,9 @@ $(document).ready(function () {
         onClickRow: function (data, row) {
 
         },
-        rowStyle:function rowStyle() {
+        rowStyle: function rowStyle() {
             return {
-                css: {'cursor':'pointer'}
+                css: {'cursor': 'pointer'}
             };
         },
         columns: [{
@@ -231,7 +252,8 @@ $(document).ready(function () {
 
     $('#historyTBL').bootstrapTable({
         url: 'Recruitments/logs',
-        columns: [ {
+        pagination: true,
+        columns: [{
             width: '30%',
             field: 'timestamp',
             title: 'Timestamp',
@@ -258,85 +280,87 @@ $(document).ready(function () {
 
     //on change status
     $('#userStatus').change(function () {
-       var $status = $(this).val();
-       if($status === 'pending'){
-           $userTable.bootstrapTable('destroy');
-           $userTable.bootstrapTable({
-               url: 'Recruitments/getUsers/'+$status,
-               columns: [{
-                   field: 'id_num',
-                   title: 'ID No.'
-               }, {
-                   field: 'name',
-                   title: 'Name'
-               }, {
-                   field: 'user_type',
-                   title: 'User Type'
-               }, {
-                   field: 'course',
-                   title: 'Course'
-               }, {
-                   field: 'year',
-                   title: 'Year'
-               }, {
-                   field: 'id_num',
-                   title: 'Action',
-                   formatter: function (data) {
-                       return '<button onclick="userAction('+data+',0)" class="btn btn-primary">Accept</button>' +
-                           '<button onclick="userAction('+data+',1)" class="btn btn-primary">Deny</button>';
-                   }
-               }]
-           });
+        var $status = $(this).val();
+        if ($status === 'pending') {
+            $userTable.bootstrapTable('destroy');
+            $userTable.bootstrapTable({
+                url: 'Recruitments/getUsers/' + $status,
+                columns: [{
+                    field: 'id_num',
+                    title: 'ID No.'
+                }, {
+                    field: 'name',
+                    title: 'Name'
+                }, {
+                    field: 'user_type',
+                    title: 'User Type'
+                }, {
+                    field: 'course',
+                    title: 'Course'
+                }, {
+                    field: 'year',
+                    title: 'Year'
+                }, {
+                    field: 'id_num',
+                    title: 'Action',
+                    formatter: function (data) {
+                        return '<button onclick="userAction(' + data + ',0)" class="btn btn-primary">Accept</button>' +
+                            '<button onclick="userAction(' + data + ',1)" class="btn btn-primary">Deny</button>';
+                    }
+                }]
+            });
 
-       }else if($status === 'registered'){
-           $userTable.bootstrapTable('destroy');
-           $userTable.bootstrapTable({
-               url: 'Recruitments/getUsers/'+$status,
-               onClickRow: function (data, row) {
-                   userDetails(data);
-               },
-               columns: [{
-                   field: 'id_num',
-                   title: 'ID No.'
-               }, {
-                   field: 'name',
-                   title: 'Name'
-               }, {
-                   field: 'user_type',
-                   title: 'User Type'
-               }, {
-                   field: 'course',
-                   title: 'Course'
-               }, {
-                   field: 'year',
-                   title: 'Year'
-               }]
-           });
-       }else{
-           $userTable.bootstrapTable('destroy');
-           $userTable.bootstrapTable({
-               url: 'Recruitments/getUsers/'+$status,
-               onClickRow: function (data, row) {
-                   archDetails(data);
-               },
-               columns: [{
-                   field: 'id_num',
-                   title: 'ID No.'
-               }, {
-                   field: 'name',
-                   title: 'Name'
-               }, {
-                   field: 'user_type',
-                   title: 'User Type'
-               }, {
-                   field: 'course',
-                   title: 'Course'
-               }, {
-                   field: 'year',
-                   title: 'Year'
-               }]
-           });
-       }
+        } else if ($status === 'registered') {
+            $userTable.bootstrapTable('destroy');
+            $userTable.bootstrapTable({
+                url: 'Recruitments/getUsers/' + $status,
+                onClickRow: function (data, row) {
+                    userDetails(data);
+                },
+                columns: [{
+                    field: 'id_num',
+                    title: 'ID No.'
+                }, {
+                    field: 'name',
+                    title: 'Name'
+                }, {
+                    field: 'user_type',
+                    title: 'User Type'
+                }, {
+                    field: 'course',
+                    title: 'Course'
+                }, {
+                    field: 'year',
+                    title: 'Year'
+                }]
+            });
+        } else if ($status === 'archived') {
+            $userTable.bootstrapTable('destroy');
+            $userTable.bootstrapTable({
+                url: 'Recruitments/getUsers/' + $status,
+                columns: [{
+                    field: 'id_num',
+                    title: 'ID No.'
+                }, {
+                    field: 'name',
+                    title: 'Name'
+                }, {
+                    field: 'user_type',
+                    title: 'User Type'
+                }, {
+                    field: 'course',
+                    title: 'Course'
+                }, {
+                    field: 'year',
+                    title: 'Year'
+                }, {
+                    field: 'id_num',
+                    title: 'Action',
+                    formatter: function (data) {
+                        return '<button onclick="userAction(' + data + ',2)" class="btn btn-success">Revert</button>';
+                    }}]
+            });
+        }
     });
 
     //archive user
@@ -373,23 +397,25 @@ function companyDetails(data, index) {
     toggleDiv($('#details'), $('#main'));
     //assign dynamic data
     $('#company_name').html(data.company_name);
-    $('#companyImage').attr('src','./uploads/'+data.image_url);
+    $('#companyImage').attr('src', './uploads/' + data.image_url);
     $('#address').html(data.address);
     $('#contact_person').html(data.contact_person);
     $('#mobile_num').html(data.mobile_num);
     $('#tel').html(data.tel_num);
     $('#alt_number').html(data.alt_number);
     $('#email').html(data.email);
-    if(data.about !== null){
+    if (data.about !== null) {
         $('#desc').html(data.about);
-    }else{
+    } else {
         $('#desc').html('<button onclick="addDesc()" class="btn btn-primary">Add description</button>');
     }
 }
+
 //add description
 function addDesc() {
     alert('test');
 }
+
 //show schedule details
 function schedDetails(data) {
     toggleDiv($('#details'), $('#main'));
@@ -499,15 +525,15 @@ function saveCompanyInfo(id, index) {
 }
 
 //appointment 
-function appointmentAction($sched_id,$action) {
+function appointmentAction($sched_id, $action) {
     $.ajax({
-        url: 'Recruitments/userAppointments/'+ $sched_id +'/'+ $action,
+        url: 'Recruitments/userAppointments/' + $sched_id + '/' + $action,
         success: function (result) {
-           if(result === 'false'){
-               alert('There is a conflict in your time. Please choose a different schedule.');
-           }else{
-               location.reload();
-           }
+            if (result === 'false') {
+                alert('There is a conflict in your time. Please choose a different schedule.');
+            } else {
+                location.reload();
+            }
         }
     })
 }
@@ -515,23 +541,23 @@ function appointmentAction($sched_id,$action) {
 //view company
 function userCompanydetails(data) {
     $('#info').removeAttr('hidden');
-    $('#noComp').attr('hidden','hidden');
+    $('#noComp').attr('hidden', 'hidden');
     $('#address').html(data.address);
     $('#contact').html(data.mobile_num);
-    $('#companyImage').attr('src','./uploads/'+data.image_url);
-    if(data.about !== null){
+    $('#companyImage').attr('src', './uploads/' + data.image_url);
+    if (data.about !== null) {
         $('#aboutUs').html(data.about);
-    }else{
+    } else {
         $('#aboutUs').html('No description.');
     }
 
 }
 
-function userDetails(data){
+function userDetails(data) {
     toggleDiv($('#details'), $('#main'));
-    if(data.user_type === 'admin'){
-        $('#userDv').attr('hidden','hidden');
-        $('#yearDv').attr('hidden','hidden');
+    if (data.user_type === 'admin') {
+        $('#userDv').attr('hidden', 'hidden');
+        $('#yearDv').attr('hidden', 'hidden');
     }
     $('#firstname').val(data.first_name);
     $('#lastname').val(data.last_name);
@@ -543,26 +569,58 @@ function userDetails(data){
 
 }
 
-function archDetails(data){
-    toggleDiv($('#details'), $('#main'));
-
-    $('#firstname').replaceWith('<p>'+data.first_name+'</p>');
-    $('#lastname').replaceWith('<p>'+data.last_name+'</p>');
-    $('#idnum').replaceWith('<p>'+data.id_num+'</p>');
-    $('#user_type').replaceWith('<p>'+data.user_type+'</p>');
-    $('#course').replaceWith('<p>'+data.course+'</p>');
-    $('#year').replaceWith('<p>'+data.year+'</p>');
-    $('#saveBtn').val(data.user_id);
-
-}
 
 //user Action
-
-function userAction($user_id,$action) {
+function userAction($user_id, $action) {
     $.ajax({
-        url: 'Accounts/userAction/'+$user_id+'/'+$action,
+        url: 'Accounts/userAction/' + $user_id + '/' + $action,
         success: function (result) {
-            location.reload()
+            if($action === 0){
+                $('#usersTable').bootstrapTable('refresh', {url: 'Recruitments/getUsers/pending'});
+            }else if($action === 2){
+                $('#usersTable').bootstrapTable('refresh', {url: 'Recruitments/getUsers/archived'});
+            }else {
+                $('#usersTable').bootstrapTable('refresh', {url: 'Recruitments/getUsers/registered'});
+            }
         }
-    })
+    });
+}
+
+function printToPDF() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
+    dateCreated = '<p>Date Created: ' + mm + '/' + dd + '/' + yyyy + '</p>';
+
+
+    $('#appointments').bootstrapTable('togglePagination');
+    var printContents = $('#nav-registered').find('.fixed-table-body').html();
+    var company = $('#company').text();
+    var eventType = $('#eventType').text();
+    var date = $('#date').val();
+    var time = $('#time').val();
+    var location = $('#location').val();
+    var room = $('#room').val();
+
+    dateTime = '<p class="col-12">Date and Time: ' + date +' : '+time+'</p>';
+    locactionAndRoom = '<p class="col-12">Location and Room: ' + location +' : '+room+'</p>';
+
+
+    document.body.innerHTML = '<div class="text-center"><h2>List of Registered Users on '+company+' '+eventType+
+        '</h2></div><div class="row">' + locactionAndRoom + dateTime + '</div>' + printContents + '<footer class="fixed-bottom">'+dateCreated+'</footer>';
+
+
+    window.print();
+    window.location.reload(true);
 }

@@ -103,6 +103,7 @@
                         <div class="tab-pane fade" id="nav-registered"
                              role="tabpanel" aria-labelledby="nav-registered-tab" aria-expanded="false">
                             <div class="table-responsive">
+                                <button onclick="printToPDF()" class="btn btn-success">Print</button>
                                 <table id="appointments" data-search="true">
                                 </table>
                             </div>

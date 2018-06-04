@@ -37,6 +37,11 @@
 <script src="assets/js/custom.min.js"></script>
 <!--Bootstrap Table Javascript-->
 <script src="assets/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="assets/plugins/tableExport.js"></script>
+<script src="assets/plugins/jspdf/jspdf.js"></script>
+<script src="assets/plugins/jspdf/libs/sprintf.js"></script>
+<script src="assets/plugins/jspdf/libs/base64.js"></script>
+
 <!--Dynamic Data-->
 <script src="assets/js/dynamic.js"></script>
 

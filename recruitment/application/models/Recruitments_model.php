@@ -37,7 +37,7 @@ class Recruitments_model extends CI_Model
             $data['image_url'] = $file_name = $upload_data['file_name'];
         }
         $this->db->insert('company', $data);
-        $this->recordLogs('Added '.$company.' as new company.');
+        $this->recordLogs('Added ' . $company . ' as new company.');
 
     }
 
@@ -51,27 +51,30 @@ class Recruitments_model extends CI_Model
         $query = $this->db->where('status', $status)->get('company')->result_array();
         return $query;
     }
-    public function recordLogs($text){
+
+    public function recordLogs($text)
+    {
         $user_id = $this->session->userdata['logged_in']['user_id'];
-        $this->db->insert('logs',array(
-            'activity'=> $text,
-            'user_id'=>$user_id
+        $this->db->insert('logs', array(
+            'activity' => $text,
+            'user_id' => $user_id
         ));
     }
+
     public function setCompanyStatus($id)
     {
         $this->db->set('status', 'archived')->where('company_id', $id)->update('company');
-        $company = $this->db->select('company_name')->where('company_id',$id)->get('company')->row()->company_name;
-        $this->recordLogs($company.' has been archived.');
+        $company = $this->db->select('company_name')->where('company_id', $id)->get('company')->row()->company_name;
+        $this->recordLogs($company . ' has been archived.');
 
     }
 
     public function revertCompanyStatus($id)
     {
         $this->db->set('status', 'registered')->where('company_id', $id)->update('company');
-        $company = $this->db->select('company_name')->where('company_id',$id)->get('company')->row()->company_name;
+        $company = $this->db->select('company_name')->where('company_id', $id)->get('company')->row()->company_name;
 
-        $this->recordLogs($company.' has been reverted.');
+        $this->recordLogs($company . ' has been reverted.');
     }
 
     public function updateComp($id)
@@ -85,9 +88,9 @@ class Recruitments_model extends CI_Model
             'alt_number' => $this->input->post('alt_number'),
             'email' => $this->input->post('email'),
         );
-        $company = $this->db->select('company_name')->where('company_id',$id)->get('company')->row()->company_name;
+        $company = $this->db->select('company_name')->where('company_id', $id)->get('company')->row()->company_name;
 
-        $this->recordLogs('Updated information of '.$company);
+        $this->recordLogs('Updated information of ' . $company);
 
         return $this->db->update('company', $data, 'company_id=' . $id);
     }
@@ -113,11 +116,11 @@ class Recruitments_model extends CI_Model
             'defaultSlot' => $slots
         );
 
-        $company = $this->db->select('company_name')->where('company_id',$id)->get('company')->row()->company_name;
+        $company = $this->db->select('company_name')->where('company_id', $id)->get('company')->row()->company_name;
 
         $this->db->insert('schedule', $data);
 
-        $this->recordLogs('Added exam schedule for '.$event.' under '.$company.'.');
+        $this->recordLogs('Added exam schedule for ' . $event . ' under ' . $company . '.');
 
     }
 
@@ -155,12 +158,12 @@ class Recruitments_model extends CI_Model
         if ($eventType !== 'All' && $eventType !== 'DONE') {
             $this->db->where('event_type', $eventType);
         }
-        if($eventType !== 'DONE'){
-            $this->db->where('sched_date >=','date(NOW())',FALSE)
-                ->where('start_time >=','time(NOW())',FALSE);
-        }else{
-            $this->db->where('sched_date <','date(NOW())',FALSE)
-                ->where('end_time <','time(NOW())',FALSE);
+        if ($eventType !== 'DONE') {
+            $this->db->where('sched_date >=', 'date(NOW())', FALSE)
+                ->where('start_time >=', 'time(NOW())', FALSE);
+        } else {
+            $this->db->where('sched_date <', 'date(NOW())', FALSE)
+                ->where('end_time <', 'time(NOW())', FALSE);
         }
 
         $this->db->group_by('schedule.sched_id,appointment.user_id');
@@ -169,20 +172,20 @@ class Recruitments_model extends CI_Model
 
     public function appointments($id)
     {
-        $this->db->select('sched_id,id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year,appointment_date');
+        $this->db->select('appointment.sched_id,id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year,appointment_date');
         $this->db->join('user', 'user.user_id = appointment.user_id');
-        $this->db->where('appointment.sched_id', $id)
-            ->where('sched_date >=','date(NOW())',FALSE)
-            ->where('start_time >=','time(NOW())',FALSE);
+        $this->db->where('appointment.sched_id', $id);
+//            ->where('sched_date >=', 'date(NOW())', FALSE)
+//            ->where('start_time >=', 'time(NOW())', FALSE);
         return $this->db->get('appointment')->result_array();
     }
 
     public function getUser($status)
     {
         $this->db->select('id_num,CONCAT(first_name," ",last_name) as name,user_type,course,year, first_name,last_name,user_id');
-        if($status === 'registered'){
-            $this->db->where_in('status', array('alumni','registered'));
-        }else{
+        if ($status === 'registered') {
+            $this->db->where_in('status', array('alumni', 'registered'));
+        } else {
             $this->db->where('status', $status);
         }
         return $this->db->get('user')->result_array();
@@ -199,8 +202,8 @@ class Recruitments_model extends CI_Model
         $counter = 0;
         if (!empty($appointments)) {
             foreach ($appointments as $a) {
-            //if appointment and schedule have the same date
-                if ($a['appointment_date'] === $schedules->sched_date) {
+                //if appointment and schedule have the same date
+                if ($a['sched_date'] === $schedules->sched_date) {
                     if ($a['start_time'] === $schedules->start_time ||
                         ($a['start_time'] < $schedules->start_time &&
                             $schedules->end_time < $a['start_time']) ||
@@ -238,12 +241,12 @@ class Recruitments_model extends CI_Model
         $this->db->join('schedule', 'schedule.sched_id = appointment.sched_id', 'inner');
         $this->db->join('company', 'company.company_id = schedule.company_id', 'inner');
         $this->db->where('appointment.user_id', $user_id);
-        if($status === 'ongoing'){
-            $this->db->where('sched_date >=','date(NOW())',FALSE)
-                ->where('start_time >=','time(NOW())',FALSE);
-        }else{
-            $this->db->where('sched_date <','date(NOW())',FALSE)
-                ->where('start_time <','time(NOW())',FALSE);
+        if ($status === 'ongoing') {
+            $this->db->where('sched_date >=', 'date(NOW())', FALSE)
+                ->where('start_time >=', 'time(NOW())', FALSE);
+        } else {
+            $this->db->where('sched_date <', 'date(NOW())', FALSE)
+                ->where('start_time <', 'time(NOW())', FALSE);
         }
 
         return $this->db->get('appointment')->result_array();
@@ -271,70 +274,75 @@ class Recruitments_model extends CI_Model
         $this->db->update('schedule');
 
         $schedule = $this->db->select('company_name,event_type')
-            ->join('company','company.company_id = schedule.company_id','inner')
-            ->where('sched_id',$id)->get('schedule')->row();
+            ->join('company', 'company.company_id = schedule.company_id', 'inner')
+            ->where('sched_id', $id)->get('schedule')->row();
         $event = $schedule->event_type;
         $company = $schedule->company_name;
 
-        $this->recordLogs('Updated exam schedule for '.$event.' under '.$company.'.');
+        $this->recordLogs('Updated exam schedule for ' . $event . ' under ' . $company . '.');
 
     }
 
-    public function getEvents(){
+    public function getEvents()
+    {
         return $this->db->select('company_name,event_type,sched_date,location')
-            ->join('company','company.company_id = schedule.company_id','inner')
-            ->where('event_type','Seminar')
-            ->where('sched_date >=','date(NOW())',FALSE)
-            ->where('start_time >=','time(NOW())',FALSE)
-            ->order_by('sched_date','ASC')
-            ->get('schedule',5)->result_array();
+            ->join('company', 'company.company_id = schedule.company_id', 'inner')
+            ->where('event_type', 'Seminar')
+            ->where('sched_date >=', 'date(NOW())', FALSE)
+            ->where('start_time >=', 'time(NOW())', FALSE)
+            ->order_by('sched_date', 'ASC')
+            ->get('schedule', 5)->result_array();
     }
 
-    public function archiveUser($id){
-        $this->db->set('status','archived');
-        $this->db->where('user_id',$id);
+    public function archiveUser($id)
+    {
+        $this->db->set('status', 'archived');
+        $this->db->where('user_id', $id);
         $this->db->update('user');
 
         $name = $this->db->select('CONCAT(first_name," ",last_name) as name')
-            ->where('user_id',$id)
+            ->where('user_id', $id)
             ->get('user')->row()->name;
 
 
-        $this->recordLogs('Archived user '.$name.'.');
+        $this->recordLogs('Archived user ' . $name . '.');
 
     }
 
-    public function getLogs(){
+    public function getLogs()
+    {
         return $this->db->select('logs.*,CONCAT(user.first_name," ",user.last_name) as name')
-            ->join('user','user.user_id = logs.user_id','inner')
-            ->order_by('logs.timestamp','DESC')
+            ->join('user', 'user.user_id = logs.user_id', 'inner')
+            ->order_by('logs.timestamp', 'DESC')
             ->get('logs')->result_array();
     }
 
-    public function message(){
+    public function message()
+    {
         $message = $this->input->post('message');
         $to = $this->input->post('to');
         $senderID = $this->session->userdata['logged_in']['user_id'];
 
-        $query = $this->db->select('user_id')->where('email',$to)->where('user_type','admin')->get('user');
-        if($query->num_rows() === 1){
+        $query = $this->db->select('user_id')->where('email', $to)->where('user_type', 'admin')->get('user');
+        if ($query->num_rows() === 1) {
             $userID = $query->row()->user_id;
-            $this->db->insert('messages',array('message'=>$message,'senderID'=>$senderID,'userID'=>$userID));
-            if($this->db->insert_id()){
-                return array('success-message'=>'Message Sent');
-            }else{
-                return array('failed-message'=>'Message Sent');
+            $this->db->insert('messages', array('message' => $message, 'senderID' => $senderID, 'userID' => $userID));
+            if ($this->db->insert_id()) {
+                return array('success-message' => 'Message Sent');
+            } else {
+                return array('failed-message' => 'Message Sent');
             }
-        }else{
-            return array('err-message'=>'Email not registered or email is not an admin.');
+        } else {
+            return array('err-message' => 'Email not registered or email is not an admin.');
         }
     }
 
-    public function viewMsg(){
+    public function viewMsg()
+    {
         return $this->db
             ->select('messages.*,CONCAT(user.first_name," ",user.last_name) as name')
-            ->join('user','user.user_id = messages.userID')
-            ->where('userID',$this->session->userdata['logged_in']['user_id'])
+            ->join('user', 'user.user_id = messages.userID')
+            ->where('userID', $this->session->userdata['logged_in']['user_id'])
             ->get('messages')
             ->result_array();
     }
