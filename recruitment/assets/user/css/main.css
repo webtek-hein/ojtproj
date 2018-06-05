@@ -67,7 +67,7 @@ a:hover {
   padding: 140px 0;
 }
 .navbar-default .navbar-nav > li > a:hover {
-  color: #02bdd5;
+  color: #2246d6;
 }
 .navbar.navbar-default {
   border: 0;
@@ -123,7 +123,7 @@ a:hover {
   text-transform: uppercase;
 }
 #top-bar .main-menu li a:hover {
-  color: #02bdd5;
+  color: #2246d6;
 }
 .navbar-custom .nav li > a {
   position: relative;
@@ -978,7 +978,7 @@ article {
   font-size: 15px;
 }
 .sidebar .recent-post ul li a:hover {
-  color: #02bdd5;
+  color: #2246d6;
 }
 .sidebar .recent-post time {
   font-weight: 300;

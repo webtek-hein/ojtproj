@@ -13,7 +13,7 @@
 
 </head>
 
-<body>
+<body style="background-image: url('assets/images/bg-05.jpg');">
 
 
 <div class="container">
@@ -30,31 +30,31 @@
             </div>
             <div class="input-group input-group-icon">
                 <input name="id" type="text" placeholder="Id Number"/>
-                <div class="input-icon"><i class="fa-credit-card"></i></div>
+                <div class="input-icon"><i class="fa fa-credit-card"></i></div>
             </div>
             <div class="input-group input-group-icon">
                 <input name="email" type="email" placeholder="Email Address"/>
-                <div class="input-icon"><i class="fa-envelope"></i></div>
+                <div class="input-icon"><i class="fa fa-envelope"></i></div>
             </div>
             <div class="input-group input-group-icon">
                 <input name="password" type="password" placeholder="Password"/>
-                <div class="input-icon"><i class="fa fa-key"></i></div>
+                <div class="input-icon"><i class="fa fa fa-key"></i></div>
             </div>
             <div class="input-group input-group-icon">
                 <input name="contact" type="text" placeholder="Contact No."/>
-                <div class="input-icon"><i class="fa-mobile"></i></div>
+                <div class="input-icon"><i class="fa fa-mobile"></i></div>
             </div>
             <div class="input-group input-group-icon">
                 <input name="contact" type="text" placeholder="Alternative Contact No."/>
-                <div class="input-icon"><i class="fa-mobile"></i></div>
+                <div class="input-icon"><i class="fa fa-mobile"></i></div>
             </div>
             <div class="input-group input-group-icon">
                 <input name="course" type="text" placeholder="Course"/>
-                <div class="input-icon"><i class="fa-mortar-board"></i></div>
+                <div class="input-icon"><i class="fa fa-mortar-board"></i></div>
             </div>
             <div class="input-group input-group-icon">
                 <input name="year" placeholder="Year"/>
-                <div class="input-icon"><i class="fa-mortar-board"></i></div>
+                <div class="input-icon"><i class="fa fa-mortar-board"></i></div>
             </div>
             <div class="input-group">
                 <input type="radio" name="usertype" value="student" id="gender-male"/>
@@ -71,7 +71,7 @@
             </div>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-success">Sign Up</button>
+            <button type="submit" class="btn btn-success btn-lg">Sign Up</button>
         </div>
     </form>
 </div>

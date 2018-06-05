@@ -9,6 +9,11 @@ body {
   font-size: 15px;
   color: #b9b9b9;
   background-color: #e3e3e3;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;  
 }
 h4 {
   color: #2246d6;
@@ -22,7 +27,7 @@ select {
   padding: 1em;
   line-height: 1.4;
   background-color: #f9f9f9;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #2246d6;
   border-radius: 3px;
   -webkit-transition: 0.35s ease-in-out;
   -moz-transition: 0.35s ease-in-out;
@@ -210,4 +215,22 @@ select option {
     width: 100%;
     padding-right: 0;
   }
+}
+button {
+background: #2246d6;
+color: #fff;
+border: 1px solid #eee;
+border-radius: 20px;
+box-shadow: 5px 5px 5px #eee;
+text-shadow:none;
+margin-left: 40%;
+}
+
+button:hover {
+background: #a3a4a8;
+color: #fff;
+border: 1px solid #eee;
+border-radius: 20px;
+box-shadow: 5px 5px 5px #eee;
+text-shadow:none;
 }
