@@ -124,15 +124,15 @@
                     <div class="row form-group">
                         <div class="col-md-3">
                             <label class="col-md-0">First Name</label>
-                            <input type="text" name="contact_firstname" class="form-control" required>
+                            <input type="text" name="contact_firstname" class="form-control">
                         </div>
                         <div class="col-md-3">
                             <label class="col-md-0">Last Name</label>
-                            <input type="text" name="contact_lastname" class="form-control" required>
+                            <input type="text" name="contact_lastname" class="form-control">
                         </div>
                         <div class="col-md-3">
                             <label class="col-md-0">Middle Name</label>
-                            <input type="text" name="contact_middlename" class="form-control" required>
+                            <input type="text" name="contact_middlename" class="form-control">
                         </div>
                         <div class="col-md-2">
                         <label class="col-md-2">Suffix</label>
@@ -153,7 +153,7 @@
 
                     <div class="form-group">
                         <label>Telephone No.</label>
-                        <input required type="text" name="tel" class="form-control" required>
+                        <input type="text" name="tel" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Mobile No.</label>
@@ -161,7 +161,7 @@
                     </div>
                     <div class="form-group">
                         <label>Alternative Mobile No.</label>
-                        <input required type="text" name="alt_mobile" class="form-control" required>
+                        <input type="text" name="alt_mobile" class="form-control">
                     </div>
                     <hr>
                     <div class="form-group">
