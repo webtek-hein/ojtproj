@@ -134,6 +134,7 @@ class Recruitments_model extends CI_Model
             ->join('schedule', 'schedule.sched_id = appointment.sched_id', 'inner')
             ->get('appointment')->result_array();
 
+
         $data = array();
         foreach ($compID as $c) {
             $data[] = $c['company_id'];
@@ -145,29 +146,43 @@ class Recruitments_model extends CI_Model
         $this->db->join('company', 'company.company_id = schedule.company_id', 'inner');
 
 
-        if ($page === 'schedules') {
-            $this->db->where_in('event_type', array('Internship', 'Employment'));
-            if ($userType === 'student') {
-                if (!empty($data)) {
-                    $this->db->where_not_in('schedule.company_id', $data);
-                }
-            }
-        } else {
-            $this->db->where_in('event_type', array('Seminar', 'Orientation'));
-        }
         if ($eventType !== 'All' && $eventType !== 'DONE') {
+
             $this->db->where('event_type', $eventType);
+        } else {
+            if ($page === 'schedules') {
+                $this->db->where_in('event_type', array('Internship', 'Employment'));
+                if ($userType === 'student') {
+                    if (!empty($data)) {
+                        $this->db->where_not_in('schedule.company_id', $data);
+                    }
+                }
+            } else {
+                $this->db->where_in('event_type', array('Seminar', 'Orientation'));
+            }
         }
         if ($eventType !== 'DONE') {
-            $this->db->where('sched_date >=', 'date(NOW())', FALSE)
-                ->where('start_time >=', 'time(NOW())', FALSE);
+            $this->db->group_start();
+            $this->db->group_start()
+                ->or_where('sched_date', 'date(NOW())', FALSE)
+                ->where('start_time >', 'CURRENT_TIME()', FALSE);
+            $this->db->group_end();
+            $this->db->or_where('sched_date >', 'date(NOW())', FALSE);
+            $this->db->group_end();
         } else {
-            $this->db->where('sched_date <', 'date(NOW())', FALSE)
-                ->where('end_time <', 'time(NOW())', FALSE);
+            $this->db->group_start();
+            $this->db->group_start()
+                ->where('sched_date', 'date(NOW())', FALSE)
+                ->where('end_time >', 'CURRENT_TIME()', FALSE);
+            $this->db->group_end();
+            $this->db->or_where('sched_date <', 'date(NOW())', FALSE);
+            $this->db->group_end();
         }
 
         $this->db->group_by('schedule.sched_id,appointment.user_id');
-        return $this->db->get('schedule')->result_array();
+        return $this->db
+            ->get('schedule')
+            ->result_array();
     }
 
     public function appointments($id)
