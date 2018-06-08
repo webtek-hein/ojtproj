@@ -56,11 +56,13 @@ class Recruitments extends CI_Controller
         $data = [];
         foreach ($list as $schedule) {
             $time =  date('h:i A', strtotime($schedule['start_time'])) . '-' . date('h:i A', strtotime($schedule['end_time']));
+            $date = strtotime($schedule['sched_date']);
+            $newDate = date('F d Y', $date);
             if ($userType !== 'admin') {
                 if ($user_id !== $schedule['user_id']) {
                     $data[] = array(
                         'sched_id' => $schedule['sched_id'],
-                        'date' => $schedule['sched_date'],
+                        'date' => $newDate,
                         'time' => $time,
                         'location' => $schedule['location'],
                         'room' => $schedule['room'],
@@ -76,7 +78,7 @@ class Recruitments extends CI_Controller
             } else {
                 $data[] = array(
                     'sched_id' => $schedule['sched_id'],
-                    'date' => $schedule['sched_date'],
+                    'date' => $newDate,
                     'time' => $time,
                     'location' => $schedule['location'],
                     'room' => $schedule['room'],
