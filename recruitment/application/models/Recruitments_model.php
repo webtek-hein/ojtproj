@@ -173,7 +173,7 @@ class Recruitments_model extends CI_Model
             $this->db->group_start();
             $this->db->group_start()
                 ->where('sched_date', 'date(NOW())', FALSE)
-                ->where('end_time >', 'CURRENT_TIME()', FALSE);
+                ->where('end_time <', 'CURRENT_TIME()', FALSE);
             $this->db->group_end();
             $this->db->or_where('sched_date <', 'date(NOW())', FALSE);
             $this->db->group_end();
