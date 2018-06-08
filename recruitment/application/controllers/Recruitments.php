@@ -55,7 +55,7 @@ class Recruitments extends CI_Controller
 
         $data = [];
         foreach ($list as $schedule) {
-            $time = $schedule['start_time'] . '-' . $schedule['end_time'];
+            $time =  date('h:i A', strtotime($schedule['start_time'])) . '-' . date('h:i A', strtotime($schedule['end_time']));
             if ($userType !== 'admin') {
                 if ($user_id !== $schedule['user_id']) {
                     $data[] = array(
@@ -114,10 +114,12 @@ class Recruitments extends CI_Controller
         $list = $this->rec->appoitnmentPerUser($status);
         $data = array();
         foreach ($list as $schedule) {
-            $time = $schedule['start_time'] . '-' . $schedule['end_time'];
+            $time =  date('h:i A', strtotime($schedule['start_time'])) . '-' . date('h:i A', strtotime($schedule['end_time']));
+            $date = strtotime($schedule['sched_date']);
+            $newDate = date('F d Y', $date);
             $data[] = array(
                 'sched_id' => $schedule['sched_id'],
-                'date' => $schedule['sched_date'],
+                'date' => $newDate,
                 'time' => $time,
                 'location' => $schedule['location'],
                 'room' => $schedule['room'],

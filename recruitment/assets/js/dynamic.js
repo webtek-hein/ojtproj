@@ -96,10 +96,25 @@ $(document).ready(function () {
         },
         columns: [{
             field: 'date',
-            title: 'Date'
+            title: 'Date',
+            formatter: function (data) {
+                date = new Date(data);
+                var monthNames = [
+                    "January", "February", "March",
+                    "April", "May", "June", "July",
+                    "August", "September", "October",
+                    "November", "December"
+                ];
+
+                var day = date.getDate();
+                var monthIndex = date.getMonth();
+                var year = date.getFullYear();
+
+                return monthNames[monthIndex] +  ' ' + day  +  ' ' + year;
+            }
         }, {
             field: 'time',
-            title: 'Time'
+            title: 'Time',
         }, {
             field: 'location',
             title: 'Location'
@@ -173,7 +188,22 @@ $(document).ready(function () {
             title: 'Event'
         }, {
             field: 'sched_date',
-            title: 'Date'
+            title: 'Date',
+            formatter: function (data) {
+                date = new Date(data);
+                var monthNames = [
+                    "January", "February", "March",
+                    "April", "May", "June", "July",
+                    "August", "September", "October",
+                    "November", "December"
+                ];
+
+                var day = date.getDate();
+                var monthIndex = date.getMonth();
+                var year = date.getFullYear();
+
+                return monthNames[monthIndex] +  ' ' + day  +  ' ' + year;
+            }
         }, {
             field: 'location',
             title: 'Location'
@@ -376,6 +406,10 @@ $(document).ready(function () {
         });
     });
 });
+
+function formatTime(data){
+
+}
 
 
 //show company Details
