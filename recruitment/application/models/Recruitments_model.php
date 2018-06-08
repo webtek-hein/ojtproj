@@ -257,11 +257,21 @@ class Recruitments_model extends CI_Model
         $this->db->join('company', 'company.company_id = schedule.company_id', 'inner');
         $this->db->where('appointment.user_id', $user_id);
         if ($status === 'ongoing') {
-            $this->db->where('sched_date >=', 'date(NOW())', FALSE)
-                ->where('start_time >=', 'time(NOW())', FALSE);
+            $this->db->group_start();
+            $this->db->group_start()
+                ->or_where('sched_date', 'date(NOW())', FALSE)
+                ->where('start_time >', 'CURRENT_TIME()', FALSE);
+            $this->db->group_end();
+            $this->db->or_where('sched_date >', 'date(NOW())', FALSE);
+            $this->db->group_end();
         } else {
-            $this->db->where('sched_date <', 'date(NOW())', FALSE)
-                ->where('start_time <', 'time(NOW())', FALSE);
+            $this->db->group_start();
+            $this->db->group_start()
+                ->where('sched_date', 'date(NOW())', FALSE)
+                ->where('end_time <', 'CURRENT_TIME()', FALSE);
+            $this->db->group_end();
+            $this->db->or_where('sched_date <', 'date(NOW())', FALSE);
+            $this->db->group_end();
         }
 
         return $this->db->get('appointment')->result_array();
@@ -303,10 +313,16 @@ class Recruitments_model extends CI_Model
         return $this->db->select('company_name,event_type,sched_date,location')
             ->join('company', 'company.company_id = schedule.company_id', 'inner')
             ->where('event_type', 'Seminar')
-            ->where('sched_date >=', 'date(NOW())', FALSE)
-            ->where('start_time >=', 'time(NOW())', FALSE)
+           ->group_start()
+            ->group_start()
+                ->or_where('sched_date', 'date(NOW())', FALSE)
+                ->where('start_time >', 'CURRENT_TIME()', FALSE)
+            ->group_end()
+            ->or_where('sched_date >', 'date(NOW())', FALSE)
+            ->group_end()
             ->order_by('sched_date', 'ASC')
             ->get('schedule', 5)->result_array();
+
     }
 
     public function archiveUser($id)
