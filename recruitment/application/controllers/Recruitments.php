@@ -186,11 +186,18 @@ class Recruitments extends CI_Controller
     public function logs(){
         echo json_encode($this->rec->getLogs());
     }
+
     public function inquire(){
         $this->session->set_flashdata($this->rec->message());
         redirect('userInquire');
     }
+
     public function viewMessages(){
         echo json_encode($this->rec->viewMsg());
     }
+
+    public function validateSched(){
+        echo json_encode($this->rec->valSched());
+    }
+
 }

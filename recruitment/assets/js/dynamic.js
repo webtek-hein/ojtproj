@@ -28,7 +28,7 @@ $(document).ready(function () {
     $companyTable.bootstrapTable({
         url: 'Recruitments/getCompanies/0',
         showExport: true,
-        exportTypes: ['pdf','excel'],
+        exportTypes: ['pdf', 'excel'],
         onClickRow: function (data, row) {
             index = row.data('index');
             companyDetails(data, index);
@@ -110,7 +110,7 @@ $(document).ready(function () {
                 var monthIndex = date.getMonth();
                 var year = date.getFullYear();
 
-                return monthNames[monthIndex] +  ' ' + day  +  ' ' + year;
+                return monthNames[monthIndex] + ' ' + day + ' ' + year;
             }
         }, {
             field: 'time',
@@ -202,7 +202,7 @@ $(document).ready(function () {
                 var monthIndex = date.getMonth();
                 var year = date.getFullYear();
 
-                return monthNames[monthIndex] +  ' ' + day  +  ' ' + year;
+                return monthNames[monthIndex] + ' ' + day + ' ' + year;
             }
         }, {
             field: 'location',
@@ -388,7 +388,8 @@ $(document).ready(function () {
                     title: 'Action',
                     formatter: function (data) {
                         return '<button onclick="userAction(' + data + ',2)" class="btn btn-success">Revert</button>';
-                    }}]
+                    }
+                }]
             });
         }
     });
@@ -405,9 +406,61 @@ $(document).ready(function () {
             }
         });
     });
+
+
+    $('#addSchedule').on('show.bs.modal', function () {
+        var dates = [];
+        var index;
+        var indexes = [];
+        var i = -1;
+        var date = $('#schedDate');
+        var startTime = $('#start_time');
+        var endTime = $('#end_time');
+        var loc = $('#loc');
+        var r = $('#r');
+        var counter = 0;
+        $.ajax({
+            url: 'Recruitments/validateSched',
+            dataType: 'JSON',
+            success: function (result) {
+                result.forEach(function (list) {
+                    dates.push(list.sched_date);
+                });
+                $('.valSched').on('submit', function () {
+                    while ((i = dates.indexOf(date.val(), i + 1)) != -1) {
+                        indexes.push(i);
+                    }
+                    indexes.forEach(function (ind) {
+                        console.log('i:'+ind);
+                        if (loc.val() === result[ind].location && r.val() === result[ind].room) {
+                            if (startTime.val() === result[ind].start_time) {
+                                counter++;
+                            } else if (startTime.val() < result[ind].start_time) {
+                                if (endTime.val() > result[ind].start_time) {
+                                    counter++;
+                                }
+                            }else if(startTime.val()> result[ind].start_time){
+                                if(endTime.val() <= result[ind].end_time){
+                                    counter++;
+                                }
+                            }
+                        }
+                    });
+                    if(counter > 0){
+                        console.log(counter);
+                        alert('There is a conflict in the schedule. Please change the time or location.');
+                        counter = 0;
+                        return false;
+                    }
+                });
+            }
+        });
+    })
+
+
 });
 
-function formatTime(data){
+function formatTime(data) {
 
 }
 
@@ -609,11 +662,11 @@ function userAction($user_id, $action) {
     $.ajax({
         url: 'Accounts/userAction/' + $user_id + '/' + $action,
         success: function (result) {
-            if($action === 0){
+            if ($action === 0) {
                 $('#usersTable').bootstrapTable('refresh', {url: 'Recruitments/getUsers/pending'});
-            }else if($action === 2){
+            } else if ($action === 2) {
                 $('#usersTable').bootstrapTable('refresh', {url: 'Recruitments/getUsers/archived'});
-            }else {
+            } else {
                 $('#usersTable').bootstrapTable('refresh', {url: 'Recruitments/getUsers/registered'});
             }
         }
@@ -647,14 +700,18 @@ function printToPDF() {
     var location = $('#location').val();
     var room = $('#room').val();
 
-    dateTime = '<p class="col-12">Date and Time: ' + date +' : '+time+'</p>';
-    locactionAndRoom = '<p class="col-12">Location and Room: ' + location +' : '+room+'</p>';
+    dateTime = '<p class="col-12">Date and Time: ' + date + ' : ' + time + '</p>';
+    locactionAndRoom = '<p class="col-12">Location and Room: ' + location + ' : ' + room + '</p>';
 
 
-    document.body.innerHTML = '<div class="text-center"><h2>List of Registered Users on '+company+' '+eventType+
-        '</h2></div><div class="row">' + locactionAndRoom + dateTime + '</div>' + printContents + '<footer class="fixed-bottom">'+dateCreated+'</footer>';
+    document.body.innerHTML = '<div class="text-center"><h2>List of Registered Users on ' + company + ' ' + eventType +
+        '</h2></div><div class="row">' + locactionAndRoom + dateTime + '</div>' + printContents + '<footer class="fixed-bottom">' + dateCreated + '</footer>';
 
 
     window.print();
     window.location.reload(true);
+}
+
+function checkSchecule() {
+    alert('');
 }

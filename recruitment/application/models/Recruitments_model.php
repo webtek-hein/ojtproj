@@ -378,4 +378,8 @@ class Recruitments_model extends CI_Model
             ->result_array();
     }
 
+    public function valSched(){
+        return $this->db->get('schedule')->result_array();
+    }
+
 }

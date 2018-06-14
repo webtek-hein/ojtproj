@@ -124,7 +124,7 @@
 <!-- ============================================================== -->
     <div id="addSchedule" class="modal fade col-lg-12" role="dialog">
         <div class="modal-dialog modal-lg">
-            <form method="POST" action="Recruitments/addSchedule/schedules">
+            <form class="valSched" method="POST" action="Recruitments/addSchedule/schedules">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -156,19 +156,19 @@
                             <label class="col-md-8">Date and Time</label>
                             <div class="row">
                                 <div class="col-md-5">
-                                    <input required type="date" name="date" class="form-control">
+                                    <input required type="date" name="date" id="schedDate" class="form-control">
                                 </div>
                                 <div>
                                     <p>From</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <input required type="time" name="start" class="form-control">
+                                    <input required type="time" name="start" id="start_time" class="form-control">
                                 </div>
                                 <div>
                                     <p>TO</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <input required type="time" name="end" class="form-control">
+                                    <input required type="time" name="end" id="end_time" class="form-control">
                                 </div>
                             </div>
                             </div>
@@ -178,10 +178,10 @@
                             <label class="col-md-2">Slots</label>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input required name="location" type="text" placeholder="Location" class="form-control">
+                                    <input required name="location" id="loc" type="text" placeholder="Location" class="form-control">
                                 </div>
                                 <div class="col-md-3">
-                                    <input required name="room" type="text" placeholder="Room" class="form-control">
+                                    <input required name="room" id="r" type="text" placeholder="Room" class="form-control">
                                 </div>
                                 <div class="col-md-2">
                                     <input required min="0" name="slots" type="number" class="form-control">
