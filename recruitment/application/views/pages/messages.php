@@ -6,7 +6,7 @@
     <div id="msgtbl" class="col-sm-12">
         <div class="card">
             <div class="card-block">
-                <table id="messages" class="table">
+                <table id="messages" class="table table-no-bordered">
                 </table>
             </div>
         </div>

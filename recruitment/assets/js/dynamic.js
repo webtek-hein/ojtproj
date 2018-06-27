@@ -233,12 +233,13 @@ $(document).ready(function () {
                 css: {'cursor': 'pointer'}
             };
         },
-        columns: [{
-            field: 'timestamp',
-            title: 'Timestamp'
-        }, {
+        columns: [ {
             field: 'name',
             title: 'Sender'
+        },{
+            width: '20%',
+            field: 'timestamp',
+            title: ''
         }]
     });
 
