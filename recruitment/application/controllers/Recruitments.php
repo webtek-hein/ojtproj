@@ -200,4 +200,11 @@ class Recruitments extends CI_Controller
         echo json_encode($this->rec->valSched());
     }
 
+    public function newUsers(){
+        echo json_encode($this->rec->pendingUsers());
+    }
+    public function newMsgs(){
+        echo json_encode($this->rec->messages());
+    }
+
 }

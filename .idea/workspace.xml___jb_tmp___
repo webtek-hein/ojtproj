@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09e281c4-03b3-4036-b8d0-c0f993b364f6" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recruitment/application/views/pages/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/views/pages/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recruitment/application/views/pages/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/views/pages/messages.php" afterDir="false" />
@@ -20,24 +22,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dynamic.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dynamic.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recruitment/assets/js/dynamic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="220" column="47" selection-start-line="220" selection-start-column="47" selection-end-line="220" selection-end-column="47" />
+            <state relative-caret-position="85">
+              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
               <folding>
-                <element signature="e#4810#6139#0" expanded="true" />
-                <element signature="e#4892#5125#0" expanded="true" />
-                <element signature="e#5165#5255#0" expanded="true" />
-                <element signature="e#5186#5244#0" expanded="true" />
-                <element signature="e#6329#6419#0" expanded="true" />
-                <element signature="e#6438#6652#0" expanded="true" />
-                <element signature="e#6439#6513#0" expanded="true" />
-                <element signature="e#6587#6651#0" expanded="true" />
-                <element signature="e#12370#14319#0" expanded="true" />
-                <element signature="e#12671#14311#0" expanded="true" />
-                <element signature="e#12789#14301#0" expanded="true" />
-                <element signature="e#12965#14285#0" expanded="true" />
+                <element signature="e#85#86#0" expanded="true" />
+                <element signature="e#103#104#0" expanded="true" />
+                <element signature="e#187#188#0" expanded="true" />
+                <element signature="e#226#227#0" expanded="true" />
+                <element signature="e#6189#6786#0" expanded="true" />
+                <element signature="e#6274#6487#0" expanded="true" />
                 <element signature="n#formatTime#0" expanded="true" />
                 <element signature="n#!!block;n#archiveCompany#0" expanded="true" />
                 <element signature="n#!!block;n#appointmentAction#0" expanded="true" />
@@ -49,36 +45,22 @@
       <file leaf-file-name="messages.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/messages.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="136">
               <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+            <state relative-caret-position="323">
+              <caret line="36" column="42" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="42" />
               <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#section#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-                <element signature="n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-                <element signature="e#2384#2387#0#PHP" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,8 +69,8 @@
       <file leaf-file-name="Recruitments.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="194" column="25" selection-start-line="194" selection-start-column="20" selection-end-line="194" selection-end-column="25" />
+            <state relative-caret-position="374">
+              <caret line="205" column="27" selection-start-line="205" selection-start-column="20" selection-end-line="205" selection-end-column="27" />
               <folding>
                 <element signature="n#getSchedule#0;n#Recruitments#0;n#!!top" expanded="true" />
                 <element signature="n#userAppointments#0;n#Recruitments#0;n#!!top" expanded="true" />
@@ -96,6 +78,8 @@
                 <element signature="n#editSchedule#0;n#Recruitments#0;n#!!top" expanded="true" />
                 <element signature="n#getEvents#0;n#Recruitments#0;n#!!top" expanded="true" />
                 <element signature="n#validateSched#0;n#Recruitments#0;n#!!top" expanded="true" />
+                <element signature="n#newUsers#0;n#Recruitments#0;n#!!top" expanded="true" />
+                <element signature="n#newUsers#1;n#Recruitments#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,15 +88,17 @@
       <file leaf-file-name="Recruitments_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="373" column="38" selection-start-line="373" selection-start-column="38" selection-end-line="373" selection-end-column="38" />
+            <state relative-caret-position="459">
+              <caret line="387" column="101" selection-start-line="387" selection-start-column="97" selection-end-line="387" selection-end-column="101" />
               <folding>
                 <element signature="n#companies#0;n#Recruitments_model#0;n#!!top" expanded="true" />
                 <element signature="n#getSched#0;n#Recruitments_model#0;n#!!top" expanded="true" />
                 <element signature="n#register#0;n#Recruitments_model#0;n#!!top" expanded="true" />
                 <element signature="n#appoitnmentPerUser#0;n#Recruitments_model#0;n#!!top" expanded="true" />
                 <element signature="n#getEvents#0;n#Recruitments_model#0;n#!!top" expanded="true" />
+                <element signature="n#viewMsg#0;n#Recruitments_model#0;n#!!top" expanded="true" />
                 <element signature="n#valSched#0;n#Recruitments_model#0;n#!!top" expanded="true" />
+                <element signature="n#pendingUsers#0;n#Recruitments_model#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,13 +148,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php" />
         <option value="$PROJECT_DIR$/recruitment/application/views/pages/schedules.php" />
         <option value="$PROJECT_DIR$/recruitment/application/views/pages/events.php" />
-        <option value="$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php" />
-        <option value="$PROJECT_DIR$/recruitment/assets/js/dynamic.js" />
         <option value="$PROJECT_DIR$/recruitment/application/views/pages/messages.php" />
         <option value="$PROJECT_DIR$/recruitment/application/views/pages/dashboard.php" />
+        <option value="$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php" />
+        <option value="$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php" />
+        <option value="$PROJECT_DIR$/recruitment/assets/js/dynamic.js" />
       </list>
     </option>
   </component>
@@ -254,6 +240,7 @@
       <workItem from="1528416668520" duration="5189000" />
       <workItem from="1528898079902" duration="12429000" />
       <workItem from="1530097749323" duration="3940000" />
+      <workItem from="1530109266799" duration="1785000" />
     </task>
     <task id="LOCAL-00001" summary="Add Company Modal">
       <created>1523029155703</created>
@@ -434,24 +421,24 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21637000" />
+    <option name="totallyTimeSpent" value="23422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20121029" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.204236" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3288364" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.31045753" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.31045753" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32352942" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -465,19 +452,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18305598" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3288364" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3297546" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="12" />
@@ -836,49 +823,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="42" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/messages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/models/Recruitments_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="373" column="38" selection-start-line="373" selection-start-column="38" selection-end-line="373" selection-end-column="38" />
+        <state relative-caret-position="459">
+          <caret line="387" column="101" selection-start-line="387" selection-start-column="97" selection-end-line="387" selection-end-column="101" />
           <folding>
             <element signature="n#companies#0;n#Recruitments_model#0;n#!!top" expanded="true" />
             <element signature="n#getSched#0;n#Recruitments_model#0;n#!!top" expanded="true" />
             <element signature="n#register#0;n#Recruitments_model#0;n#!!top" expanded="true" />
             <element signature="n#appoitnmentPerUser#0;n#Recruitments_model#0;n#!!top" expanded="true" />
             <element signature="n#getEvents#0;n#Recruitments_model#0;n#!!top" expanded="true" />
+            <element signature="n#viewMsg#0;n#Recruitments_model#0;n#!!top" expanded="true" />
             <element signature="n#valSched#0;n#Recruitments_model#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/assets/js/dynamic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="220" column="47" selection-start-line="220" selection-start-column="47" selection-end-line="220" selection-end-column="47" />
-          <folding>
-            <element signature="e#4810#6139#0" expanded="true" />
-            <element signature="e#4892#5125#0" expanded="true" />
-            <element signature="e#5165#5255#0" expanded="true" />
-            <element signature="e#5186#5244#0" expanded="true" />
-            <element signature="e#6329#6419#0" expanded="true" />
-            <element signature="e#6438#6652#0" expanded="true" />
-            <element signature="e#6439#6513#0" expanded="true" />
-            <element signature="e#6587#6651#0" expanded="true" />
-            <element signature="e#12370#14319#0" expanded="true" />
-            <element signature="e#12671#14311#0" expanded="true" />
-            <element signature="e#12789#14301#0" expanded="true" />
-            <element signature="e#12965#14285#0" expanded="true" />
-            <element signature="n#formatTime#0" expanded="true" />
-            <element signature="n#!!block;n#archiveCompany#0" expanded="true" />
-            <element signature="n#!!block;n#appointmentAction#0" expanded="true" />
+            <element signature="n#pendingUsers#0;n#Recruitments_model#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recruitment/application/controllers/Recruitments.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="194" column="25" selection-start-line="194" selection-start-column="20" selection-end-line="194" selection-end-column="25" />
+        <state relative-caret-position="374">
+          <caret line="205" column="27" selection-start-line="205" selection-start-column="20" selection-end-line="205" selection-end-column="27" />
           <folding>
             <element signature="n#getSchedule#0;n#Recruitments#0;n#!!top" expanded="true" />
             <element signature="n#userAppointments#0;n#Recruitments#0;n#!!top" expanded="true" />
@@ -886,40 +871,26 @@
             <element signature="n#editSchedule#0;n#Recruitments#0;n#!!top" expanded="true" />
             <element signature="n#getEvents#0;n#Recruitments#0;n#!!top" expanded="true" />
             <element signature="n#validateSched#0;n#Recruitments#0;n#!!top" expanded="true" />
+            <element signature="n#newUsers#0;n#Recruitments#0;n#!!top" expanded="true" />
+            <element signature="n#newUsers#1;n#Recruitments#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/messages.php">
+    <entry file="file://$PROJECT_DIR$/recruitment/assets/js/dynamic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        <state relative-caret-position="85">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#p#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recruitment/application/views/pages/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#section#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#!!top" expanded="true" />
-            <element signature="e#2384#2387#0#PHP" expanded="true" />
+            <element signature="e#85#86#0" expanded="true" />
+            <element signature="e#103#104#0" expanded="true" />
+            <element signature="e#187#188#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#6189#6786#0" expanded="true" />
+            <element signature="e#6274#6487#0" expanded="true" />
+            <element signature="n#formatTime#0" expanded="true" />
+            <element signature="n#!!block;n#archiveCompany#0" expanded="true" />
+            <element signature="n#!!block;n#appointmentAction#0" expanded="true" />
           </folding>
         </state>
       </provider>
