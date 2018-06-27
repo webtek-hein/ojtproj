@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    $.getJSON('Recruitments/newUsers', function(data){
+        $('#newUsr').html(data);
+    });
+
+    $.getJSON('Recruitments/newMsgs', function(data){
+        $('#newMsg').html(data);
+    });
+
     //validate file size
     $('#companySub').click(function () {
         var file = $('input[name=logo]');
@@ -171,7 +179,7 @@ $(document).ready(function () {
             var position = $('#position').val();
             var link = 'userSchedulesSeminar';
             if (position === 'admin') {
-                link = 'schedules';
+                link = 'events';
             }
             window.location = link;
         },
@@ -214,22 +222,24 @@ $(document).ready(function () {
     $('#messages').bootstrapTable({
         url: 'Recruitments/viewMessages',
         onClickRow: function (data, row) {
-
+            var email = data.email;
+            var message = data.message;
+            $('#email').html(email);
+            $('#message').html(message);
+            toggleDiv($('#vMsg'),$('#msgtbl'));
         },
         rowStyle: function rowStyle() {
             return {
                 css: {'cursor': 'pointer'}
             };
         },
-        columns: [{
-            field: 'timestamp',
-            title: 'Timestamp'
-        }, {
-            field: 'message',
-            title: 'Message'
-        }, {
+        columns: [ {
             field: 'name',
-            title: 'From'
+            title: 'Sender'
+        },{
+            width: '20%',
+            field: 'timestamp',
+            title: ''
         }]
     });
 

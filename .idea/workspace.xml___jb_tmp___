@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="09e281c4-03b3-4036-b8d0-c0f993b364f6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml___jb_tmp___" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml___jb_tmp___" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recruitment/application/views/pages/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/views/pages/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recruitment/application/views/pages/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/application/views/pages/messages.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recruitment/assets/js/dynamic.js" beforeDir="false" afterPath="$PROJECT_DIR$/recruitment/assets/js/dynamic.js" afterDir="false" />
     </list>
@@ -271,7 +270,7 @@
       <workItem from="1528416668520" duration="5189000" />
       <workItem from="1528898079902" duration="12429000" />
       <workItem from="1530097749323" duration="3940000" />
-      <workItem from="1530109266799" duration="3509000" />
+      <workItem from="1530109266799" duration="3523000" />
     </task>
     <task id="LOCAL-00001" summary="Add Company Modal">
       <created>1523029155703</created>
@@ -459,7 +458,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25146000" />
+    <option name="totallyTimeSpent" value="25160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
