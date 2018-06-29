@@ -21,7 +21,7 @@
                 </p>
                 <div>
                     <p>Message: </p>
-                    <p id="message">Here</p>
+                    <p id="message">Here</p> 
                 </div>
             </div>
         </div>

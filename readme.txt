@@ -2,13 +2,12 @@ DATABASE:		practicum.sql
 SERVER: 			WAMP or XAMPP
 FRAMEWORK:		Codeigniter
 LANGUAGE:		PHP
-URL:			/ojtproject/recruitment
+URL:			http://localhost/ojtproject/recruitment/
 
 LOGIN CREDENTIALS:	Admin
-			ID Number: 123456
-			Password: 1234
+			ID Number: 1000123
+			Password: admin1234
 
-			Student
+			User
 			ID Number: 2143735
-			Password: 1234
-
+			Password: user123
